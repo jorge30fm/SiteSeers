@@ -1,36 +1,37 @@
-import jwt from 'jsonwebtoken';
+import jwt from "jsonwebtoken";
 
-//add secret to .evn file
-const secret = 'mysecretsshhhhh';
-const expiration = '2h';
+const secret = "mysecretsshhhhh";
+const expiration = "2h";
 
-const authMiddleware = function ({ req }) {
-    // allows token to be sent via req.body, req.query, or headers
-    let token = req.body.token || req.query.token || req.headers.authorization;
+function signToken({ username, email, _id }) {
+	const payload = { username, email, _id };
 
-    // ["Bearer", "<tokenvalue>"]
-    if (req.headers.authorization) {
-      token = token.split(' ').pop().trim();
-    }
+	return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
+}
+function authMiddleware({ req }) {
+	// allows token to be sent via req.body, req.query, or headers
+	let token = req.body.token || req.query.token || req.headers.authorization;
 
-    if (!token) {
-      return req;
-    }
+	// separate "Bearer" from "<tokenvalue>"
+	if (req.headers.authorization) {
+		token = token.split(" ").pop().trim();
+	}
 
-    try {
-      const { data } = jwt.verify(token, secret, { maxAge: expiration });
-      req.user = data;
-    } catch {
-      console.log('Invalid token');
-    }
+	// if no token, return request object as is
+	if (!token) {
+		return req;
+	}
 
-    return req;
-  };
+	try {
+		// decode and attach user data to request object
+		const { data } = jwt.verify(token, secret, { maxAge: expiration });
+		req.user = data;
+	} catch {
+		console.log("Invalid token");
+	}
 
-const signToken = function ({ firstName, email, _id }) {
-    const payload = { firstName, email, _id };
+	// return updated request object
+	return req;
+}
 
-    return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
-  }
-
-  export {authMiddleware, signToken}
+export { signToken, authMiddleware };
