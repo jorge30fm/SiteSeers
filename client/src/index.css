@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --dark-green: #09451C;
+  --light-green: #96a68d;
+  --bone: #e3e1dc;
+  --orange: #ff8427;
+  --blue: #2e4057;
+  --burnt: #bb4430;
+}
+
+body {
+    background-color: var(--bone);
+    color: var(--dark-green);
+}
+
+button {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--dark-green);
+    color: var(--bone);
+    transition: background-color 0.15s, color 0.15s;
+}
+
+button:hover {
+    background-color: var(--light-green);
+    color: var(--bone);
+}
