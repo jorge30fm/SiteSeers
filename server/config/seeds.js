@@ -1,4 +1,4 @@
-const { User } = require("../models");
+import { User } from "../models/index.js";
 
 const userData = [
   {
@@ -6,8 +6,11 @@ const userData = [
     lastName: "Monteagudo",
     email: "jorge@email.com",
     password: "password123",
-    phoneNumber: "123-456-7890",
-    about: "an absolute wizard",
+    phone: "123-456-7890",
+    bio: "an absolute wizard",
+    reservationHistory: [],
+    campsiteListings: [],
+    userReviews: []
   },
 
   {
@@ -15,8 +18,11 @@ const userData = [
     lastName: "Hill",
     email: "chip@email.com",
     password: "password123",
-    phoneNumber: "123-456-7890",
-    about: "an absolute wizard",
+    phone: "123-456-7890",
+    bio: "an absolute wizard",
+    reservationHistory: [],
+    campsiteListings: [],
+    userReviews: []
   },
 
   {
@@ -24,8 +30,11 @@ const userData = [
     lastName: "Franklin",
     email: "josie@email.com",
     password: "password123",
-    phoneNumber: "123-456-7890",
-    about: "an absolute wizard",
+    phone: "123-456-7890",
+    bio: "an absolute wizard",
+    reservationHistory: [],
+    campsiteListings: [],
+    userReviews: []
   },
 
   {
@@ -33,8 +42,11 @@ const userData = [
     lastName: "Nowaczewski",
     email: "jack@email.com",
     password: "password123",
-    phoneNumber: "123-456-7890",
-    about: "an absolute wizard",
+    phone: "123-456-7890",
+    bio: "an absolute wizard",
+    reservationHistory: [],
+    campsiteListings: [],
+    userReviews: []
   },
 
   {
@@ -42,11 +54,14 @@ const userData = [
     lastName: "Towers",
     email: "jorge@email.com",
     password: "password123",
-    phoneNumber: "123-456-7890",
-    about: "he no wizard",
+    phone: "123-456-7890",
+    bio: "he no wizard",
+    reservationHistory: [],
+    campsiteListings: [],
+    userReviews: []
   },
 ];
 
 const seedUsers = () => User.bulkCreate(userData);
 
-module.exports = seedUsers;
+export default seedUsers;
