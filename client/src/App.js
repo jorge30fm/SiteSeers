@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloProvider,
@@ -31,12 +31,13 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="app-container">
       <ApolloProvider client={client}>
 
         <Router>
-          <Header />
+          <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Header>
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
