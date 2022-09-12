@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import dateFormat from "../utils/dateFormat";
+import dateFormat from "../utils/dateFormat.js";
 const { Schema, model } = mongoose;
 
 const reservationSchema = new Schema({
