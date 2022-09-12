@@ -15,7 +15,7 @@ const typeDefs = gql`
 	}
 	type Reviews {
 		_id: ID
-		rating: Float
+		rating: Int
 		reviewText: String
 		createdAt: String
 		user: String

@@ -53,10 +53,10 @@ const userSchema = new Schema(
     userReviews: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Reviews'
+        ref: 'Review'
       }
     ]
-  },,
+  },
   {
     toJSON: {
       virtuals: true
