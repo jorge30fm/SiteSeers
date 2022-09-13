@@ -1,16 +1,16 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 :root {
-  --dark-green: #09451c;
-  --light-green: #96a68d;
-  --bone: #e3e1dc;
-  --orange: #ff8427;
-  --blue: #2e4057;
-  --burnt: #bb4430;
+	--dark-green: #09451c;
+	--light-green: #96a68d;
+	--bone: #e3e1dc;
+	--orange: #ff8427;
+	--blue: #2e4057;
+	--burnt: #bb4430;
 }
 /* UTILITY CLASSES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 /* HEIGHT / WIDTH UTILS */
@@ -319,94 +319,95 @@
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 header {
-  background-size: cover;
-  background-color: var(--dark-green);
-  color: var(--bone);
-  position: -webkit-sticky;
-  top: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
+	background-size: cover;
+	background-color: var(--dark-green);
+	color: var(--bone);
+	position: -webkit-sticky;
+	top: 0;
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
 }
 
 footer {
-  background-size: cover;
-  background-color: var(--dark-green);
-  color: var(--bone);
-  padding: 10px;
+	background-size: cover;
+	background-color: var(--dark-green);
+	color: var(--bone);
+	padding: 10px;
 }
 
 header img {
-  width: 30px;
-  height: 30px;
+	width: 30px;
+	height: 30px;
 }
 
 body {
-  background-color: var(--bone);
-  color: var(--dark-green);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.5;
+	background-color: var(--bone);
+	color: var(--dark-green);
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 1.5;
 }
 
 main {
-  flex: 1;
+	flex: 1;
 }
 
 .app-container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
 }
 
 .mountain-bg {
-  background-image: url("./assets/images/mountains.jpg");
-  background-size: cover;
-  background-position: center 30%;
-  color: var(--bone);
+	background-image: url("./assets/images/mountains.jpg");
+	background-size: cover;
+	background-position: center 30%;
+	color: var(--bone);
 }
 
 .centered {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 section {
-  padding: 30px 45px;
+	padding: 30px 45px;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .btn-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 input {
-  border: 1px solid var(--dark-green);
-  border-radius: 10px;
-  padding: 10px;
+	border: 1px solid var(--dark-green);
+	border-radius: 10px;
+	padding: 10px;
 }
 
 button {
-  border: none;
-  border-radius: 5px;
-  padding: 5px;
-  margin-top: 15px;
-  width: 70px;
-  background-color: var(--dark-green);
-  color: var(--bone);
-  transition: background-color 0.15s, color 0.15s;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+	margin-top: 15px;
+	width: 70px;
+	background-color: var(--dark-green);
+	color: var(--bone);
+	transition: background-color 0.15s, color 0.15s;
 }
 
 button:hover {
-  background-color: var(--light-green);
-  color: var(--bone);
+	background-color: var(--light-green);
+	color: var(--bone);
 }
+
