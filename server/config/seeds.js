@@ -10,7 +10,7 @@ const userData = [
     bio: "an absolute wizard",
     reservationHistory: [],
     campsiteListings: [],
-    userReviews: []
+    userReviews: [],
   },
 
   {
@@ -22,7 +22,7 @@ const userData = [
     bio: "an absolute wizard",
     reservationHistory: [],
     campsiteListings: [],
-    userReviews: []
+    userReviews: [],
   },
 
   {
@@ -34,7 +34,7 @@ const userData = [
     bio: "an absolute wizard",
     reservationHistory: [],
     campsiteListings: [],
-    userReviews: []
+    userReviews: [],
   },
 
   {
@@ -46,7 +46,7 @@ const userData = [
     bio: "an absolute wizard",
     reservationHistory: [],
     campsiteListings: [],
-    userReviews: []
+    userReviews: [],
   },
 
   {
@@ -58,7 +58,7 @@ const userData = [
     bio: "he no wizard",
     reservationHistory: [],
     campsiteListings: [],
-    userReviews: []
+    userReviews: [],
   },
 ];
 
