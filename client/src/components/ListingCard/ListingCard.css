@@ -1,0 +1,19 @@
+/* ListingCard Styling Start*/
+.listingImage {
+	color: white;
+	height: 100px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	text-align: center;
+}
+.listingCard {
+	margin: 5% 5%;
+}
+
+.location {
+    color:rgba(9, 69, 28, .6);
+}
+.basicInfo {
+    margin: 2% 5% 0 5%;
+}
