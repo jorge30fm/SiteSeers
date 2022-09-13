@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "./Nav";
+import Nav from "./Nav.js";
 import icon from "../assets/images/icons/menu-icon.png";
 import logo from "../assets/images/icons/logo-placeholder.png";
 
