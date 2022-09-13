@@ -1,4 +1,7 @@
 import React from "react";
+import Account from "../components/DashComponents/Account";
+import Reservations from "../components/DashComponents/Reservations";
+import Listings from "../components/DashComponents/Listings";
 
 const Dashboard = () => {
   return (
@@ -6,14 +9,18 @@ const Dashboard = () => {
         <h2>User's Dashboard</h2>
         <div className="tabs">
           <button>Account</button>
-          <button>Bookings</button>
-          <button>Lisings</button>
-          <button>Reviews</button>
+          <button>Reservations</button>
+          <button>Listings</button>
         </div>
-        <div className="tab-content">Account tab content here</div>
-        <div className="tab-content">Bookings tab content here</div>
-        <div className="tab-content">Listings tab content here</div>
-        <div className="tab-content">Reviews tab content here</div>
+        <div className="tab-content">
+          <Account />
+        </div>
+        <div className="tab-content">
+          <Reservations />
+        </div>
+        <div className="tab-content">
+          <Listings />
+        </div>
     </main>
   );
 };
