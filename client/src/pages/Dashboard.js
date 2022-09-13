@@ -1,15 +1,20 @@
 import React from "react";
-import ListingCard from "../components/ListingCard";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 const Dashboard = () => {
   return (
-    <div className="container">
-      <Header />
-      <ListingCard />
-      <Footer />
-    </div>
+    <main>
+        <h2>User's Dashboard</h2>
+        <div className="tabs">
+          <button>Account</button>
+          <button>Bookings</button>
+          <button>Lisings</button>
+          <button>Reviews</button>
+        </div>
+        <div className="tab-content">Account tab content here</div>
+        <div className="tab-content">Bookings tab content here</div>
+        <div className="tab-content">Listings tab content here</div>
+        <div className="tab-content">Reviews tab content here</div>
+    </main>
   );
 };
 export default Dashboard;
