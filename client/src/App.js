@@ -8,12 +8,11 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer";
-import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
-import Dashboard from "./pages/Dashboard";
-import SingleSite from "./pages/SingleSite";
-
+import Footer from "./components/Footer/Footer";
+import Login from "./pages/Login/Login";
+import SignUp from "./pages/SignUp/SignUp";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import SingleSite from "./pages/SingleSite/SingleSite";
 
 const httpLink = createHttpLink({
   uri: "/graphql",

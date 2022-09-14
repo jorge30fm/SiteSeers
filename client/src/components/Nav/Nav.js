@@ -1,4 +1,5 @@
 import React from "react";
+import "./Nav.css";
 import Close from "@mui/icons-material/Close";
 
 const Nav = (props) => {

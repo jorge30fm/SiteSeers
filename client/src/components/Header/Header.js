@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import Nav from "../Nav";
+import Nav from "../Nav/Nav";
 import Menu from "@mui/icons-material/Menu";
 import logo from "../../assets/images/icons/logo-placeholder.png";
 

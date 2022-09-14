@@ -318,13 +318,6 @@
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-footer {
-	background-size: cover;
-	background-color: var(--dark-green);
-	color: var(--bone);
-	padding: 10px;
-}
-
 body {
 	background-color: var(--bone);
 	color: var(--dark-green);
@@ -354,10 +347,6 @@ main {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-}
-
-section {
-	padding: 30px 45px;
 }
 
 form {
@@ -392,4 +381,3 @@ button:hover {
 	background-color: var(--light-green);
 	color: var(--bone);
 }
-
