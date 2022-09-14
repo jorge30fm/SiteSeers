@@ -6,11 +6,18 @@ function SearchBar() {
   const [errorMessage, setErrorMessage] = useState("");
   const { search } = searchState;
 
+  const handleChange = (e) => {
+    setSearchState(e.target.value);
+    console.log("Handle Change", e.target.value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!errorMessage) {
+      console.log("Search Bar", e);
+    } else {
+      setErrorMessage("Please try another search");
     }
-    console.log("Search Bar", searchState);
   };
 
   return (
@@ -20,6 +27,7 @@ function SearchBar() {
           type="text"
           placeholder="Find a New Adventure"
           name="search"
+          onChange={handleChange}
           defaultValue={search}
         />
         <button type="submit" className="searchButton">
