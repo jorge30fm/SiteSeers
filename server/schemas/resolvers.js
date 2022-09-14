@@ -29,9 +29,14 @@ const resolvers = {
 				.populate("campsiteListing");
 		},
 		campsites: async (parent, { location, name, _id }) => {
-			const params = location ? { location } : name ? { name } : _id ? { _id } : {}
-			return Campsite.find(params)
-      .populate("campsiteReviews");
+			const params = location
+				? { location }
+				: name
+				? { name }
+				: _id
+				? { _id }
+				: {};
+			return Campsite.find(params).populate("campsiteReviews");
 		},
 	},
 	Mutation: {
@@ -57,9 +62,70 @@ const resolvers = {
 			const token = signToken(user);
 			return { token, user };
 		},
-		addCampsite: async (parent, args) => {
-			const campsite = await Campsite.create(args);
-			return campsite;
+		editUser: async (parent, args, context) => {
+			if (context.user) {
+				const updatedUser = await User.findByIdAndUpdate(
+					{ _id: context.user._id },
+					args,
+					{ new: true }
+				)
+					.populate("reservationHistory")
+					.populate("campsiteListing")
+					.populate("userReviews");
+				return updatedUser;
+			}
+			throw new AuthenticationError(
+				"You must be logged in to perform this action!"
+			);
+		},
+		addCampsite: async (parent, args, context) => {
+			if (context.user) {
+				const campsite = await Campsite.create({
+					...args,
+					username: context.user.username,
+				});
+				await User.findByIdAndUpdate(
+					{ _id: context.user._id },
+					{ $push: { campsiteListings: campsite._id } },
+					{ new: true }
+				).populate("campsiteReviews");
+				return campsite;
+			}
+			throw new AuthenticationError(
+				"You must be logged in to perform this action!"
+			);
+		},
+		editCampsite: async (parent, args, context) => {
+			if (context.user) {
+				const updatedCampsite = await Campsite.findOneAndUpdate(
+					{ _id: args._id },
+					...args,
+					{ new: true }
+				).populate("campsiteReviews");
+				return updatedCampsite;
+			}
+			throw new AuthenticationError(
+				"You must be logged in to perform this action!"
+			);
+		},
+		deleteCampsite: async (parent, { _id }, context) => {
+			if (context.user) {
+				const updatedUser = await User.findByIdAndUpdate(
+					{ _id: context.user._id },
+					{ $pull: _id },
+					{ new: true }
+				)
+					.populate("reservationHistory")
+					.populate("campsiteListing")
+					.populate("userReviews");
+
+				await Campsite.findOneAndDelete({ _id: _id });
+
+				return updatedUser;
+			}
+			throw new AuthenticationError(
+				"You must be logged in to perform this action!"
+			);
 		},
 	},
 };

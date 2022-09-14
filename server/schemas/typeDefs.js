@@ -139,7 +139,7 @@ const typeDefs = gql`
 			description: String
 			rate: Int
 		): Campsite
-		deleteCampsite(_id: ID!): Campsite
+		deleteCampsite(_id: ID!): User
 		addUserReview(
 			_id: ID!
 			rating: Int
