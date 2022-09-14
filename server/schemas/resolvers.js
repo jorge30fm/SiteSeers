@@ -1,4 +1,4 @@
-import { User, Campsite } from "../models/index.js";
+import { User, Campsite, Reservation } from "../models/index.js";
 import { AuthenticationError } from "apollo-server-express";
 import { signToken } from "../utils/auth.js";
 
@@ -125,16 +125,30 @@ const resolvers = {
 					.populate("reservationHistory")
 					.populate("campsiteListings")
 					.populate("userReviews");
-
-
-
 				return updatedUser;
 			}
 			throw new AuthenticationError(
 				"You must be logged in to perform this action!"
 			);
 		},
-	},
-};
+    addReservation: async (parent,args, context) => {
+      if(context.user) {
+        const reservation = await Reservation.create({
+					...args,
+					username: context.user.username,
+				});
+				await User.findByIdAndUpdate(
+					{ _id: context.user._id },
+					{ $push: { reservationHistory: reservation._id } },
+					{ new: true }
+				).populate("campsite");
+				return reservation;
+			}
+			throw new AuthenticationError(
+				"You must be logged in to perform this action!"
+			);
+      }
+    }
+	};
 
 export default resolvers;

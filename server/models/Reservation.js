@@ -18,10 +18,6 @@ const reservationSchema = new Schema(
 			default: Date.now,
 			get: (timestamp) => dateFormat(timestamp),
 		},
-		username: {
-			type: String,
-			reauired: true,
-		},
 		reservationStartDate: {
 			type: Date,
 			get: (timestamp) => dateFormat(timestamp),
@@ -30,6 +26,10 @@ const reservationSchema = new Schema(
 			type: Date,
 			get: (timestamp) => dateFormat(timestamp),
 		},
+		active: {
+			type: Boolean,
+			default: true
+		}
 	},
 	{
 		toJSON: {
