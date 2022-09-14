@@ -88,8 +88,8 @@ const typeDefs = gql`
 		me: User
 		users: [User]
 		user(_id: ID!): User
-		campsites: [Campsite]
-		campsite(name: String, location: String!): Campsite
+		campsite(_id: ID!): Campsite
+		campsites(name: String, location: String!): [Campsite]
 	}
 	type Mutation {
 		login(email: String!, password: String!): User
