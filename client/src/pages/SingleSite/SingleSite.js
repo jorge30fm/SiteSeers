@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from "../components/Carousel/Carousel";
+import Carousel from "../../components/Carousel/Carousel";
 import StarIcon from "@mui/icons-material/Star";
 import Grill from "@mui/icons-material/OutdoorGrill";
 import Fire from "@mui/icons-material/Fireplace";

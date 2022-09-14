@@ -1,11 +1,17 @@
 import { gql } from "apollo-server-express";
 
 const typeDefs = gql`
+	type Auth {
+		token: ID!
+		user: User
+	}
+
 	type User {
 		_id: ID
-		firstName: String!
-		lastName: String!
-		email: String!
+		username: String
+		firstName: String
+		lastName: String
+		email: String
 		phone: String
 		bio: String
 		reservationHistory: [Reservation]
@@ -13,6 +19,7 @@ const typeDefs = gql`
 		reviewCount: Int
 		userReviews: [Reviews]
 	}
+
 	type Reviews {
 		_id: ID
 		rating: Int
@@ -23,10 +30,13 @@ const typeDefs = gql`
 
 	type Reservation {
 		_id: ID
+		username: String!
 		totalPrice: Float
+		createdAt: String
 		campsite: Campsite
 		active: Boolean
 	}
+
 	type Ammenities {
 		parking: Boolean
 		wheelchairAccessible: Boolean
@@ -71,11 +81,11 @@ const typeDefs = gql`
 
 	type Campsite {
 		_id: ID
-		name: String!
-		location: String!
-		description: String!
-		rate: Int!
-		owner: User!
+		name: String
+		location: String
+		description: String
+		rate: Int
+		owner: User
 		ammenities: Ammenities
 		activities: Activities
 		terrain: Terrain
@@ -87,22 +97,61 @@ const typeDefs = gql`
 		me: User
 		users: [User]
 		user(_id: ID!): User
-		campsites: [Campsite]
-		campsite(name: String, location: String!): Campsite
+		campsite(_id: ID!): Campsite
+		campsites(name: String, location: String, _id: ID): [Campsite]
 	}
+
 	type Mutation {
 		login(email: String!, password: String!): Auth
-		addUser(username: String!, email: String!, password: String!): Auth
+		addUser(
+			username: String!
+			firstName: String!
+			lastName: String!
+			email: String!
+			password: String!
+		): Auth
+		editUser(
+			username: String
+			firstName: String
+			lastName: String
+			email: String
+			password: String
+			phone: String
+			bio: String
+		): User
+		addReservation(
+			totalPrice: Float
+			campsiteID: ID!
+			reservationStartDate: String
+			reservationEndDate: String
+		): Reservation
+		removeReservation(reservationID: ID!): Reservation
 		addCampsite(
 			name: String!
 			location: String!
 			description: String!
 			rate: Int!
 		): Campsite
-	}
-	type Auth {
-		token: ID!
-		user: User
+		editCampsite(
+			_id: ID!
+			name: String
+			location: String
+			description: String
+			rate: Int
+		): Campsite
+		deleteCampsite(_id: ID!): User
+		addUserReview(
+			_id: ID!
+			rating: Int
+			reviewText: String!
+			user: String
+		): User
+		addCampsiteReview(
+			campsiteID: ID!
+			rating: Int
+			reviewText: String!
+			user: String
+		): User
 	}
 `;
 export default typeDefs;
