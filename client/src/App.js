@@ -13,7 +13,6 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Dashboard from "./pages/Dashboard";
 
-
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -36,7 +35,6 @@ function App() {
   return (
     <div className="app-container">
       <ApolloProvider client={client}>
-
         <Router>
           <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Header>
           <Routes>
