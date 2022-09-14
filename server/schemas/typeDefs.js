@@ -1,6 +1,10 @@
 import { gql } from "apollo-server-express";
 
 const typeDefs = gql`
+	type Auth {
+		token: ID!
+		user: User
+	}
 	type User {
 		_id: ID
 		username: String
@@ -92,14 +96,14 @@ const typeDefs = gql`
 		campsites(name: String, location: String!): [Campsite]
 	}
 	type Mutation {
-		login(email: String!, password: String!): User
+		login(email: String!, password: String!): Auth
 		addUser(
 			username: String!
 			firstName: String!
 			lastName: String!
 			email: String!
 			password: String!
-		): User
+		): Auth
 		editUser(
 			username: String
 			firstName: String
@@ -116,10 +120,7 @@ const typeDefs = gql`
 			reservationStartDate: String
 			reservationEndDate: String
 		): User
-		removeReservation(
-			reservationID: ID!
-			userID: ID!
-		): User
+		removeReservation(reservationID: ID!, userID: ID!): User
 		addCampsite(
 			userID: ID!
 			name: String!
@@ -130,8 +131,3 @@ const typeDefs = gql`
 	}
 `;
 export default typeDefs;
-
-/*type Auth {
-	token: ID!
-	user: User
-} */
