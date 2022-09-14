@@ -5,6 +5,7 @@ const typeDefs = gql`
 		token: ID!
 		user: User
 	}
+
 	type User {
 		_id: ID
 		username: String
@@ -18,6 +19,7 @@ const typeDefs = gql`
 		reviewCount: Int
 		userReviews: [Reviews]
 	}
+
 	type Reviews {
 		_id: ID
 		rating: Int
@@ -28,10 +30,13 @@ const typeDefs = gql`
 
 	type Reservation {
 		_id: ID
+		username: String!
 		totalPrice: Float
+		createdAt: String
 		campsite: Campsite
 		active: Boolean
 	}
+
 	type Ammenities {
 		parking: Boolean
 		wheelchairAccessible: Boolean
@@ -93,8 +98,9 @@ const typeDefs = gql`
 		users: [User]
 		user(_id: ID!): User
 		campsite(_id: ID!): Campsite
-		campsites(name: String, location: String!): [Campsite]
+		campsites(name: String, location: String, _id: ID): [Campsite]
 	}
+
 	type Mutation {
 		login(email: String!, password: String!): Auth
 		addUser(
@@ -114,20 +120,38 @@ const typeDefs = gql`
 			bio: String
 		): User
 		addReservation(
-			userID: ID!
 			totalPrice: Float
 			campsiteID: ID!
 			reservationStartDate: String
 			reservationEndDate: String
-		): User
-		removeReservation(reservationID: ID!, userID: ID!): User
+		): Reservation
+		removeReservation(reservationID: ID!): Reservation
 		addCampsite(
-			userID: ID!
 			name: String!
 			location: String!
 			description: String!
 			rate: Int!
 		): Campsite
+		editCampsite(
+			_id: ID!
+			name: String
+			location: String
+			description: String
+			rate: Int
+		): Campsite
+		deleteCampsite(_id: ID!): Campsite
+		addUserReview(
+			_id: ID!
+			rating: Int
+			reviewText: String!
+			user: String
+		): User
+		addCampsiteReview(
+			campsiteID: ID!
+			rating: Int
+			reviewText: String!
+			user: String
+		): User
 	}
 `;
 export default typeDefs;

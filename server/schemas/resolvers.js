@@ -16,13 +16,22 @@ const resolvers = {
 			throw new AuthenticationError("Not logged in");
 		},
 		users: async () => {
-			return User.find().select("-__v -password");
+			return User.find()
+				.select("-__v -password")
+				.populate("reservationHistory")
+				.populate("campsiteListing")
+				.populate("userReviews");
 		},
 		user: async (parent, { username }) => {
-			return User.findOne({ username }).select("-__v -password");
+			return User.findOne({ username })
+				.select("-__v -password")
+				.populate("userReviews")
+				.populate("campsiteListing");
 		},
-		campsites: async () => {
-			return Campsite.find();
+		campsites: async (parent, { location, name, _id }) => {
+			const params = location ? { location } : name ? { name } : _id ? { _id } : {}
+			return Campsite.find(params)
+      .populate("campsiteReviews");
 		},
 	},
 	Mutation: {
