@@ -3,9 +3,10 @@ import { gql } from "apollo-server-express";
 const typeDefs = gql`
 	type User {
 		_id: ID
-		firstName: String!
-		lastName: String!
-		email: String!
+		username: String
+		firstName: String
+		lastName: String
+		email: String
 		phone: String
 		bio: String
 		reservationHistory: [Reservation]
@@ -71,11 +72,11 @@ const typeDefs = gql`
 
 	type Campsite {
 		_id: ID
-		name: String!
-		location: String!
-		description: String!
-		rate: Int!
-		owner: User!
+		name: String
+		location: String
+		description: String
+		rate: Int
+		owner: User
 		ammenities: Ammenities
 		activities: Activities
 		terrain: Terrain
@@ -91,18 +92,46 @@ const typeDefs = gql`
 		campsite(name: String, location: String!): Campsite
 	}
 	type Mutation {
-		login(email: String!, password: String!): Auth
-		addUser(username: String!, email: String!, password: String!): Auth
+		login(email: String!, password: String!): User
+		addUser(
+			username: String!
+			firstName: String!
+			lastName: String!
+			email: String!
+			password: String!
+		): User
+		editUser(
+			username: String
+			firstName: String
+			lastName: String
+			email: String
+			password: String
+			phone: String
+			bio: String
+		): User
+		addReservation(
+			userID: ID!
+			totalPrice: Float
+			campsiteID: ID!
+			reservationStartDate: String
+			reservationEndDate: String
+		): User
+		removeReservation(
+			reservationID: ID!
+			userID: ID!
+		): User
 		addCampsite(
+			userID: ID!
 			name: String!
 			location: String!
 			description: String!
 			rate: Int!
 		): Campsite
 	}
-	type Auth {
-		token: ID!
-		user: User
-	}
 `;
 export default typeDefs;
+
+/*type Auth {
+	token: ID!
+	user: User
+} */

@@ -11,6 +11,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import ListingCard  from './components/ListingCard/ListingCard.js'
 
 
 const httpLink = createHttpLink({
@@ -38,7 +39,9 @@ function App() {
 
         <Router>
           <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Header>
+          <ListingCard />
           <Routes>
+
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
           </Routes>

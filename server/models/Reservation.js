@@ -11,10 +11,14 @@ const reservationSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: "Campsite",
 	},
-	reservationDate: {
+	reservationStartDate: {
 		type: Date,
 		get: (timestamp) => dateFormat(timestamp),
 	},
+	reservationEndDate: {
+		type: Date,
+		get: (timestamp) => dateFormat(timestamp)
+	}
 });
 
 const Reservation = model("Reservation", reservationSchema);
