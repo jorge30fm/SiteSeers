@@ -1,0 +1,9 @@
+.login-section {
+    padding: 30px;
+}
+
+.login-div {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+  }
