@@ -40,7 +40,9 @@ function App() {
       <ApolloProvider client={client}>
         <Router>
           <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Header>
+
           <Routes>
+
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/search" element={<SearchResults />} />
