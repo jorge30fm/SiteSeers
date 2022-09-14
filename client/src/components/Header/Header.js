@@ -1,7 +1,8 @@
 import React from "react";
-import Nav from './Nav.js'
-import icon from "../assets/images/icons/menu-icon.png";
-import logo from "../assets/images/icons/logo-placeholder.png";
+import "./Header.css";
+import Nav from "../Nav";
+import Menu from "@mui/icons-material/Menu";
+import logo from "../../assets/images/icons/logo-placeholder.png";
 
 const Header = (props) => {
   const { menuOpen, setMenuOpen } = props;
@@ -17,13 +18,11 @@ const Header = (props) => {
         <Nav menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Nav>
       </nav>
       <div>
-        <img
-          src={icon}
-          alt="menu icon"
+        <Menu
           onClick={() => {
             setMenuOpen(true);
           }}
-        ></img>
+        />
       </div>
     </header>
   );
