@@ -10,7 +10,7 @@ const Header = (props) => {
   return (
     <header>
       <a href="/">
-        <img src={logo} alt="logo"></img>
+        <img className="header-icon" src={logo} alt="logo"></img>
       </a>
       <div className={`${menuOpen && "page-cover"}`}></div>
 
@@ -19,6 +19,7 @@ const Header = (props) => {
       </nav>
       <div>
         <Menu
+          className="header-icon"
           onClick={() => {
             setMenuOpen(true);
           }}
