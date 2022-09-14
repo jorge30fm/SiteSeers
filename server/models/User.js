@@ -6,6 +6,12 @@ const {Schema, model } = mongoose;
 
 const userSchema = new Schema(
   {
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true
+    },
     firstName: {
       type: String,
       required: true,
@@ -25,7 +31,7 @@ const userSchema = new Schema(
     phone: {
       type: String,
       required: false,
-      match: [/  ^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/, "Must match a phone number!"]
+      // match: [/ ^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/, "Must match a phone number!"]
     },
     bio: {
       type: String,

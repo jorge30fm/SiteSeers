@@ -18,7 +18,7 @@ const Nav = (props) => {
       <div>
         <ul>
           <li>
-            <a href="/" className="nav-link">
+            <a href="/search" className="nav-link">
               Search
             </a>
           </li>
