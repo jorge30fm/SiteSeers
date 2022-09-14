@@ -1,22 +1,20 @@
 .dash-section {
-    margin: 30px;
-  }
-  
-  .tab-container {
-    border-bottom: 1px solid var(--light-green);
-  }
-  
-  .tab {
-    padding: 5px 10px;
-    
-  }
-  
-  .selected {
-    border-bottom: 2px solid var(--dark-green);
-    background-color: var(--light-green);
-  }
-  
-  .tab-content-container {
-      margin: 20px 10px;
-  }
-  
+  margin: 30px;
+}
+
+.tab-container {
+  border-bottom: 1px solid var(--light-green);
+}
+
+.tab {
+  padding: 5px 10px;
+}
+
+.selected {
+  border-bottom: 2px solid var(--dark-green);
+  background-color: var(--light-green);
+}
+
+.tab-content-container {
+  margin: 20px 10px;
+}
