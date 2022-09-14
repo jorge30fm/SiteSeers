@@ -42,12 +42,11 @@ function App() {
           <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Header>
 
           <Routes>
-
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/search" element={<SearchResults />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-			<Route path="/single-site" element={<SingleSite />} />
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/single-site" element={<SingleSite />} />
           </Routes>
           <Footer />
         </Router>

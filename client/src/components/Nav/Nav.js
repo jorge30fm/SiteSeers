@@ -9,7 +9,7 @@ const Nav = (props) => {
     <div className="menu">
       <div className="menu-header">
         <Close
-        className="header-icon"
+          className="header-icon"
           onClick={() => {
             setMenuOpen(false);
           }}
@@ -28,7 +28,7 @@ const Nav = (props) => {
             </a>
           </li>
           <li>
-            <a href="/" className="nav-link">
+            <a href="/logout" className="nav-link">
               Logout
             </a>
           </li>
