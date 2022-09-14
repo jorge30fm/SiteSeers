@@ -19,13 +19,19 @@ const Nav = (props) => {
       <div>
         <ul>
           <li>
-            <a href="/" className="nav-link">Search</a>
+            <a href="/search" className="nav-link">
+              Search
+            </a>
           </li>
           <li>
-            <a href="/" className="nav-link">Dashboard</a>
+            <a href="/" className="nav-link">
+              Dashboard
+            </a>
           </li>
           <li>
-            <a href="/" className="nav-link">Logout</a>
+            <a href="/" className="nav-link">
+              Logout
+            </a>
           </li>
         </ul>
       </div>
