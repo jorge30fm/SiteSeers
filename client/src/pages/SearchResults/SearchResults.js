@@ -1,6 +1,6 @@
 import React from "react";
-import SearchBar from "../components/SearchBar";
-import ListingCard from "../components/ListingCard/ListingCard.js";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import ListingCard from "../../components/ListingCard/ListingCard";
 
 function SearchPage() {
   return (
