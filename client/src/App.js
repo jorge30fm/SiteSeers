@@ -12,7 +12,7 @@ import Footer from "./components/Footer/Footer";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 
-import SearchResults from "./pages/SearchResults";
+import SearchResults from "./pages/SearchResults/SearchResults";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import SingleSite from "./pages/SingleSite/SingleSite";
 
