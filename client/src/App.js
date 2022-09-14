@@ -11,8 +11,10 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-import Dashboard from "./pages/Dashboard";
 
+import SearchResults from "./pages/SearchResults";
+import Dashboard from "./pages/Dashboard";
+import SingleSite from "./pages/SingleSite";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -36,7 +38,6 @@ function App() {
   return (
     <div className="app-container">
       <ApolloProvider client={client}>
-
         <Router>
           <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Header>
 
@@ -44,7 +45,9 @@ function App() {
 
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/search" element={<SearchResults />} />
             <Route path="/dashboard" element={<Dashboard />} />
+			<Route path="/single-site" element={<SingleSite />} />
           </Routes>
           <Footer />
         </Router>
