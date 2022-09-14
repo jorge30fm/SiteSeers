@@ -1,5 +1,6 @@
 import React from "react";
-import exit from "../assets/images/icons/exit-icon.png";
+import "./Nav.css";
+import Close from "@mui/icons-material/Close";
 
 const Nav = (props) => {
   const { setMenuOpen } = props;
@@ -7,14 +8,12 @@ const Nav = (props) => {
   return (
     <div className="menu">
       <div className="menu-header">
-        <img
-          className="exit"
-          src={exit}
-          alt="exit menu"
+        <Close
+        className="header-icon"
           onClick={() => {
             setMenuOpen(false);
           }}
-        ></img>
+        />
       </div>
       <div>
         <ul>
