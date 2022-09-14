@@ -9,7 +9,7 @@ const resolvers = {
 				const userData = await User.findOne({ _id: context.user._id })
 					.select("-__v -password")
 					.populate("reservationHistory")
-					.populate("campsiteListing")
+					.populate("campsiteListings")
 					.populate("userReviews");
 				return userData;
 			}
@@ -19,14 +19,14 @@ const resolvers = {
 			return User.find()
 				.select("-__v -password")
 				.populate("reservationHistory")
-				.populate("campsiteListing")
+				.populate("campsiteListings")
 				.populate("userReviews");
 		},
 		user: async (parent, { username }) => {
 			return User.findOne({ username })
 				.select("-__v -password")
 				.populate("userReviews")
-				.populate("campsiteListing");
+				.populate("campsiteListings");
 		},
 		campsites: async (parent, { location, name, _id }) => {
 			const params = location
@@ -40,12 +40,14 @@ const resolvers = {
 		},
 	},
 	Mutation: {
+    //done
 		addUser: async (parent, args) => {
 			const user = await User.create(args);
 			const token = signToken(user);
 
 			return { token, user };
 		},
+    //done
 		login: async (parent, { email, password }) => {
 			const user = await User.findOne({ email });
 
@@ -62,6 +64,7 @@ const resolvers = {
 			const token = signToken(user);
 			return { token, user };
 		},
+    //done -> future development = add profile picture
 		editUser: async (parent, args, context) => {
 			if (context.user) {
 				const updatedUser = await User.findByIdAndUpdate(
@@ -70,7 +73,7 @@ const resolvers = {
 					{ new: true }
 				)
 					.populate("reservationHistory")
-					.populate("campsiteListing")
+					.populate("campsiteListings")
 					.populate("userReviews");
 				return updatedUser;
 			}
@@ -78,6 +81,7 @@ const resolvers = {
 				"You must be logged in to perform this action!"
 			);
 		},
+    //done --> future development: add images
 		addCampsite: async (parent, args, context) => {
 			if (context.user) {
 				const campsite = await Campsite.create({
@@ -95,11 +99,12 @@ const resolvers = {
 				"You must be logged in to perform this action!"
 			);
 		},
+    //done --> future development= add images
 		editCampsite: async (parent, args, context) => {
 			if (context.user) {
 				const updatedCampsite = await Campsite.findOneAndUpdate(
 					{ _id: args._id },
-					...args,
+					args,
 					{ new: true }
 				).populate("campsiteReviews");
 				return updatedCampsite;
@@ -108,18 +113,20 @@ const resolvers = {
 				"You must be logged in to perform this action!"
 			);
 		},
+    //done
 		deleteCampsite: async (parent, { _id }, context) => {
 			if (context.user) {
+        await Campsite.findOneAndDelete({ _id: _id });
 				const updatedUser = await User.findByIdAndUpdate(
 					{ _id: context.user._id },
-					{ $pull: _id },
+					{ $pull: {campsiteListings: {_id} }},
 					{ new: true }
 				)
 					.populate("reservationHistory")
-					.populate("campsiteListing")
+					.populate("campsiteListings")
 					.populate("userReviews");
 
-				await Campsite.findOneAndDelete({ _id: _id });
+
 
 				return updatedUser;
 			}
