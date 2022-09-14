@@ -43,8 +43,8 @@ const resolvers = {
         throw new AuthenticationError("Incorrect credentials");
       }
 
-      const token = signToken(user);
-      return { token, user };
+      // const token = signToken(user);
+      return  user ; //retur token
     },
     addCampsite: async (parent, args) => {
       const campsite = await Campsite.create(args);
