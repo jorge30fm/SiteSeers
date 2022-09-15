@@ -40,7 +40,7 @@ const typeDefs = gql`
 		active: Boolean
 	}
 
-	type Ammenities {
+	type Amenities {
 		parking: Boolean
 		wheelchairAccessible: Boolean
 		petAllowed: Boolean
@@ -89,7 +89,7 @@ const typeDefs = gql`
 		description: String
 		price: Int
 		owner: User
-		ammenities: Ammenities
+		amenities: Amenities
 		activities: Activities
 		terrain: String
 		reviewCount: Int
@@ -130,7 +130,7 @@ const typeDefs = gql`
 			reservationEndDate: String!
 			numberOfCampers: Int
 			active: Boolean
-		): Reservation
+		): User
 		deleteReservation(_id: ID!): User
 		addCampsite(
 			name: String!
@@ -139,6 +139,46 @@ const typeDefs = gql`
 			price: Int!
 			active: Boolean
 			terrain: String
+		): Campsite
+		addAmenities(
+			parking: Boolean
+			wheelchairAccessible: Boolean
+			petAllowed: Boolean
+			toilets: Boolean
+			campfire: Boolean
+			water: Boolean
+			showers: Boolean
+			trash: Boolean
+			hotTub: Boolean
+			picnicTable: Boolean
+			wifi: Boolean
+			cookingEquipment: Boolean
+		): Campsite
+		addActivities(
+			campsiteID: ID!
+			fishing: Boolean
+			paddling: Boolean
+			birdWatching: Boolean
+			wildlifeWatching: Boolean
+			biking: Boolean
+			boating: Boolean
+			offRoading: Boolean
+			climbing: Boolean
+			snowSports: Boolean
+			horsebackRiding: Boolean
+			surfing: Boolean
+			windSport: Boolean
+		): Campsite
+		addTerrain(
+			lake: Boolean
+			beach: Boolean
+			farm: Boolean
+			forest: Boolean
+			river: Boolean
+			hotSpring: Boolean
+			swimmingHole: Boolean
+			desert: Boolean
+			cave: Boolean
 		): Campsite
 		editCampsite(
 			_id: ID!

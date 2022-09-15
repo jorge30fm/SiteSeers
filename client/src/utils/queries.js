@@ -71,7 +71,7 @@ export const QUERY_CAMPSITE = gql`
                     phone
                     email
                 }
-                ammenities
+                amenities
                 activities
                 terrain
             }
