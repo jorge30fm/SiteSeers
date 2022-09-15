@@ -170,6 +170,18 @@ const typeDefs = gql`
 			windSport: Boolean
 		): Campsite
 		addTerrain(
+			campsiteID: ID!
+			lake: Boolean
+			beach: Boolean
+			farm: Boolean
+			forest: Boolean
+			river: Boolean
+			hotSpring: Boolean
+			swimmingHole: Boolean
+			desert: Boolean
+			cave: Boolean
+		): Campsite
+		addTerrain(
 			lake: Boolean
 			beach: Boolean
 			farm: Boolean

@@ -39,14 +39,14 @@ const resolvers = {
 		},
 	},
 	Mutation: {
-		//done
+		//adds user to database and returns a token alongside an object with all of the user info
 		addUser: async (parent, args) => {
 			const user = await User.create(args);
 			const token = signToken(user);
 
 			return { token, user };
 		},
-		//done
+		//logs in and returns a token and the user info
 		login: async (parent, { email, password }) => {
 			const user = await User.findOne({ email });
 
@@ -63,7 +63,7 @@ const resolvers = {
 			const token = signToken(user);
 			return { token, user };
 		},
-		//done -> future development = add profile picture
+		//edits user information and returns that updated info. Unavailable if user isn't logged int
 		editUser: async (parent, args, context) => {
 			if (context.user) {
 				const updatedUser = await User.findByIdAndUpdate(
@@ -80,7 +80,7 @@ const resolvers = {
 				"You must be logged in to perform this action!"
 			);
 		},
-		//done --> future development: add images
+		//adds information about a campsite and adds it to the user's data if logged int
 		addCampsite: async (parent, args, context) => {
 			if (context.user) {
 				const campsite = await Campsite.create({
@@ -98,6 +98,7 @@ const resolvers = {
 				"You must be logged in to perform this action!"
 			);
 		},
+		//adds object of activities to the campsite collection
 		addActivities: async(parent, {campsiteID, ...args}, context) => {
 			if (context.user) {
 				const updatedCampsite = await Campsite.findOneAndUpdate(
@@ -111,20 +112,35 @@ const resolvers = {
 				"You must be logged in to perform this action!"
 			);
 		},
+		// adds ammenities to a campsite only if user is logged in
 		addAmenities: async(parent, {campsiteID, ...args}, context) => {
 			if (context.user) {
 				const updatedCampsite = await Campsite.findOneAndUpdate(
 					{ _id: campsiteID },
 					{ amenities: {...args } },
 					{ new: true }
-				).populate("campsite");
+				).populate("campsiteReviews");
 				return updatedCampsite;
 			}
 			throw new AuthenticationError(
 				"You must be logged in to perform this action!"
 			);
 		},
-		//done --> future development= add images
+		// adds terrain type to a campsite only if user is logged in. Can have multiple types of terrain
+		addTerrain: async(parent, {campsiteID, ...args}, context) => {
+			if (context.user) {
+				const updatedCampsite = await Campsite.findOneAndUpdate(
+					{ _id: campsiteID },
+					{ terrain: {...args } },
+					{ new: true }
+				).populate("campsiteReviews");
+				return updatedCampsite;
+			}
+			throw new AuthenticationError(
+				"You must be logged in to perform this action!"
+			);
+		},
+		//edits basic info about a campsite. Does not change terrain, amenities or activites. Use addTerrain, addAmenity or addActivity to update those values
 		editCampsite: async (parent, args, context) => {
 			if (context.user) {
 				const updatedCampsite = await Campsite.findOneAndUpdate(
@@ -138,7 +154,7 @@ const resolvers = {
 				"You must be logged in to perform this action!"
 			);
 		},
-		//done
+		//removes campsite from database and from the user's list
 		deleteCampsite: async (parent, { _id }, context) => {
 			if (context.user) {
 				await Campsite.findOneAndDelete({ _id: _id });
@@ -156,6 +172,7 @@ const resolvers = {
 				"You must be logged in to perform this action!"
 			);
 		},
+		//adds a reservation to the user's reservation history
 		addReservation: async (parent, args, context) => {
 			if (context.user) {
 				const updatedUser = await User.findOneAndUpdate(
@@ -169,6 +186,7 @@ const resolvers = {
 				"You must be logged in to perform this action!"
 			);
 		},
+		//deletes reservation from user's reservation history
 		deleteReservation: async (parent, { _id }, context) => {
 			if (context.user) {
 				const updatedUser = await User.findByIdAndUpdate(

@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import amenitiesSchema from "./Amenities.js";
 import activitySchema from "./Activities.js";
 import reviewSchema from "./Review.js";
+import terrainSchema from "./Terrain.js"
 const { Schema, model } = mongoose;
 
 const campsiteSchema = new Schema(
@@ -30,9 +31,7 @@ const campsiteSchema = new Schema(
 		},
 		amenities: amenitiesSchema,
 		activities: activitySchema,
-		terrain: {
-			type: String,
-		},
+		terrain: terrainSchema,
 		campsiteReviews: [ reviewSchema] ,
 		active: {
 			type: Boolean,
