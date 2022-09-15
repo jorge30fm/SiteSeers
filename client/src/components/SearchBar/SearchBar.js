@@ -30,7 +30,7 @@ function SearchBar() {
           onChange={handleChange}
           defaultValue={search}
         />
-        <button type="submit" className="searchButton">
+        <button type="submit" className="searchButton btn">
           <i className="search">Find</i>
         </button>
       </form>

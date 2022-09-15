@@ -44,7 +44,7 @@ const SingleSite = () => {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </section>
-        <button>Reserve</button>
+        <button className="btn">Reserve</button>
       </div>
     </main>
   );
