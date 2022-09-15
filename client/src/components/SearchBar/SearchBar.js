@@ -34,7 +34,7 @@ function SearchBar() {
           defaultValue={search}
           id="searchBarValue"
         />
-        <button type="submit" className="searchButton">
+        <button type="submit" className="searchButton btn">
           <i className="search">Find</i>
         </button>
       </form>

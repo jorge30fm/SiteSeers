@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Calendar.css";
 import Calendar from "react-calendar";
 
-import "react-calendar/dist/Calendar.css";
+// import "react-calendar/dist/Calendar.css";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 
@@ -16,11 +16,14 @@ const CalendarView = () => {
           <AddCircleOutlineIcon /> 1 <RemoveCircleOutlineIcon />
         </div>
       </div>
-      <div className="calendar-container">
-        <Calendar onChange={onChange} value={value} />
-      </div>
+      <Calendar
+        onChange={onChange}
+        value={value}
+        selectRange={true}
+        calendarType={"US"}
+      />
       <div className="btn-container calendar-section">
-        <button>Continue</button>
+        <button className="btn">Continue</button>
       </div>
     </section>
   );

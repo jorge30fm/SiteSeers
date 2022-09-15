@@ -355,7 +355,7 @@ input {
   align-items: center;
 }
 
-button {
+.btn {
   border: none;
   border-radius: 5px;
   padding: 5px;
@@ -366,7 +366,7 @@ button {
   transition: background-color 0.15s, color 0.15s;
 }
 
-button:hover {
+.btn:hover {
   background-color: var(--light-green);
   color: var(--bone);
 }
