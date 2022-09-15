@@ -40,14 +40,14 @@ const resolvers = {
 		},
 	},
 	Mutation: {
-    //done
+		//done
 		addUser: async (parent, args) => {
 			const user = await User.create(args);
 			const token = signToken(user);
 
 			return { token, user };
 		},
-    //done
+		//done
 		login: async (parent, { email, password }) => {
 			const user = await User.findOne({ email });
 
@@ -64,7 +64,7 @@ const resolvers = {
 			const token = signToken(user);
 			return { token, user };
 		},
-    //done -> future development = add profile picture
+		//done -> future development = add profile picture
 		editUser: async (parent, args, context) => {
 			if (context.user) {
 				const updatedUser = await User.findByIdAndUpdate(
@@ -81,7 +81,7 @@ const resolvers = {
 				"You must be logged in to perform this action!"
 			);
 		},
-    //done --> future development: add images
+		//done --> future development: add images
 		addCampsite: async (parent, args, context) => {
 			if (context.user) {
 				const campsite = await Campsite.create({
@@ -99,7 +99,7 @@ const resolvers = {
 				"You must be logged in to perform this action!"
 			);
 		},
-    //done --> future development= add images
+		//done --> future development= add images
 		editCampsite: async (parent, args, context) => {
 			if (context.user) {
 				const updatedCampsite = await Campsite.findOneAndUpdate(
@@ -113,13 +113,13 @@ const resolvers = {
 				"You must be logged in to perform this action!"
 			);
 		},
-    //done
+		//done
 		deleteCampsite: async (parent, { _id }, context) => {
 			if (context.user) {
-        await Campsite.findOneAndDelete({ _id: _id });
+				await Campsite.findOneAndDelete({ _id: _id });
 				const updatedUser = await User.findByIdAndUpdate(
 					{ _id: context.user._id },
-					{ $pull: {campsiteListings: {_id} }},
+					{ $pull: { campsiteListings: { _id } } },
 					{ new: true }
 				)
 					.populate("reservationHistory")
@@ -131,9 +131,9 @@ const resolvers = {
 				"You must be logged in to perform this action!"
 			);
 		},
-    addReservation: async (parent,args, context) => {
-      if(context.user) {
-        const reservation = await Reservation.create({
+		addReservation: async (parent, args, context) => {
+			if (context.user) {
+				const reservation = await Reservation.create({
 					...args,
 					username: context.user.username,
 				});
@@ -147,8 +147,25 @@ const resolvers = {
 			throw new AuthenticationError(
 				"You must be logged in to perform this action!"
 			);
-      }
-    }
-	};
+		},
+		deleteReservation: async (parent, { _id }, context) => {
+			if (context.user) {
+				await Reservation.findOneAndDelete({ _id: _id });
+				const updatedUser = await User.findByIdAndUpdate(
+					{ _id: context.user._id },
+					{ $pull: { reservationHistory: { _id } } },
+					{ new: true }
+				)
+					.populate("reservationHistory")
+					.populate("campsiteListings")
+					.populate("userReviews");
+				return updatedUser;
+			}
+			throw new AuthenticationError(
+				"You must be logged in to perform this action!"
+			);
+		},
+	},
+};
 
 export default resolvers;

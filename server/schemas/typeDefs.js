@@ -127,7 +127,7 @@ const typeDefs = gql`
 			reservationEndDate: String!
 			active: Boolean
 		): Reservation
-		removeReservation(reservationID: ID!): Reservation
+		deleteReservation(_id: ID!): User
 		addCampsite(
 			name: String!
 			location: String!
