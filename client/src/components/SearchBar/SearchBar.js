@@ -14,7 +14,10 @@ function SearchBar() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!errorMessage) {
-      console.log("Search Bar", e);
+      console.log(
+        "Handle Submit",
+        document.querySelector("#searchBarValue").value
+      );
     } else {
       setErrorMessage("Please try another search");
     }
@@ -29,6 +32,7 @@ function SearchBar() {
           name="search"
           onChange={handleChange}
           defaultValue={search}
+          id="searchBarValue"
         />
         <button type="submit" className="searchButton">
           <i className="search">Find</i>
