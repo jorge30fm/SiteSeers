@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
+import dateFormat from "../utils/dateFormat.js";
 
 const { Schema, model } = mongoose;
 
@@ -27,6 +28,11 @@ const userSchema = new Schema(
       unique: true,
       match: [/.+@.+\..+/, "Must match an email address!"],
     },
+    createdAt: {
+			type: Date,
+			default: Date.now,
+			get: (timestamp) => dateFormat(timestamp),
+		},
     phone: {
       type: String,
       required: false,
@@ -65,7 +71,9 @@ const userSchema = new Schema(
   {
     toJSON: {
       virtuals: true,
+      getters: true
     },
+
   }
 );
 

@@ -26,6 +26,9 @@ const reservationSchema = new Schema(
 			type: Date,
 			get: (timestamp) => dateFormat(timestamp),
 		},
+		numberOfCampers: {
+			type: Number
+		},
 		active: {
 			type: Boolean,
 			default: true

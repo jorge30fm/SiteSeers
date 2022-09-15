@@ -12,6 +12,7 @@ const typeDefs = gql`
 		firstName: String
 		lastName: String
 		email: String
+		createdAt: String
 		phone: String
 		bio: String
 		reservationHistory: [Reservation]
@@ -35,6 +36,7 @@ const typeDefs = gql`
 		reservationStartDate: String
 		reservationEndDate: String
 		campsite: Campsite
+		numberOfCampers: Int
 		active: Boolean
 	}
 
@@ -85,13 +87,14 @@ const typeDefs = gql`
 		name: String
 		location: String
 		description: String
-		rate: Int
+		price: Int
 		owner: User
 		ammenities: Ammenities
 		activities: Activities
-		terrain: Terrain
+		terrain: String
 		reviewCount: Int
 		campsiteReviews: [Reviews]
+		active: Boolean
 	}
 
 	type Query {
@@ -125,6 +128,7 @@ const typeDefs = gql`
 			campsite: ID!
 			reservationStartDate: String!
 			reservationEndDate: String!
+			numberOfCampers: Int
 			active: Boolean
 		): Reservation
 		deleteReservation(_id: ID!): User
@@ -132,14 +136,18 @@ const typeDefs = gql`
 			name: String!
 			location: String!
 			description: String!
-			rate: Int!
+			price: Int!
+			active: Boolean
+			terrain: String
 		): Campsite
 		editCampsite(
 			_id: ID!
 			name: String
 			location: String
 			description: String
-			rate: Int
+			price: Int
+			active: Boolean
+			terrain: String
 		): Campsite
 		deleteCampsite(_id: ID!): User
 		addUserReview(

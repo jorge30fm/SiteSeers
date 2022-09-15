@@ -18,7 +18,7 @@ const campsiteSchema = new Schema(
 			minLength: 1,
 			maxLength: 500,
 		},
-		rate: {
+		price: {
 			type: Number,
 			required: true,
 		},
@@ -35,6 +35,10 @@ const campsiteSchema = new Schema(
 			type: Schema.Types.ObjectId,
 			ref: "Review",
 		},
+		active: {
+			type: Boolean,
+			default: true
+		}
 	},
 	{
         toJSON: {
