@@ -85,7 +85,7 @@ const siteData = [
   },
   {
     name: "Hellerfurt",
-    location: "47135 Maddison River",
+    location: "Arlington",
     description: "Velit nihil et facere commodi.",
     price: "41",
   },
