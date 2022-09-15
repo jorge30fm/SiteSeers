@@ -13,11 +13,9 @@ function SearchBar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const searchBarValue = document.querySelector("#searchBarValue").value;
     if (!errorMessage) {
-      console.log(
-        "Handle Submit",
-        document.querySelector("#searchBarValue").value
-      );
+      console.log("Handle Submit", searchBarValue);
     } else {
       setErrorMessage("Please try another search");
     }
