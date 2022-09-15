@@ -44,7 +44,11 @@ const SingleSite = () => {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </section>
-        <button className="btn">Reserve</button>
+        <div className="btn-container">
+          <a href="/reserve">
+            <button className="btn">Reserve</button>
+          </a>
+        </div>
       </div>
     </main>
   );

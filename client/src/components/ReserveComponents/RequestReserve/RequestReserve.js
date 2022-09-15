@@ -25,7 +25,9 @@ const RequestReserve = () => {
               <p>Total:</p>
               <p>$$$</p>
             </div>
-            <button className="btn">Reserve</button>
+            <a href="/pay-confirm">
+              <button className="btn">Reserve</button>
+            </a>
           </div>
         </div>
       </section>
