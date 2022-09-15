@@ -6,8 +6,10 @@ import Calendar from "react-calendar";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 
-const CalendarView = () => {
+const CalendarView = (props) => {
   const [value, onChange] = useState(new Date());
+  const { setShowCalendar, setShowRequest } = props;
+
   return (
     <section className="flex-column align-center">
       <div className="calendar-section">
@@ -23,7 +25,15 @@ const CalendarView = () => {
         calendarType={"US"}
       />
       <div className="btn-container calendar-section">
-        <button className="btn">Continue</button>
+        <button
+          className="btn"
+          onClick={() => {
+            setShowCalendar(false);
+            setShowRequest(true);
+          }}
+        >
+          Continue
+        </button>
       </div>
     </section>
   );
