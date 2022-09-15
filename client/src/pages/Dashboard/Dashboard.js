@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./Dashboard.css";
-import Account from "../../components/DashComponents/Account";
-import Reservations from "../../components/DashComponents/Reservations";
-import Listings from "../../components/DashComponents/Listings";
+import Account from "../../components/DashComponents/Account/Account";
+import Reservations from "../../components/DashComponents/Reservations/Reservations";
+import Listings from "../../components/DashComponents/Listings/Listings";
 
 const Dashboard = () => {
-  const [accountSelected, setAccountSelected] = useState(false);
+  const [accountSelected, setAccountSelected] = useState(true);
   const [reservationsSelected, setReservationsSelected] = useState(false);
   const [listingsSelected, setListingsSelected] = useState(false);
 
