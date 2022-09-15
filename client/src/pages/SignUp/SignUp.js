@@ -31,7 +31,7 @@ const SignUp = () => {
             <label for="age">I am at least 18 years of age.</label>
           </div>
           <div className="btn-container">
-            <button type="submit">Sign Up</button>
+            <button className="btn" type="submit">Sign Up</button>
           </div>
         </form>
       </section>

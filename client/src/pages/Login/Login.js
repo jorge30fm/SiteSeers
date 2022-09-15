@@ -17,7 +17,7 @@ const Login = () => {
           </div>
           <div className="login-div">
             <div className="btn-container">
-              <button type="submit">Login</button>
+              <button className="btn" type="submit">Login</button>
             </div>
           </div>
         </form>
@@ -25,7 +25,7 @@ const Login = () => {
       <section className="login-section flex-column align-center">
         <h3>Not a user yet? No worries!</h3>
         <div className="btn-container">
-          <button>Sign Up</button>
+          <button className="btn">Sign Up</button>
         </div>
       </section>
     </main>
