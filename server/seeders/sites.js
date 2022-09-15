@@ -1,304 +1,304 @@
 const siteData = [
   {
-    name: "Josephinetown",
-    location: "Chapel Hill",
-    description: "Corporis repudiandae eveniet enim similique.",
-    rate: "19",
+    "name": "Oak Lawn",
+    "location": "49517 Hillard Unions",
+    "description": "Enim doloremque fugiat similique quos.",
+    "price": "16"
   },
   {
-    name: "Port Lesleyview",
-    location: "Chapel Hill",
-    description: "Excepturi dolore natus in expedita.",
-    rate: "16",
+    "name": "Fort Lilian",
+    "location": "486 Stanton Land",
+    "description": "Eum ipsam et autem fugit.",
+    "price": "37"
   },
   {
-    name: "Lake D'angelo",
-    location: "Raleigh",
-    description: "Non perferendis nisi minima voluptate.",
-    rate: "10",
+    "name": "Port Alena",
+    "location": "7576 Walter Center",
+    "description": "Et quos voluptatum rerum non.",
+    "price": "34"
   },
   {
-    name: "Vitahaven",
-    location: "Miami",
-    description: "Ut nihil debitis recusandae debitis.",
-    rate: "19",
+    "name": "Baileymouth",
+    "location": "01331 Eryn Union",
+    "description": "Quibusdam voluptas nemo neque aut.",
+    "price": "14"
   },
   {
-    name: "New Tomasa",
-    location: "Durham",
-    description: "Voluptatem quas aliquid numquam deleniti.",
-    rate: "12",
+    "name": "Alessiaview",
+    "location": "986 Wisoky Run",
+    "description": "Eos est iste nisi qui.",
+    "price": "50"
   },
   {
-    name: "Hudsonberg",
-    location: "Chapel Hill",
-    description: "Aliquam tempore voluptas quia laboriosam.",
-    rate: "28",
+    "name": "Brittanycester",
+    "location": "814 Ryann Turnpike",
+    "description": "Similique et et voluptatem expedita.",
+    "price": "32"
   },
   {
-    name: "Kuvalisbury",
-    location: "Lynchburg",
-    description: "Nam ut distinctio quam dolor.",
-    rate: "47",
+    "name": "Evansborough",
+    "location": "594 Waylon Underpass",
+    "description": "Qui in ipsam consequatur tenetur.",
+    "price": "9"
   },
   {
-    name: "Taylor",
-    location: "Dallas",
-    description: "Molestiae provident quam voluptatem deserunt.",
-    rate: "49",
+    "name": "North Darwin",
+    "location": "51990 Mitchell Hills",
+    "description": "Omnis earum earum deserunt nobis.",
+    "price": "46"
   },
   {
-    name: "Floville",
-    location: "Los Angeles",
-    description: "Laborum aliquid dolores delectus explicabo.",
-    rate: "38",
+    "name": "San Leandro",
+    "location": "264 Corrine Wells",
+    "description": "Amet ipsum ut nam rem.",
+    "price": "22"
   },
   {
-    name: "Brendonport",
-    location: "Atlanta",
-    description: "Perferendis aut distinctio nihil provident.",
-    rate: "37",
+    "name": "Lake Mattieberg",
+    "location": "17292 Janessa Trail",
+    "description": "Consequatur minima id aut eius.",
+    "price": "20"
   },
   {
-    name: "Wymanfield",
-    location: "Charlotte",
-    description: "Quam asperiores aut nesciunt facilis.",
-    rate: "38",
+    "name": "North Ozella",
+    "location": "92957 Kylie Haven",
+    "description": "Soluta debitis et nihil nemo.",
+    "price": "30"
   },
   {
-    name: "East Moriahside",
-    location: "Austin",
-    description: "Quisquam ad vel animi vel.",
-    rate: "40",
+    "name": "Yuma",
+    "location": "049 Alvah Mount",
+    "description": "Ut odit aliquam magni facere.",
+    "price": "41"
   },
   {
-    name: "North Vinceborough",
-    location: "Arlington",
-    description: "Minus quas vitae incidunt totam.",
-    rate: "21",
+    "name": "Gleasonburgh",
+    "location": "04117 Janick Fields",
+    "description": "Culpa vero rem quisquam voluptatem.",
+    "price": "46"
   },
   {
-    name: "West Maymie",
-    location: "Arlington",
-    description: "Dolore ut non incidunt eos.",
-    rate: "43",
+    "name": "Juniusboro",
+    "location": "98225 Borer Turnpike",
+    "description": "Repudiandae possimus natus et quis.",
+    "price": "36"
   },
   {
-    name: "Hellerfurt",
-    location: "47135 Maddison River",
-    description: "Velit nihil et facere commodi.",
-    rate: "41",
+    "name": "New Edmondfield",
+    "location": "249 Weber Rue",
+    "description": "Ipsam eligendi necessitatibus cum facere.",
+    "price": "34"
   },
   {
-    name: "Dubuque",
-    location: "Alexandria",
-    description: "Necessitatibus possimus illum vel recusandae.",
-    rate: "47",
+    "name": "Steveborough",
+    "location": "78300 Jerome Isle",
+    "description": "Vero aut dignissimos nostrum quo.",
+    "price": "31"
   },
   {
-    name: "Bethanyfield",
-    location: "Alexandria",
-    description: "Tempore autem sint aut animi.",
-    rate: "35",
+    "name": "West Westleyborough",
+    "location": "36391 Edgar Key",
+    "description": "Eveniet dolor consequuntur laudantium optio.",
+    "price": "7"
   },
   {
-    name: "Port Braxtonfield",
-    location: "Raleigh",
-    description: "Nulla sunt nam deserunt tenetur.",
-    rate: "17",
+    "name": "Windlerville",
+    "location": "111 Dusty Shoals",
+    "description": "Eum velit recusandae nisi doloremque.",
+    "price": "15"
   },
   {
-    name: "Bakersfield",
-    location: "Chapel Hill",
-    description: "Rem quae debitis quis quo.",
-    rate: "31",
+    "name": "East Karelle",
+    "location": "0549 Velva Crossroad",
+    "description": "Facilis ut eligendi necessitatibus facilis.",
+    "price": "41"
   },
   {
-    name: "Breitenbergfort",
-    location: "Durham",
-    description: "Consequatur commodi porro voluptas quibusdam.",
-    rate: "12",
+    "name": "Viviennefurt",
+    "location": "3438 Padberg Dale",
+    "description": "Architecto delectus sequi necessitatibus tenetur.",
+    "price": "42"
   },
   {
-    name: "Lake Aniya",
-    location: "Charlotte",
-    description: "Non velit quia et dolores.",
-    rate: "29",
+    "name": "Gregoryfort",
+    "location": "117 Bobbie River",
+    "description": "Quo omnis ab corrupti enim.",
+    "price": "42"
   },
   {
-    name: "New Felipahaven",
-    location: "Mount Airy",
-    description: "Reprehenderit odit aut qui commodi.",
-    rate: "36",
+    "name": "Nienowport",
+    "location": "0480 Waelchi Plain",
+    "description": "Sunt vel quos sed consequuntur.",
+    "price": "44"
   },
   {
-    name: "Dillanberg",
-    location: "Greensboro",
-    description: "Ut non ut eum iure.",
-    rate: "19",
+    "name": "Shakiraboro",
+    "location": "526 Waelchi Crossroad",
+    "description": "Ratione sit est rerum rem.",
+    "price": "6"
   },
   {
-    name: "Olemouth",
-    location: "Greensboro",
-    description: "Nihil nihil suscipit id corrupti.",
-    rate: "23",
+    "name": "Springfield",
+    "location": "240 Justyn Cliff",
+    "description": "Quisquam quas saepe sapiente inventore.",
+    "price": "25"
   },
   {
-    name: "Stammberg",
-    location: "King",
-    description: "Inventore voluptatem ex et nostrum.",
-    rate: "42",
+    "name": "Stoltenbergcester",
+    "location": "9446 Adams Prairie",
+    "description": "Vitae quibusdam at sunt ad.",
+    "price": "41"
   },
   {
-    name: "North Fredrick",
-    location: "45276 Deonte Springs",
-    description: "Modi quasi error nam cumque.",
-    rate: "47",
+    "name": "Durham",
+    "location": "69813 Tyree Circles",
+    "description": "Esse occaecati quas ratione dolorum.",
+    "price": "6"
   },
   {
-    name: "Merced",
-    location: "Tampa",
-    description: "Est et at alias quidem.",
-    rate: "12",
+    "name": "Apple Valley",
+    "location": "91871 Thora Forest",
+    "description": "Dolores quis eius rem ut.",
+    "price": "2"
   },
   {
-    name: "New Chasity",
-    location: "Orlando",
-    description: "Sed delectus ad corrupti ducimus.",
-    rate: "27",
+    "name": "West Alexanechester",
+    "location": "46924 Leffler Shoal",
+    "description": "Atque sed itaque sunt amet.",
+    "price": "16"
   },
   {
-    name: "Farrellboro",
-    location: "New York",
-    description: "Quibusdam dignissimos natus aut soluta.",
-    rate: "17",
+    "name": "New Chaseville",
+    "location": "29630 Octavia Knolls",
+    "description": "Asperiores et quia libero officiis.",
+    "price": "8"
   },
   {
-    name: "Prohaskahaven",
-    location: "Chapel Hill",
-    description: "Animi qui inventore aut quasi.",
-    rate: "37",
+    "name": "Lake Hesterborough",
+    "location": "46347 Hackett Walk",
+    "description": "Sit rem quam praesentium beatae.",
+    "price": "34"
   },
   {
-    name: "Pagacside",
-    location: "Chapel Hill",
-    description: "Voluptatibus rerum necessitatibus autem et.",
-    rate: "34",
+    "name": "Mallorymouth",
+    "location": "413 Eldon Islands",
+    "description": "Ducimus maiores facilis dolor qui.",
+    "price": "35"
   },
   {
-    name: "Leonorafurt",
-    location: "Chapel Hill",
-    description: "Non exercitationem aut voluptatibus ex.",
-    rate: "25",
+    "name": "North Miraclechester",
+    "location": "4480 Brekke Union",
+    "description": "Reprehenderit dicta consequatur excepturi deserunt.",
+    "price": "40"
   },
   {
-    name: "Dewittmouth",
-    location: "Miami",
-    description: "Incidunt optio sint aut ratione.",
-    rate: "50",
+    "name": "Melissaview",
+    "location": "586 Cummings Isle",
+    "description": "Sit beatae et exercitationem autem.",
+    "price": "26"
   },
   {
-    name: "El Dorado Hills",
-    location: "miami",
-    description: "Animi aut voluptas ut eum.",
-    rate: "41",
+    "name": "Steuberfurt",
+    "location": "574 Syble Harbor",
+    "description": "Repellat sit qui neque magnam.",
+    "price": "42"
   },
   {
-    name: "Mattieborough",
-    location: "Dallas",
-    description: "Dicta consequuntur maxime culpa explicabo.",
-    rate: "41",
+    "name": "Mooreside",
+    "location": "059 Krajcik Port",
+    "description": "Et quaerat autem nisi quas.",
+    "price": "14"
   },
   {
-    name: "Watsonville",
-    location: "Austin",
-    description: "Atque repudiandae officiis voluptates deleniti.",
-    rate: "44",
+    "name": "South Danika",
+    "location": "90768 Elvera Harbor",
+    "description": "Et autem accusantium numquam voluptates.",
+    "price": "22"
   },
   {
-    name: "Earlineshire",
-    location: "Los Angeles",
-    description: "Aut harum modi id qui.",
-    rate: "19",
+    "name": "Lake Rashadtown",
+    "location": "745 Yundt Pine",
+    "description": "Corrupti eveniet voluptatem neque enim.",
+    "price": "33"
   },
   {
-    name: "Cormierport",
-    location: "San Diego",
-    description: "Rerum quam ut quaerat nisi.",
-    rate: "11",
+    "name": "Pearliebury",
+    "location": "651 Jeremy Key",
+    "description": "Delectus dicta voluptatem in magnam.",
+    "price": "42"
   },
   {
-    name: "Madisenfort",
-    location: "Charlottesville",
-    description: "Totam nulla repudiandae deserunt temporibus.",
-    rate: "50",
+    "name": "East Jeramie",
+    "location": "7739 Preston Path",
+    "description": "Quos dignissimos eum sed ab.",
+    "price": "18"
   },
   {
-    name: "Grand Island",
-    location: "Charleston",
-    description: "Libero laudantium corrupti optio voluptatum.",
-    rate: "40",
+    "name": "East Uriahstead",
+    "location": "22122 Estefania Isle",
+    "description": "Corporis magni neque quis sapiente.",
+    "price": "48"
   },
   {
-    name: "Khalidside",
-    location: "Charleston",
-    description: "Placeat suscipit inventore odio deleniti.",
-    rate: "33",
+    "name": "North Myrtis",
+    "location": "29495 Powlowski Key",
+    "description": "Dolor sit enim eos est.",
+    "price": "30"
   },
   {
-    name: "Fort Lilyancester",
-    location: "Wilmington",
-    description: "Qui molestiae at consectetur sed.",
-    rate: "20",
+    "name": "West Cristobalchester",
+    "location": "031 Sawayn Rapids",
+    "description": "Odio nulla reprehenderit cupiditate facilis.",
+    "price": "34"
   },
   {
-    name: "West Lorna",
-    location: "Wilmington",
-    description: "Sint est nostrum velit optio.",
-    rate: "17",
+    "name": "Johnstonchester",
+    "location": "4123 Mavis Ports",
+    "description": "Aut rerum illum aut et.",
+    "price": "1"
   },
   {
-    name: "Kulasberg",
-    location: "Fresno",
-    description: "Dolore eveniet natus consequatur magnam.",
-    rate: "44",
+    "name": "Steuberworth",
+    "location": "587 Kuhic Burg",
+    "description": "Qui amet est dignissimos quibusdam.",
+    "price": "24"
   },
   {
-    name: "Peytonborough",
-    location: "Boston",
-    description: "Consequuntur dolores dolor inventore animi.",
-    rate: "13",
+    "name": "Lukasbury",
+    "location": "2336 Schinner Mountain",
+    "description": "Dolor veniam quia id quis.",
+    "price": "46"
   },
   {
-    name: "Zoeystad",
-    location: "Seattle",
-    description: "Facere sint sit explicabo voluptate.",
-    rate: "35",
+    "name": "West Chaim",
+    "location": "53408 Marcia Extension",
+    "description": "Quas doloremque iusto molestiae consequatur.",
+    "price": "13"
   },
   {
-    name: "Wymanburgh",
-    location: "Portland",
-    description: "Dolore optio sapiente nesciunt mollitia.",
-    rate: "28",
+    "name": "South Nicolemouth",
+    "location": "115 Monahan Ford",
+    "description": "Culpa ipsum sed alias quia.",
+    "price": "18"
   },
   {
-    name: "New Kara",
-    location: "Portland",
-    description: "Doloremque ratione molestiae soluta labore.",
-    rate: "14",
+    "name": "Jonestown",
+    "location": "73523 DuBuque Ford",
+    "description": "Soluta fugit cum assumenda facere.",
+    "price": "39"
   },
   {
-    name: "Welchland",
-    location: "Seattle",
-    description: "Molestias fugiat dolore quasi enim.",
-    rate: "45",
+    "name": "Michelburgh",
+    "location": "272 Edmond Glen",
+    "description": "Deserunt delectus repellat molestias quibusdam.",
+    "price": "19"
   },
   {
-    name: "Brentwood",
-    location: "Miami",
-    description: "Dolore facere tempore ut quia.",
-    rate: "25",
-  },
+    "name": "North Rosella",
+    "location": "828 Vivianne Forest",
+    "description": "Dolor nihil enim eos sunt.",
+    "price": "11"
+  }
 ];
 
 export default siteData
