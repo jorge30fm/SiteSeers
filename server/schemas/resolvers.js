@@ -25,7 +25,7 @@ const resolvers = {
 		user: async (parent, { username }) => {
 			return User.findOne({ username })
 				.select("-__v -password")
-				.populate("userReviews")
+				.populate("userReviews");
 		},
 		campsites: async (parent, { location, name, _id }) => {
 			const params = location
@@ -38,6 +38,7 @@ const resolvers = {
 			return Campsite.find(params).populate("campsiteReviews");
 		},
 	},
+
 	Mutation: {
 		//adds user to database and returns a token alongside an object with all of the user info
 		addUser: async (parent, args) => {
@@ -69,7 +70,7 @@ const resolvers = {
 				const updatedUser = await User.findByIdAndUpdate(
 					{ _id: context.user._id },
 					args,
-					{ new: true }
+					{ new: true, runValidators: true }
 				)
 					.populate("reservationHistory")
 					.populate("campsiteListings")
@@ -80,6 +81,7 @@ const resolvers = {
 				"You must be logged in to perform this action!"
 			);
 		},
+
 		//adds information about a campsite and adds it to the user's data if logged int
 		addCampsite: async (parent, args, context) => {
 			if (context.user) {
@@ -90,7 +92,7 @@ const resolvers = {
 				await User.findByIdAndUpdate(
 					{ _id: context.user._id },
 					{ $push: { campsiteListings: campsite._id } },
-					{ new: true }
+					{ new: true, runValidators: true }
 				).populate("campsiteReviews");
 				return campsite;
 			}
@@ -99,13 +101,13 @@ const resolvers = {
 			);
 		},
 		//adds object of activities to the campsite collection
-		addActivities: async(parent, {campsiteID, ...args}, context) => {
+		addActivities: async (parent, { campsiteID, ...args }, context) => {
 			if (context.user) {
 				const updatedCampsite = await Campsite.findOneAndUpdate(
 					{ _id: campsiteID },
-					{ activities: {...args } },
+					{ activities: { ...args } },
 					{ new: true }
-				).populate("campsite");
+				).populate("campsiteReviews");
 				return updatedCampsite;
 			}
 			throw new AuthenticationError(
@@ -113,11 +115,11 @@ const resolvers = {
 			);
 		},
 		// adds ammenities to a campsite only if user is logged in
-		addAmenities: async(parent, {campsiteID, ...args}, context) => {
+		addAmenities: async (parent, { campsiteID, ...args }, context) => {
 			if (context.user) {
 				const updatedCampsite = await Campsite.findOneAndUpdate(
 					{ _id: campsiteID },
-					{ amenities: {...args } },
+					{ amenities: { ...args } },
 					{ new: true }
 				).populate("campsiteReviews");
 				return updatedCampsite;
@@ -127,11 +129,11 @@ const resolvers = {
 			);
 		},
 		// adds terrain type to a campsite only if user is logged in. Can have multiple types of terrain
-		addTerrain: async(parent, {campsiteID, ...args}, context) => {
+		addTerrain: async (parent, { campsiteID, ...args }, context) => {
 			if (context.user) {
 				const updatedCampsite = await Campsite.findOneAndUpdate(
 					{ _id: campsiteID },
-					{ terrain: {...args } },
+					{ terrain: { ...args } },
 					{ new: true }
 				).populate("campsiteReviews");
 				return updatedCampsite;
@@ -146,7 +148,7 @@ const resolvers = {
 				const updatedCampsite = await Campsite.findOneAndUpdate(
 					{ _id: args._id },
 					args,
-					{ new: true }
+					{ new: true, runValidators: true }
 				).populate("campsiteReviews");
 				return updatedCampsite;
 			}
@@ -172,12 +174,13 @@ const resolvers = {
 				"You must be logged in to perform this action!"
 			);
 		},
+
 		//adds a reservation to the user's reservation history
 		addReservation: async (parent, args, context) => {
 			if (context.user) {
 				const updatedUser = await User.findOneAndUpdate(
 					{ _id: context.user._id },
-					{ $push: { reservationHistory: {...args } }},
+					{ $push: { reservationHistory: { ...args } } },
 					{ new: true }
 				).populate("campsite");
 				return updatedUser;
@@ -202,6 +205,50 @@ const resolvers = {
 			throw new AuthenticationError(
 				"You must be logged in to perform this action!"
 			);
+		},
+		//if logged in, adds a review to a user
+		addUserReview: async (parent, { userID, rating, reviewText }, context) => {
+			if (context.user) {
+				const updatedUser = await User.findOneAndUpdate(
+					{ _id: userID },
+					{
+						$push: {
+							userReviews: {
+								rating,
+								reviewText,
+								username: context.user.username,
+							},
+						},
+					},
+					{ new: true, runValidators: true }
+				);
+				return updatedUser;
+			}
+			throw new AuthenticationError("You need to be logged in to add a review");
+		},
+		//if logged in, adds a review to a campsite
+		addCampsiteReview: async (
+			parent,
+			{ campsiteID, rating, reviewText },
+			context
+		) => {
+			if (context.user) {
+				const updatedCampsite = await Campsite.findOneAndUpdate(
+					{ _id: campsiteID },
+					{
+						$push: {
+							campsiteReviews: {
+								rating,
+								reviewText,
+								username: context.user.username,
+							},
+						},
+					},
+					{ new: true, runValidators: true }
+				);
+				return updatedCampsite;
+			}
+			throw new AuthenticationError("You need to be logged in to add a review");
 		},
 	},
 };

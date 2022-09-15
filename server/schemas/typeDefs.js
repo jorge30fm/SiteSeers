@@ -5,7 +5,6 @@ const typeDefs = gql`
 		token: ID!
 		user: User
 	}
-
 	type User {
 		_id: ID
 		username: String
@@ -26,7 +25,7 @@ const typeDefs = gql`
 		rating: Int
 		reviewText: String
 		createdAt: String
-		user: String
+		username: String
 	}
 
 	type Reservation {
@@ -91,7 +90,7 @@ const typeDefs = gql`
 		owner: User
 		amenities: Amenities
 		activities: Activities
-		terrain: String
+		terrain: Terrain
 		reviewCount: Int
 		campsiteReviews: [Reviews]
 		active: Boolean
@@ -192,17 +191,17 @@ const typeDefs = gql`
 		): Campsite
 		deleteCampsite(_id: ID!): User
 		addUserReview(
-			_id: ID!
+			userID: ID!
 			rating: Int
 			reviewText: String!
-			user: String
+			username: String
 		): User
 		addCampsiteReview(
-			campsite: ID!
+			campsiteID: ID!
 			rating: Int
 			reviewText: String!
-			user: String
-		): User
+			username: String
+		): Campsite
 	}
 `;
 export default typeDefs;
