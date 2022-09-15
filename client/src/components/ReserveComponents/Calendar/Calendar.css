@@ -1,0 +1,12 @@
+.calendar-section {
+  padding: 30px;
+}
+
+.calendar-container {
+  max-width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  background-color: var(--light-green);
+  padding: 10px;
+}
+
