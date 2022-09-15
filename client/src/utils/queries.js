@@ -64,16 +64,54 @@ export const QUERY_CAMPSITE = gql`
                     rating
                     reviewText
                     createdAt
+					username
                 }
+				reviewCount
                 owner {
                     firstName
                     lastName
                     phone
                     email
                 }
-                amenities
-                activities
-                terrain
+                amenities {
+					parking
+					wheelchairAccessible
+					petAllowed
+					toilets
+					campfire
+					water
+					showers
+					trash
+					hotTub
+					picnicTable
+					wifi
+					cookingEquipment
+				}
+                activities {
+					fishing
+					paddling
+					birdWatching
+					wildlifeWatching
+					biking
+					boating
+					offRoading
+					climbing
+					snowSports
+					horsebackRiding
+					surfing
+					windSport
+				}
+                terrain {
+					lake
+					beach
+					farm
+					forest
+					river
+					hotSpring
+					swimmingHole
+					desert
+					cave
+				}
             }
         }
 }`;
