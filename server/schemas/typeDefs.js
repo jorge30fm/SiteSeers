@@ -137,9 +137,9 @@ const typeDefs = gql`
 			description: String!
 			price: Int!
 			active: Boolean
-			terrain: String
 		): Campsite
 		addAmenities(
+			campsiteID: ID!
 			parking: Boolean
 			wheelchairAccessible: Boolean
 			petAllowed: Boolean
@@ -187,7 +187,6 @@ const typeDefs = gql`
 			description: String
 			price: Int
 			active: Boolean
-			terrain: String
 		): Campsite
 		deleteCampsite(_id: ID!): User
 		addUserReview(
