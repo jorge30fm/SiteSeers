@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useQuery } from "@apollo/client";
+import { } 
 
 function SearchBar() {
   const [searchState, setSearchState] = useState({ search: "" });
@@ -13,7 +15,7 @@ function SearchBar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const searchBarValue = document.querySelector("#searchBarValue").value;
+    const { loading, data } = useQuery(campSite, {variables: searchState});
     if (!errorMessage) {
       console.log("Handle Submit", searchBarValue);
     } else {
