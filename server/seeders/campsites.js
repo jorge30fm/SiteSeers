@@ -1,7 +1,7 @@
 const siteData = [
 	{
 		"name": "Waterston",
-		"location": "6016 Dibbert Lakes",
+		"location": "Chapel Hill",
 		"description": "Eaque veritatis nisi error illum.",
 		"price": "11",
 		"amenities": [
@@ -35,7 +35,7 @@ const siteData = [
 	},
 	{
 		"name": "East Samantamouth",
-		"location": "4753 Wilderman Meadow",
+		"location": "Chapel Hill",
 		"description": "Et eveniet et ea dolorum.",
 		"price": "37",
 		"amenities": [
@@ -69,7 +69,7 @@ const siteData = [
 	},
 	{
 		"name": "North Dovie",
-		"location": "632 Rogers Drive",
+		"location": "Raleigh",
 		"description": "Iusto et veniam non quo.",
 		"price": "3",
 		"amenities": [
@@ -103,7 +103,7 @@ const siteData = [
 	},
 	{
 		"name": "Hackensack",
-		"location": "1952 Audrey Lights",
+		"location": "Miami",
 		"description": "Dolores odit molestiae repudiandae dolor.",
 		"price": "33",
 		"amenities": [
@@ -137,7 +137,7 @@ const siteData = [
 	},
 	{
 		"name": "West Bryceview",
-		"location": "0048 Cummings Course",
+		"location": "Durham",
 		"description": "Voluptatem unde mollitia quo recusandae.",
 		"price": "23",
 		"amenities": [
@@ -171,7 +171,7 @@ const siteData = [
 	},
 	{
 		"name": "Ilafort",
-		"location": "8266 Kreiger Locks",
+		"location": "Chapel Hill",
 		"description": "Accusantium fuga ut quam est.",
 		"price": "38",
 		"amenities": [
@@ -205,7 +205,7 @@ const siteData = [
 	},
 	{
 		"name": "Fort Amy",
-		"location": "68971 Ally Harbors",
+		"location": "Lynchburg",
 		"description": "Vel assumenda et iure ullam.",
 		"price": "41",
 		"amenities": [
@@ -239,7 +239,7 @@ const siteData = [
 	},
 	{
 		"name": "North Mariaborough",
-		"location": "5510 Wava Forges",
+		"location": "Dallas",
 		"description": "Voluptatem eum eaque fugit id.",
 		"price": "7",
 		"amenities": [
@@ -273,7 +273,7 @@ const siteData = [
 	},
 	{
 		"name": "Caitlynfield",
-		"location": "91582 Payton Meadow",
+		"location": "Los Angeles",
 		"description": "Et quo repellendus commodi officiis.",
 		"price": "20",
 		"amenities": [
@@ -307,7 +307,7 @@ const siteData = [
 	},
 	{
 		"name": "Barnstable Town",
-		"location": "53769 Stanton Cliff",
+		"location": "Atlanta",
 		"description": "Placeat molestiae necessitatibus hic laudantium.",
 		"price": "3",
 		"amenities": [
@@ -341,7 +341,7 @@ const siteData = [
 	},
 	{
 		"name": "Namebury",
-		"location": "5880 Letha Circle",
+		"location": "Charlotte",
 		"description": "Consequatur rerum voluptatem nostrum exercitationem.",
 		"price": "17",
 		"amenities": [
@@ -375,7 +375,7 @@ const siteData = [
 	},
 	{
 		"name": "O'Connerburgh",
-		"location": "9748 Lynch Ramp",
+		"location":  "Austin",
 		"description": "Quas culpa itaque omnis fuga.",
 		"price": "31",
 		"amenities": [
@@ -409,7 +409,7 @@ const siteData = [
 	},
 	{
 		"name": "Lewisville",
-		"location": "602 Melyna Circles",
+		"location": "Arlington",
 		"description": "Magni quo corrupti rerum fuga.",
 		"price": "6",
 		"amenities": [
@@ -443,7 +443,7 @@ const siteData = [
 	},
 	{
 		"name": "East Salvatore",
-		"location": "343 Terry Springs",
+		"location": "Alexandria",
 		"description": "Nihil assumenda hic porro fuga.",
 		"price": "29",
 		"amenities": [
@@ -477,7 +477,7 @@ const siteData = [
 	},
 	{
 		"name": "Raynorville",
-		"location": "0946 Madalyn Place",
+		"location": "Alexandria",
 		"description": "Ut dicta esse molestiae dolore.",
 		"price": "29",
 		"amenities": [
@@ -511,7 +511,7 @@ const siteData = [
 	},
 	{
 		"name": "Kristianmouth",
-		"location": "48161 Okuneva Centers",
+		"location": "Raleigh",
 		"description": "Minus quam aut omnis cumque.",
 		"price": "22",
 		"amenities": [
@@ -545,7 +545,7 @@ const siteData = [
 	},
 	{
 		"name": "Port Joesph",
-		"location": "7736 Bonita Trafficway",
+		"location": "Raleigh",
 		"description": "Omnis quaerat consequatur libero sunt.",
 		"price": "34",
 		"amenities": [
@@ -579,7 +579,7 @@ const siteData = [
 	},
 	{
 		"name": "East Minerva",
-		"location": "71619 Kailey Stravenue",
+		"location":"Chapel Hill",
 		"description": "Quos sed qui est maxime.",
 		"price": "4",
 		"amenities": [
@@ -613,7 +613,7 @@ const siteData = [
 	},
 	{
 		"name": "Port Carson",
-		"location": "28610 Nienow Branch",
+		"location": "Chapel Hill",
 		"description": "Accusantium maxime eligendi aut quis.",
 		"price": "9",
 		"amenities": [
@@ -647,7 +647,7 @@ const siteData = [
 	},
 	{
 		"name": "Amarimouth",
-		"location": "8504 Runte Divide",
+		"location":"Chapel Hill",
 		"description": "Esse minima animi ab magni.",
 		"price": "37",
 		"amenities": [
@@ -681,7 +681,7 @@ const siteData = [
 	},
 	{
 		"name": "East Cordie",
-		"location": "315 Colten Plains",
+		"location":"Chapel Hill",
 		"description": "Optio non aperiam quos vitae.",
 		"price": "6",
 		"amenities": [
@@ -715,7 +715,7 @@ const siteData = [
 	},
 	{
 		"name": "Ankundingstead",
-		"location": "64398 Markus Way",
+		"location": "Chapel Hill",
 		"description": "Dolorum modi voluptatem ea officiis.",
 		"price": "39",
 		"amenities": [
@@ -749,7 +749,7 @@ const siteData = [
 	},
 	{
 		"name": "New Orleans",
-		"location": "6685 Hettinger Plain",
+		"location":"Chapel Hill",
 		"description": "Placeat amet consequatur doloribus illo.",
 		"price": "8",
 		"amenities": [
@@ -783,7 +783,7 @@ const siteData = [
 	},
 	{
 		"name": "Nienowland",
-		"location": "6872 Alexandro Fords",
+		"location": "Chapel Hill",
 		"description": "Ut voluptas ad et ipsum.",
 		"price": "37",
 		"amenities": [
@@ -817,7 +817,7 @@ const siteData = [
 	},
 	{
 		"name": "East Carleybury",
-		"location": "67526 Champlin Knoll",
+		"location": "Chapel Hill",
 		"description": "Nemo quis amet facilis eum.",
 		"price": "22",
 		"amenities": [
@@ -851,7 +851,7 @@ const siteData = [
 	},
 	{
 		"name": "Fort Joshuah",
-		"location": "57684 Allen Grove",
+		"location": "Charlotte",
 		"description": "Velit maiores quo eaque perferendis.",
 		"price": "33",
 		"amenities": [
@@ -885,7 +885,7 @@ const siteData = [
 	},
 	{
 		"name": "Jabariboro",
-		"location": "70637 Keebler Island",
+		"location": "Charlotte",
 		"description": "In sed nobis vel quis.",
 		"price": "27",
 		"amenities": [
@@ -919,7 +919,7 @@ const siteData = [
 	},
 	{
 		"name": "Koelpinstad",
-		"location": "251 Schamberger Viaduct",
+		"location": "Charlotte",
 		"description": "Numquam dolor corrupti architecto dolorem.",
 		"price": "19",
 		"amenities": [
@@ -953,7 +953,7 @@ const siteData = [
 	},
 	{
 		"name": "Mayaguez",
-		"location": "9093 Kemmer Station",
+		"location":"Charlotte",
 		"description": "Inventore exercitationem non soluta atque.",
 		"price": "47",
 		"amenities": [
@@ -987,7 +987,7 @@ const siteData = [
 	},
 	{
 		"name": "Lake Reynold",
-		"location": "08064 Penelope Square",
+		"location": "Charlotte",
 		"description": "Natus voluptas quod dolorem autem.",
 		"price": "20",
 		"amenities": [
@@ -1021,7 +1021,7 @@ const siteData = [
 	},
 	{
 		"name": "Bartolettiland",
-		"location": "10916 Celine Pike",
+		"location": "Mount Airy",
 		"description": "Aspernatur sit hic quas voluptatem.",
 		"price": "12",
 		"amenities": [
@@ -1055,7 +1055,7 @@ const siteData = [
 	},
 	{
 		"name": "Trompstad",
-		"location": "0061 Kamren Tunnel",
+		"location":"Mount Airy",
 		"description": "Blanditiis atque incidunt enim ea.",
 		"price": "38",
 		"amenities": [
@@ -1089,7 +1089,7 @@ const siteData = [
 	},
 	{
 		"name": "Ileneview",
-		"location": "46756 Legros Motorway",
+		"location": "Mount Airy",
 		"description": "Repellendus qui culpa tempora molestiae.",
 		"price": "18",
 		"amenities": [
@@ -1123,7 +1123,7 @@ const siteData = [
 	},
 	{
 		"name": "New Emilio",
-		"location": "5105 Shields Islands",
+		"location": "Greensboro",
 		"description": "Sequi sed quo nemo minus.",
 		"price": "48",
 		"amenities": [
@@ -1157,7 +1157,7 @@ const siteData = [
 	},
 	{
 		"name": "South Eltonton",
-		"location": "2223 Ullrich Hills",
+		"location": "Greensboro",
 		"description": "Fugiat quas aut error necessitatibus.",
 		"price": "19",
 		"amenities": [
@@ -1191,7 +1191,7 @@ const siteData = [
 	},
 	{
 		"name": "Fairfield",
-		"location": "6773 Wolf Squares",
+		"location": "Greensboro",
 		"description": "Accusamus numquam quas totam facilis.",
 		"price": "20",
 		"amenities": [
@@ -1225,7 +1225,7 @@ const siteData = [
 	},
 	{
 		"name": "Stamford",
-		"location": "931 Lubowitz Loaf",
+		"location": "Greensboro",
 		"description": "Vero et ex vel repellendus.",
 		"price": "15",
 		"amenities": [
@@ -1259,7 +1259,7 @@ const siteData = [
 	},
 	{
 		"name": "Lake Morton",
-		"location": "390 Pasquale Estate",
+		"location": "Greensboro",
 		"description": "Quia aut quaerat praesentium velit.",
 		"price": "46",
 		"amenities": [
@@ -1293,7 +1293,7 @@ const siteData = [
 	},
 	{
 		"name": "Port Paigeside",
-		"location": "62556 Dickens Causeway",
+		"location": "Tampa",
 		"description": "Et dolores molestias eos sequi.",
 		"price": "46",
 		"amenities": [
@@ -1327,7 +1327,7 @@ const siteData = [
 	},
 	{
 		"name": "East Orvillestead",
-		"location": "38675 Powlowski Expressway",
+		"location": "Tampa",
 		"description": "Numquam consequatur eos praesentium natus.",
 		"price": "32",
 		"amenities": [
@@ -1361,7 +1361,7 @@ const siteData = [
 	},
 	{
 		"name": "Bothell",
-		"location": "3797 Funk Burgs",
+		"location": "Tampa",
 		"description": "Omnis omnis quis autem delectus.",
 		"price": "28",
 		"amenities": [
@@ -1395,7 +1395,7 @@ const siteData = [
 	},
 	{
 		"name": "Altoona",
-		"location": "8840 Heather Ford",
+		"location": "Tampa",
 		"description": "Eum quibusdam quas delectus repellendus.",
 		"price": "30",
 		"amenities": [
@@ -1429,7 +1429,7 @@ const siteData = [
 	},
 	{
 		"name": "Pasadena",
-		"location": "696 Robin Turnpike",
+		"location": "Orlando",
 		"description": "Voluptate excepturi dolorum placeat sunt.",
 		"price": "45",
 		"amenities": [
@@ -1463,7 +1463,7 @@ const siteData = [
 	},
 	{
 		"name": "Florissant",
-		"location": "29852 Wilderman Roads",
+		"location": "Orlando",
 		"description": "Ut qui est voluptatum eos.",
 		"price": "30",
 		"amenities": [
@@ -1497,7 +1497,7 @@ const siteData = [
 	},
 	{
 		"name": "Aniyaport",
-		"location": "8266 Koss Parks",
+		"location": "Orlando",
 		"description": "Qui molestias nemo et odit.",
 		"price": "30",
 		"amenities": [
@@ -1531,7 +1531,7 @@ const siteData = [
 	},
 	{
 		"name": "Stephenside",
-		"location": "2204 Ashly Lights",
+		"location": "Orlando",
 		"description": "Autem eum alias quas enim.",
 		"price": "20",
 		"amenities": [
@@ -1565,7 +1565,7 @@ const siteData = [
 	},
 	{
 		"name": "Linniefurt",
-		"location": "736 Dietrich Extension",
+		"location":  "Chapel Hill",
 		"description": "Non aut autem molestias officia.",
 		"price": "38",
 		"amenities": [
@@ -1599,7 +1599,7 @@ const siteData = [
 	},
 	{
 		"name": "Fort Jordi",
-		"location": "247 Lizeth Falls",
+		"location":  "Chapel Hill",
 		"description": "Ipsam placeat ut aspernatur corporis.",
 		"price": "40",
 		"amenities": [
@@ -1633,7 +1633,7 @@ const siteData = [
 	},
 	{
 		"name": "Lake Tommie",
-		"location": "20258 Judd Highway",
+		"location":  "Chapel Hill",
 		"description": "Iure omnis reiciendis reprehenderit alias.",
 		"price": "9",
 		"amenities": [
@@ -1667,7 +1667,7 @@ const siteData = [
 	},
 	{
 		"name": "Lemkefort",
-		"location": "947 Sydnie Shore",
+		"location":  "Chapel Hill",
 		"description": "Quia magni possimus sint dolores.",
 		"price": "27",
 		"amenities": [
