@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ReserveDetails.css";
 import Carousel from "../../components/Carousel/Carousel";
 import CancelModal from "../../components/CancelModal/CancelModal";
 
 const ReserveDetails = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
-    <main>
+    <main className="position-relative">
       <Carousel />
       <section className="section-padding">
         <div className="margin-bottom">
@@ -21,10 +23,31 @@ const ReserveDetails = () => {
           <p>Email:</p>
         </div>
         <div className="btn-container">
-          <button className="btn">Cancel Reservation</button>
+          <button
+            onClick={() => {
+              setModalOpen(true);
+            }}
+            className="btn"
+          >
+            Cancel Reservation
+          </button>
         </div>
       </section>
-      <CancelModal></CancelModal>
+      <div
+        className={`page-cover ${modalOpen && "modal-open"} ${
+          !modalOpen && "modal-close"
+        }`}
+      ></div>
+      <div
+        className={`flex-column modal-wrapper ${modalOpen && "modal-open"} ${
+          !modalOpen && "modal-close"
+        }`}
+      >
+        <CancelModal
+          modalOpen={modalOpen}
+          setModalOpen={setModalOpen}
+        ></CancelModal>
+      </div>
     </main>
   );
 };
