@@ -1,0 +1,12 @@
+.dash-reserve-title {
+    margin: 5%;
+}
+
+.dash-border-top {
+    border-top: 2px solid var(--dark-green);
+}
+
+.wrapper-link {
+    color: var(--dark-green);
+    text-decoration: none;
+}
