@@ -7,7 +7,9 @@ const CancelModal = (props) => {
     <div className="flex-column justify-content-center">
       <h2>Are you sure you want to cancel your reservation?</h2>
       <div className="btn-container">
-        <button className="btn">Cancel</button>
+        <a href="/cancel-confirm">
+          <button className="btn">Cancel</button>
+        </a>
       </div>
       <div className="btn-container">
         <button

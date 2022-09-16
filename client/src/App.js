@@ -17,6 +17,8 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import SingleSite from "./pages/SingleSite/SingleSite";
 import PayConfirm from "./pages/PayConfirm/PayConfirm";
 import ReserveDetails from "./pages/ReserveDetails/ReserveDetails";
+import CancelConfirm from "./components/CancelConfirm/CancelConfirm";
+import AddListing from "./pages/AddListing/AddListing";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -52,6 +54,8 @@ function App() {
             <Route path="/reserve" element={<ReserveSite />} />
             <Route path="/pay-confirm" element={<PayConfirm />} />
             <Route path="/reservation-details" element={<ReserveDetails />} />
+            <Route path="/cancel-confirm" element={<CancelConfirm />} />
+            <Route path="/add-listing" element={<AddListing />} />
           </Routes>
           <Footer />
         </Router>

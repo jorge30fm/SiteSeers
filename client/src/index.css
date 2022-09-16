@@ -386,3 +386,16 @@ input {
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.6);
 }
+
+.padding {
+  padding: 30px;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.nothing-here {
+  margin-left: 5%;
+  color: var(--light-green);
+}
