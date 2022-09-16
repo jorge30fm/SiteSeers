@@ -6,14 +6,16 @@ import "./PayConfirm.css";
 const PayConfirm = () => {
   return (
     <main>
-      <h2>You're all set!</h2>
-      <div>
+      <section className="flex-column align-center">
+        <h2>You're all set!</h2>
+      </section>
+      <div className="flex-column align-center">
         <Carousel />
         <section>
           <h2>Site Name</h2>
           <h2>Location</h2>
         </section>
-        <section>
+        <section className="flex-row justify-center">
           {/* <StartDate /> */}
           to
           {/* <EndDate /> */}
