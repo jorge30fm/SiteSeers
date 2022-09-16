@@ -7,7 +7,9 @@ const Reservations = () => {
     <div>
       <div>
         <h3 className="dash-reserve-title">Upcoming Reservations</h3>
+        <a className="wrapper-link" href="/reservation-details">
         <ListingCard />
+        </a>
       </div>
       <div className="dash-border-top">
         <h3 className="dash-reserve-title">Previous Reservations</h3>

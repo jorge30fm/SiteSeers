@@ -7,8 +7,12 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 
 const CalendarView = (props) => {
-  const [value, onChange] = useState(new Date());
+  const [value, setValue] = useState(new Date());
   const { setShowCalendar, setShowRequest } = props;
+  const handleOnChange = (e) => {
+    setValue(e);
+    console.log(e);
+  };
 
   return (
     <section className="flex-column align-center">
@@ -19,7 +23,7 @@ const CalendarView = (props) => {
         </div>
       </div>
       <Calendar
-        onChange={onChange}
+        onChange={handleOnChange}
         value={value}
         selectRange={true}
         calendarType={"US"}

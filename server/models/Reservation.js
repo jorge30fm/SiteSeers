@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import dateFormat from "../utils/dateFormat.js";
 
-const { Schema, model } = mongoose;
+const { Schema } = mongoose;
 
 const reservationSchema = new Schema(
 	{
@@ -26,6 +26,10 @@ const reservationSchema = new Schema(
 			type: Date,
 			get: (timestamp) => dateFormat(timestamp),
 		},
+		numberOfCampers: {
+			type: Number,
+			default: 1
+		},
 		active: {
 			type: Boolean,
 			default: true
@@ -38,6 +42,6 @@ const reservationSchema = new Schema(
 	}
 );
 
-const Reservation = model("Reservation", reservationSchema);
 
-export default Reservation;
+
+export default reservationSchema;
