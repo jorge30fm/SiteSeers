@@ -1,42 +1,87 @@
-import React from "react";
-import "./SignUp.css";
+import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../../utils/mutations';
 
-const SignUp = () => {
+import Auth from '../../utils/auth';
+
+const Signup = () => {
+  const [formState, setFormState] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
+  const [addUser, { error }] = useMutation(ADD_USER);
+
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await addUser({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
-    <main>
-      <section className="signup-section">
-        <form className="flex-column">
-          <div className="signup-div">
-            <label for="first">First Name:</label>
-            <input name="first"></input>
+    <main className="flex-row justify-center mb-4">
+      <div className="col-12 col-md-6">
+        <div className="card">
+          <h4 className="card-header">Sign Up</h4>
+          <div className="card-body">
+            <form onSubmit={handleFormSubmit}>
+              <input
+                className="form-input"
+                placeholder="Your username"
+                name="username"
+                type="username"
+                id="username"
+                value={formState.username}
+                onChange={handleChange}
+              />
+              <input
+                className="form-input"
+                placeholder="Your email"
+                name="email"
+                type="email"
+                id="email"
+                value={formState.email}
+                onChange={handleChange}
+              />
+              <input
+                className="form-input"
+                placeholder="******"
+                name="password"
+                type="password"
+                id="password"
+                value={formState.password}
+                onChange={handleChange}
+              />
+              <button className="btn d-block w-100" type="submit">
+                Submit
+              </button>
+            </form>
+
+            {error && <div>Signup failed</div>}
           </div>
-          <div className="signup-div">
-            <label for="last">Last Name:</label>
-            <input name="last"></input>
-          </div>
-          <div className="signup-div">
-            <label for="username">Username:</label>
-            <input name="username"></input>
-          </div>
-          <div className="signup-div">
-            <label for="email">Email:</label>
-            <input name="email" type="email"></input>
-          </div>
-          <div className="signup-div">
-            <label for="password">Password:</label>
-            <input name="password" type="password"></input>
-          </div>
-          <div className="age-container">
-            <input className="checkbox" name="age" type="checkbox"></input>
-            <label for="age">I am at least 18 years of age.</label>
-          </div>
-          <div className="btn-container">
-            <button className="btn" type="submit">Sign Up</button>
-          </div>
-        </form>
-      </section>
+        </div>
+      </div>
     </main>
   );
 };
 
-export default SignUp;
+export default Signup;

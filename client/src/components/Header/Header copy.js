@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Header.css";
 import Nav from "../Nav/Nav";
 import Menu from "@mui/icons-material/Menu";
@@ -15,7 +14,8 @@ const Header = (props) => {
         <img className="header-icon" src={logo} alt="logo"></img>
       </a>
       <div className={`${menuOpen && "page-cover"}`}></div>
-
+      <Link to="/login">Login</Link>
+          <Link to="/signup">Signup</Link>
       <nav className={`${menuOpen && "menu-open"}`}>
         <Nav menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Nav>
       </nav>
