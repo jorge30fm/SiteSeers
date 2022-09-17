@@ -28,10 +28,15 @@ const SignUp = () => {
           </div>
           <div className="age-container">
             <input className="checkbox" name="age" type="checkbox"></input>
-            <label for="age">I am at least 18 years of age.</label>
+            <label for="age">
+              I agree to SiteSeers" <a href="/terms-of-service">Terms</a> "and"{" "}
+              <a href="/privacy-policy">Privacy</a>"."
+            </label>
           </div>
           <div className="btn-container">
-            <button className="btn" type="submit">Sign Up</button>
+            <button className="btn" type="submit">
+              Sign Up
+            </button>
           </div>
         </form>
       </section>

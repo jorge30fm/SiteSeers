@@ -17,6 +17,8 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import SingleSite from "./pages/SingleSite/SingleSite";
 import PayConfirm from "./pages/PayConfirm/PayConfirm";
 import ReserveDetails from "./pages/ReserveDetails/ReserveDetails";
+import TermsOfService from "./pages/Policies/TermsService";
+import PrivacyPolicy from "./pages/Policies/PrivacyPolicy";
 import CancelConfirm from "./components/CancelConfirm/CancelConfirm";
 import AddListing from "./pages/AddListing/AddListing";
 
@@ -54,6 +56,8 @@ function App() {
             <Route path="/reserve" element={<ReserveSite />} />
             <Route path="/pay-confirm" element={<PayConfirm />} />
             <Route path="/reservation-details" element={<ReserveDetails />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/cancel-confirm" element={<CancelConfirm />} />
             <Route path="/add-listing" element={<AddListing />} />
           </Routes>
