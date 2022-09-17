@@ -1,7 +1,33 @@
 .section-padding {
-    padding: 30px;
+  padding: 30px;
 }
 
 .margin-bottom {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.modal-wrapper {
+  position: absolute;
+  background-color: var(--bone);
+  padding: 30px;
+  border: 1px solid var(--dark-green);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  left: 0;
+  top: 20%;
+  height: 80vh;
+  width: 100vw;
+  z-index: 2;
+}
+
+.modal-close {
+  display: none;
+}
+
+.modal-open {
+  display: block;
 }

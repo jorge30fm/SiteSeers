@@ -370,3 +370,32 @@ input {
   background-color: var(--light-green);
   color: var(--bone);
 }
+
+.btn-faded {
+  background-color: var(--bone);
+  border: none;
+  color: var(--dark-green);
+}
+
+.page-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.padding {
+  padding: 30px;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.nothing-here {
+  margin-left: 5%;
+  color: var(--light-green);
+}

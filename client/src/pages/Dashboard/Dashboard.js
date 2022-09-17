@@ -3,11 +3,13 @@ import "./Dashboard.css";
 import Account from "../../components/DashComponents/Account/Account";
 import Reservations from "../../components/DashComponents/Reservations/Reservations";
 import Listings from "../../components/DashComponents/Listings/Listings";
+import Reviews from "../../components/DashComponents/Reviews/Reviews";
 
 const Dashboard = () => {
   const [accountSelected, setAccountSelected] = useState(true);
   const [reservationsSelected, setReservationsSelected] = useState(false);
   const [listingsSelected, setListingsSelected] = useState(false);
+  const [reviewsSelected, setReviewsSelected] = useState(false);
 
   return (
     <main>
@@ -22,6 +24,7 @@ const Dashboard = () => {
               setAccountSelected(true);
               setReservationsSelected(false);
               setListingsSelected(false);
+              setReviewsSelected(false);
             }}
           >
             <p>Account</p>
@@ -32,6 +35,7 @@ const Dashboard = () => {
               setAccountSelected(false);
               setReservationsSelected(true);
               setListingsSelected(false);
+               setReviewsSelected(false);
             }}
           >
             <p>Reservations</p>
@@ -42,9 +46,21 @@ const Dashboard = () => {
               setAccountSelected(false);
               setReservationsSelected(false);
               setListingsSelected(true);
+               setReviewsSelected(false);
             }}
           >
             <p>Listings</p>
+          </div>
+          <div
+            className={`tab ${reviewsSelected && "selected"}`}
+            onClick={() => {
+              setAccountSelected(false);
+              setReservationsSelected(false);
+              setListingsSelected(false);
+              setReviewsSelected(true);
+            }}
+          >
+            <p>Reviews</p>
           </div>
         </div>
         <div className="tab-content-container">
@@ -53,6 +69,7 @@ const Dashboard = () => {
             {reservationsSelected && <Reservations />}
           </div>
           <div className="tab-content">{listingsSelected && <Listings />}</div>
+          <div className="tab-content">{reviewsSelected && <Reviews />}</div>
         </div>
       </section>
     </main>
