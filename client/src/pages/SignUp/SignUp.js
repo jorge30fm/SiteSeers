@@ -29,8 +29,8 @@ const SignUp = () => {
           <div className="age-container">
             <input className="checkbox" name="age" type="checkbox"></input>
             <label for="age">
-              I agree to SiteSeers" <a href="TermsService.js">Terms</a> "and"{" "}
-              <a href="PrivacyPolicy.js">Privacy</a>"."
+              I agree to SiteSeers" <a href="/terms-of-service">Terms</a> "and"{" "}
+              <a href="/privacy-policy">Privacy</a>"."
             </label>
           </div>
           <div className="btn-container">
