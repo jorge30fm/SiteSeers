@@ -9,48 +9,46 @@ const TermsService = () => {
         <p>
           The following Terms of Service govern your use of the Camping
           Connection web application (the "Service"). The Service is provided by
-          Camping Connection, LLC ("Camping Connection", "we", "us", or "our").
-          Please read these Terms of Service carefully before using the Service.
-          By accessing or using the Service, you agree to be bound by these
-          Terms of Service. If you do not agree to these Terms of Service, you
-          may not use the Service. We may modify these Terms of Service from
-          time to time without prior notice to you. You can review the most
-          current version of the Terms of Service at any time by visiting this
-          page. Your continued use of the Service after we make any such
-          modifications constitutes your binding acceptance of the new Terms of
-          Service. If you do not agree to any modification of these Terms of
-          Service, you must stop using the Service. The Service is intended for
-          users who are at least 18 years old. By using the Service, you
-          represent and warrant that: (i) you are at least 18 years old; (ii) if
-          you are a camper, you will only use the Service to request and book
-          campsites from hosts; (iii) if you are a host, you will only use the
-          Service to offer and rent campsites to campers; and (iv) your use of
-          the Service does not violate any applicable law or regulation. Your
-          access to and use of the Service is also subject to our Privacy
-          Policy. Please review our Privacy Policy carefully before using the
-          Service.
+          Site Seers, LLC ("Site Seers", "we", "us", or "our"). Please read
+          these Terms of Service carefully before using the Service. By
+          accessing or using the Service, you agree to be bound by these Terms
+          of Service. If you do not agree to these Terms of Service, you may not
+          use the Service. We may modify these Terms of Service from time to
+          time without prior notice to you. You can review the most current
+          version of the Terms of Service at any time by visiting this page.
+          Your continued use of the Service after we make any such modifications
+          constitutes your binding acceptance of the new Terms of Service. If
+          you do not agree to any modification of these Terms of Service, you
+          must stop using the Service. The Service is intended for users who are
+          at least 18 years old. By using the Service, you represent and warrant
+          that: (i) you are at least 18 years old; (ii) if you are a camper, you
+          will only use the Service to request and book campsites from hosts;
+          (iii) if you are a host, you will only use the Service to offer and
+          rent campsites to campers; and (iv) your use of the Service does not
+          violate any applicable law or regulation. Your access to and use of
+          the Service is also subject to our Privacy Policy. Please review our
+          Privacy Policy carefully before using the Service.
         </p>
         <h3>Camper Terms</h3>
         <p>
           If you are a camper, you may use the Service to request and book
           campsites from hosts. You understand and agree that: (i) Camping
           Connection is not a party to any agreement between you and a host,
-          (ii) Camping Connection has no control over any campsite or the
-          campsite host, (iii) Camping Connection is not responsible for any
-          element of your interactions with hosts or other campers, and (iv)
-          Camping Connection will have no liability with respect to any disputes
-          between you and a host or other camper.
+          (ii) Site Seers has no control over any campsite or the campsite host,
+          (iii) Site Seers is not responsible for any element of your
+          interactions with hosts or other campers, and (iv) Site Seers will
+          have no liability with respect to any disputes between you and a host
+          or other camper.
         </p>
         <h3>Host Terms</h3>
         <p>
           If you are a host, you may use the Service to offer and rent campsites
-          to campers. You understand and agree that: (i) Camping Connection is
-          not a party to any agreement between you and a camper, (ii) Camping
-          Connection has no control over any campsite or the camper, (iii)
-          Camping Connection is not responsible for any element of your
-          interactions with campers or other hosts, and (iv) Camping Connection
-          will have no liability with respect to any disputes between you and a
-          camper or other host.
+          to campers. You understand and agree that: (i) Site Seers is not a
+          party to any agreement between you and a camper, (ii) Camping
+          Connection has no control over any campsite or the camper, (iii) Site
+          Seers is not responsible for any element of your interactions with
+          campers or other hosts, and (iv) Site Seers will have no liability
+          with respect to any disputes between you and a camper or other host.
         </p>
         <h3>Prohibited Activities</h3>
         <p>
