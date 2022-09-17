@@ -18,6 +18,7 @@ import SingleSite from "./pages/SingleSite/SingleSite";
 import PayConfirm from "./pages/PayConfirm/PayConfirm";
 import ReserveDetails from "./pages/ReserveDetails/ReserveDetails";
 import TermsOfService from "./pages/Policies/TermsService";
+import PrivacyPolicy from "./pages/Policies/PrivacyPolicy";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -54,6 +55,7 @@ function App() {
             <Route path="/pay-confirm" element={<PayConfirm />} />
             <Route path="/reservation-details" element={<ReserveDetails />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
           <Footer />
         </Router>
