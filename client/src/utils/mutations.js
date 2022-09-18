@@ -20,7 +20,7 @@ export const LOGIN_USER = gql`
 `;
 
 //addUser
-// $password: String!
+// $password: String! - CH 9/17 during office hours - commented out to get addUser mutation to work.  
 export const ADD_USER = gql`
   mutation addUser(
     $username: String!
