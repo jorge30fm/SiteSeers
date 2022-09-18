@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
-
 import Auth from '../../utils/auth';
 
 const Signup = () => {
@@ -28,10 +27,22 @@ const Signup = () => {
 
     try {
       const { data } = await addUser({
-        variables: { ...formState },
-      });
+      //   variables: { ...formState },
+      // });
 
-      Auth.login(data.addUser.token);
+      // Auth.login(data.addUser.token);
+      variables: {
+        username: formState.username,
+        email: formState.email,
+        password: formState.password,
+        firstName: formState.firstName,
+        lastName: formState.lastName,
+      },
+    });
+    const token = data.addUser.token;
+    Auth.login(token);
+   
+   
     } catch (e) {
       console.error(e);
     }
@@ -45,6 +56,22 @@ const Signup = () => {
           <div className="card-body">
             <form onSubmit={handleFormSubmit}>
               <input
+                className="form-input"
+                placeholder="Your username"
+                name="username"
+                type="username"
+                id="username"
+                value={formState.username}
+                onChange={handleChange}
+              />
+               <input
+                className="signup-div"
+                placeholder="Your First Name"
+                name="first"
+                value={formState.firstName}
+                onChange={handleChange}
+              />
+               <input
                 className="form-input"
                 placeholder="Your username"
                 name="username"
