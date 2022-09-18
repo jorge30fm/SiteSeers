@@ -33,39 +33,46 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-md-6">
-        <div className="card">
-          <h4 className="card-header">Login</h4>
-          <div className="card-body">
-            <form onSubmit={handleFormSubmit}>
-              <input
-                className="form-input"
-                placeholder="Your email"
-                name="email"
-                type="email"
-                id="email"
-                value={formState.email}
-                onChange={handleChange}
-              />
-              <input
-                className="form-input"
-                placeholder="******"
-                name="password"
-                type="password"
-                id="password"
-                value={formState.password}
-                onChange={handleChange}
-              />
-              <button className="btn d-block w-100" type="submit">
-                Submit
+    <main>
+      <section className="mountain-bg login-section">
+        <h2>Login</h2>
+          <form className="flex-column" onSubmit={handleFormSubmit}>
+          <div className="login-div">
+          <label>Email:</label>
+            <input
+              placeholder="Your email"
+              name="email"
+              type="email"
+              value={formState.email}
+              onChange={handleChange}
+            />
+            </div>
+            <div className="login-div">
+            <label>Password:</label>
+            <input
+              placeholder="******"
+              name="password"
+              type="password"
+              value={formState.password}
+              onChange={handleChange}
+            />
+            </div>
+             <div className="login-div">
+            <div className="btn-container">
+              <button className="btn" type="submit">
+                Login
               </button>
-            </form>
-
-            {error && <div>Login failed</div>}
+            </div>
           </div>
+          </form>
+          {error && <div>Login failed</div>}
+      </section>
+      <section className="login-section flex-column align-center">
+        <h3>Not a user yet? No worries!</h3>
+        <div className="btn-container">
+          <button className="btn">Sign Up</button>
         </div>
-      </div>
+      </section>
     </main>
   );
 };
