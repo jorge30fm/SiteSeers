@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Login.css";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../../utils/mutations";
@@ -70,9 +71,9 @@ const Login = (props) => {
       <section className="padding flex-column align-center">
         <h3>Not a user yet? No worries!</h3>
         <div className="btn-container">
-          <a href="/signup">
+          <Link to="/signup">
             <button className="btn">Sign Up</button>
-          </a>
+          </Link>
         </div>
       </section>
     </main>

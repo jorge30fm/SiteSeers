@@ -2,7 +2,7 @@ import React from "react";
 import "./SingleSite.css";
 
 import Auth from "../../utils/auth";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 
 import Carousel from "../../components/Carousel/Carousel";
 import StarIcon from "@mui/icons-material/Star";
@@ -53,9 +53,9 @@ const SingleSite = () => {
           </p>
         </section>
         <div className="btn-container">
-          <a href="/reserve">
+          <Link to="/reserve">
             <button className="btn">Reserve</button>
-          </a>
+          </Link>
         </div>
       </div>
     </main>
