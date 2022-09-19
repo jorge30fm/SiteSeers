@@ -1,5 +1,6 @@
 import React from "react";
 import "./RequestReserve.css";
+import { Link } from "react-router-dom";
 import Carousel from "../../Carousel/Carousel";
 
 const RequestReserve = () => {
@@ -25,9 +26,9 @@ const RequestReserve = () => {
               <p>Total:</p>
               <p>$$$</p>
             </div>
-            <a href="/pay-confirm">
+            <Link to="/pay-confirm">
               <button className="btn">Reserve</button>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

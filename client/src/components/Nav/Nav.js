@@ -22,17 +22,36 @@ const Nav = (props) => {
           <>
             <ul>
               <li>
-                <Link to="/search" className="nav-link">
+                <Link
+                  to="/search"
+                  className="nav-link"
+                  onClick={() => {
+                    setMenuOpen(false);
+                  }}
+                >
                   Search
                 </Link>
               </li>
               <li>
-                <Link to="/" className="nav-link">
+                <Link
+                  to="/"
+                  className="nav-link"
+                  onClick={() => {
+                    setMenuOpen(false);
+                  }}
+                >
                   Dashboard
                 </Link>
               </li>
               <li>
-                <Link to="/logout" className="nav-link">
+                <Link
+                  to="/"
+                  className="nav-link"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    Auth.logout();
+                  }}
+                >
                   Logout
                 </Link>
               </li>
@@ -42,12 +61,24 @@ const Nav = (props) => {
           <>
             <ul>
               <li>
-                <Link to="/login" className="nav-link">
+                <Link
+                  to="/login"
+                  className="nav-link"
+                  onClick={() => {
+                    setMenuOpen(false);
+                  }}
+                >
                   Log In
                 </Link>
               </li>
               <li>
-                <Link to="/signup" className="nav-link">
+                <Link
+                  to="/signup"
+                  className="nav-link"
+                  onClick={() => {
+                    setMenuOpen(false);
+                  }}
+                >
                   Sign Up
                 </Link>
               </li>
