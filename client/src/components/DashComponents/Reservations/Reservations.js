@@ -1,5 +1,6 @@
 import React from "react";
 import "./Reservations.css"
+import { Link } from "react-router-dom";
 import ListingCard from "../../ListingCard/ListingCard";
 
 const Reservations = () => {
@@ -7,9 +8,9 @@ const Reservations = () => {
     <div>
       <div>
         <h3 className="dash-reserve-title">Upcoming Reservations</h3>
-        <a className="wrapper-link" href="/reservation-details">
+        <Link className="wrapper-link" to="/reservation-details">
         <ListingCard />
-        </a>
+        </Link>
       </div>
       <div className="dash-border-top">
         <h3 className="dash-reserve-title">Previous Reservations</h3>

@@ -18,3 +18,12 @@
 .tab-content-container {
   margin: 20px 10px;
 }
+
+.dash-border-top {
+  border-top: 2px solid var(--dark-green);
+}
+
+.wrapper-link {
+  color: var(--dark-green);
+  text-decoration: none;
+}
