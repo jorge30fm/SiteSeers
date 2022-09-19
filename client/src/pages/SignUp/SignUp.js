@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../../utils/mutations";
 
@@ -111,8 +112,8 @@ const Signup = () => {
           <div className="flex-row margin-top justify-center">
             <input className="checkbox" name="age" type="checkbox"></input>
             <label for="age">
-              I agree to SiteSeers <a href="/terms-of-service">Terms</a> and{" "}
-              <a href="/privacy-policy">Privacy</a>.
+              I agree to SiteSeers <Link to="/terms-of-service">Terms</Link> and{" "}
+              <Link to="/privacy-policy">Privacy</Link>.
             </label>
           </div>
           <div className="btn-container margin-top">

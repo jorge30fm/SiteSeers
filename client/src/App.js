@@ -20,8 +20,9 @@ import PayConfirm from "./pages/PayConfirm/PayConfirm";
 import ReserveDetails from "./pages/ReserveDetails/ReserveDetails";
 import TermsOfService from "./pages/Policies/TermsService";
 import PrivacyPolicy from "./pages/Policies/PrivacyPolicy";
-import CancelConfirm from "./components/CancelConfirm/CancelConfirm";
+import CancelConfirm from "./pages/CancelConfirm/CancelConfirm";
 import AddListing from "./pages/AddListing/AddListing";
+import NotFound from "./pages/NotFound/NotFound";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -42,6 +43,7 @@ const client = new ApolloClient({
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="app-container">
       <ApolloProvider client={client}>
@@ -51,8 +53,8 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/search" element={<SearchResults />} />
             <Route path="/" element={<Dashboard />} />
+            <Route path="/search" element={<SearchResults />} />
             <Route path="/single-site" element={<SingleSite />} />
             <Route path="/reserve" element={<ReserveSite />} />
             <Route path="/pay-confirm" element={<PayConfirm />} />
@@ -61,6 +63,7 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/cancel-confirm" element={<CancelConfirm />} />
             <Route path="/add-listing" element={<AddListing />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </Router>
