@@ -1,13 +1,3 @@
-.signup-section {
-  padding: 30px;
-}
-
-.signup-div {
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
-}
-
 .age-container {
     display: flex;
     flex-direction: row;

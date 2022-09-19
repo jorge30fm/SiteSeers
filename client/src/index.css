@@ -336,7 +336,7 @@ main {
 }
 
 .mountain-bg {
-  background-image: url("./assets/images/mountains.jpg");
+  background-image: url("./assets/images/tent-door.jpg");
   background-size: cover;
   background-position: center 30%;
   color: var(--bone);
