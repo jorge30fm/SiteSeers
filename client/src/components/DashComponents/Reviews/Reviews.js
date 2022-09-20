@@ -1,6 +1,7 @@
 import React from "react";
 import "./Reviews.css";
 import reviewData from "./reviewdata.js";
+// import { Link } from "react-router-dom";
 // import ListingCard from "../../ListingCard/ListingCard";
 
 const Reviews = () => {
@@ -10,9 +11,13 @@ const Reviews = () => {
       {reviewData &&
         reviewData.map((review) => (
           <div key={review._id}>
+            <img src={review.image} alt='campsite'></img>
             <h5>{review.campsite}</h5>
-            <p>Rating: {review.rating}</p>
-            <p>{review.reviewText} <span className="date-style">{Date(review.createdAt)}</span></p>
+            <p>Rating: {review.starIcon}</p>
+            <p>
+              {review.reviewText}{" "}
+              <span className="date-style">{Date(review.createdAt)}</span>
+            </p>
             <br></br>
           </div>
         ))}

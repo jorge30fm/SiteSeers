@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import { useLazyQuery } from "@apollo/client";
-import { QUERY_USER_LISTINGS_BASIC } from "../../utils/queries";
+import { QUERY_CAMPSITE } from "../../utils/queries";
 
 function SearchBar() {
   const [searchState, setSearchState] = useState({ search: "" });
 
-  const [getSearchResults, { loading, data }] = useLazyQuery(
-    QUERY_USER_LISTINGS_BASIC,
-    {
-      variables: { name: searchState },
-    }
-  );
+  const [getSearchResults, { loading, data }] = useLazyQuery(QUERY_CAMPSITE, {
+    variables: { name: searchState },
+  });
 
   const [errorMessage, setErrorMessage] = useState("");
   const { search } = searchState;
