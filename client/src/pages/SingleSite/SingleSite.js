@@ -14,11 +14,13 @@ import Shower from "@mui/icons-material/Shower";
 import Power from "@mui/icons-material/Power";
 
 const SingleSite = () => {
-  const { loading, data } = useQuery(QUERY_CAMPSITE);
-  const siteInfo = data || {};
   const { id: siteId } = useParams();
 
-  console.log(siteId);
+  const { loading, data } = useQuery(QUERY_CAMPSITE, {
+    variables: { id: siteId },
+  });
+
+  const siteInfo = data?.campsites[0] || {};
 
   if (!Auth.loggedIn()) {
     return <Navigate to="/login" />;
@@ -28,7 +30,7 @@ const SingleSite = () => {
     return <div>Loading...</div>;
   }
 
-  console.log(siteInfo);
+  console.log(siteInfo.amenities);
 
   return (
     <main>
@@ -42,9 +44,10 @@ const SingleSite = () => {
           <StarIcon />
         </section>
         <section>
-          <h2>Site Name</h2>
-          <h3>Location</h3>
+          <h2>{siteInfo.name}</h2>
+          <h3>{siteInfo.location}</h3>
         </section>
+        {/* ================================ */}
         <section>
           <h3>Amenties</h3>
           <div>
@@ -54,16 +57,11 @@ const SingleSite = () => {
             <Power />
           </div>
         </section>
+        {/* ================================ */}
         <section>
           <h3>Description</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            {siteInfo.description}
           </p>
         </section>
         <div className="btn-container">
