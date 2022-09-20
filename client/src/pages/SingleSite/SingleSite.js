@@ -1,8 +1,10 @@
 import React from "react";
-import "./SingleSite.css";
+import { Navigate, Link, useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 
 import Auth from "../../utils/auth";
-import { Navigate, Link } from "react-router-dom";
+import { QUERY_CAMPSITE } from "../../utils/queries";
+import "./SingleSite.css";
 
 import Carousel from "../../components/Carousel/Carousel";
 import StarIcon from "@mui/icons-material/Star";
@@ -12,9 +14,21 @@ import Shower from "@mui/icons-material/Shower";
 import Power from "@mui/icons-material/Power";
 
 const SingleSite = () => {
+  const { loading, data } = useQuery(QUERY_CAMPSITE);
+  const siteInfo = data?.campsite || {};
+  const { id: siteId } = useParams();
+
+  console.log(siteId);
+
   if (!Auth.loggedIn()) {
     return <Navigate to="/login" />;
   }
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  console.log(siteInfo);
 
   return (
     <main>

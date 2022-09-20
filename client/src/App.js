@@ -55,7 +55,10 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/" element={<Dashboard />} />
             <Route path="/search" element={<SearchResults />} />
-            <Route path="/single-site" element={<SingleSite />} />
+            <Route path="/single-site">
+              <Route path=":id" element={<SingleSite />} />
+              <Route path="" element={<SingleSite />} />
+            </Route>
             <Route path="/reserve" element={<ReserveSite />} />
             <Route path="/pay-confirm" element={<PayConfirm />} />
             <Route path="/reservation-details" element={<ReserveDetails />} />

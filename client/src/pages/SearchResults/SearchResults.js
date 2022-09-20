@@ -1,7 +1,7 @@
 import React from "react";
 
 import Auth from "../../utils/auth";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 
 import SearchBar from "../../components/SearchBar/SearchBar";
 import ListingCard from "../../components/ListingCard/ListingCard";
@@ -15,7 +15,9 @@ function SearchPage() {
     <main>
       <SearchBar></SearchBar>
       <section>
-        <ListingCard />
+        <Link to="/single-site">
+          <ListingCard />
+        </Link>
       </section>
     </main>
   );
