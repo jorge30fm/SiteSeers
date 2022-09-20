@@ -1,5 +1,6 @@
 import React from "react";
 import "./Listings.css";
+import { Link } from "react-router-dom";
 import ListingCard from "../../ListingCard/ListingCard";
 
 const Listings = () => {
@@ -7,18 +8,18 @@ const Listings = () => {
     <div>
       <div>
         <h3 className="dash-listing-title">Active Listings</h3>
-        <a className="wrapper-link" href="/reservation-details">
+        <Link className="wrapper-link" to="/reservation-details">
           <ListingCard />
-        </a>
+        </Link>
       </div>
       <div className="dash-border-top">
         <h3 className="dash-listing-title">Disabled Listings</h3>
         <p className="nothing-here">There's nothing here!</p>
       </div>
       <div className="btn-container padding">
-        <a href="/add-listing">
-        <button className="btn">Add Listing</button>
-        </a>
+        <Link to="/add-listing">
+          <button className="btn">Add Listing</button>
+        </Link>
       </div>
     </div>
   );

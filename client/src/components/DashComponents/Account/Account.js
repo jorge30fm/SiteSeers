@@ -58,17 +58,17 @@ const Account = () => {
 	if (loading) {
 		return <div>Loading...</div>;
 	}
+
+  const profilePicStyle = {
+    backgroundImage: `url(https://res.cloudinary.com/dxs0geixs/image/upload/c_scale,w_135/v1663680167/${userInfo.profilePicture})`,
+    backgroundSize: "cover",
+  }
 	return (
 		<div>
 			<div className="flex-row justify-space-between">
 				<div className="pfp-container">
 					<div
-						className="pfp"
-						style={{
-							backgroundImage:
-								"url: https://res.cloudinary.com/dxs0geixs/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1663680167/siteSeers/hcpz4zaybkvuus7p2mye.jpg",
-						}}
-					></div>
+						className="pfp"style={profilePicStyle}></div>
 					<Edit
 						id="upload_widget"
 						className="account-edit-icon "

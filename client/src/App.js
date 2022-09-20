@@ -7,21 +7,22 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
+import Dashboard from "./pages/Dashboard/Dashboard";
 import ReserveSite from "./pages/ReserveSite/ReserveSite";
 import SearchResults from "./pages/SearchResults/SearchResults";
-import Dashboard from "./pages/Dashboard/Dashboard";
 import SingleSite from "./pages/SingleSite/SingleSite";
 import PayConfirm from "./pages/PayConfirm/PayConfirm";
 import ReserveDetails from "./pages/ReserveDetails/ReserveDetails";
 import TermsOfService from "./pages/Policies/TermsService";
 import PrivacyPolicy from "./pages/Policies/PrivacyPolicy";
-import CancelConfirm from "./components/CancelConfirm/CancelConfirm";
+import CancelConfirm from "./pages/CancelConfirm/CancelConfirm";
 import AddListing from "./pages/AddListing/AddListing";
-import UploadImage from './components/UploadImage/UploadImage.js'
+import NotFound from "./pages/NotFound/NotFound";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -42,6 +43,7 @@ const client = new ApolloClient({
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="app-container">
       <ApolloProvider client={client}>
@@ -51,8 +53,8 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/search" element={<SearchResults />} />
             <Route path="/" element={<Dashboard />} />
+            <Route path="/search" element={<SearchResults />} />
             <Route path="/single-site" element={<SingleSite />} />
             <Route path="/reserve" element={<ReserveSite />} />
             <Route path="/pay-confirm" element={<PayConfirm />} />
@@ -61,6 +63,7 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/cancel-confirm" element={<CancelConfirm />} />
             <Route path="/add-listing" element={<AddListing />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </Router>

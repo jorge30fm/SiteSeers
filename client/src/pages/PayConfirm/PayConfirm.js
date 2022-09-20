@@ -1,9 +1,16 @@
 import React from "react";
+
+import Auth from "../../utils/auth";
+import { Navigate } from "react-router-dom";
+
 import Carousel from "../../components/Carousel/Carousel";
-//import Calendar from "../../components/Calendar/Calendar";
 import "./PayConfirm.css";
 
 const PayConfirm = () => {
+  if (!Auth.loggedIn()) {
+    return <Navigate to="/login" />;
+  }
+
   return (
     <main>
       <section className="flex-column align-center">

@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import "./ReserveDetails.css";
+
+import Auth from "../../utils/auth";
+import { Navigate } from "react-router-dom";
+
 import Carousel from "../../components/Carousel/Carousel";
 import CancelModal from "../../components/CancelModal/CancelModal";
 
 const ReserveDetails = () => {
   const [modalOpen, setModalOpen] = useState(false);
+
+  if (!Auth.loggedIn()) {
+    return <Navigate to="/login" />;
+  }
 
   return (
     <main className="position-relative">

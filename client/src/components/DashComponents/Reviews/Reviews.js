@@ -7,7 +7,6 @@ const Reviews = () => {
   return (
     <div>
       <h3>Reviews</h3>
-      {/* <a className="wrapper-link" href="/reservation-details"></a> */}
       {reviewData &&
         reviewData.map((review) => (
           <div key={review._id}>

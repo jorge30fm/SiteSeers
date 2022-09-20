@@ -1,5 +1,9 @@
 import React from "react";
 import "./SingleSite.css";
+
+import Auth from "../../utils/auth";
+import { Navigate, Link } from "react-router-dom";
+
 import Carousel from "../../components/Carousel/Carousel";
 import StarIcon from "@mui/icons-material/Star";
 import Grill from "@mui/icons-material/OutdoorGrill";
@@ -8,6 +12,10 @@ import Shower from "@mui/icons-material/Shower";
 import Power from "@mui/icons-material/Power";
 
 const SingleSite = () => {
+  if (!Auth.loggedIn()) {
+    return <Navigate to="/login" />;
+  }
+
   return (
     <main>
       <Carousel />
@@ -45,9 +53,9 @@ const SingleSite = () => {
           </p>
         </section>
         <div className="btn-container">
-          <a href="/reserve">
+          <Link to="/reserve">
             <button className="btn">Reserve</button>
-          </a>
+          </Link>
         </div>
       </div>
     </main>

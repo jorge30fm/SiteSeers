@@ -4,8 +4,7 @@
 
 .pfp {
   padding: 30px;
-  background-image: url('https://res.cloudinary.com/dxs0geixs/image/upload/c_scale,w_135/v1663680167/siteSeers/hcpz4zaybkvuus7p2mye.jpg');
-  background-size: cover;
+  background-color: var(--light-green);
   border-radius: 50%;
 }
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../../utils/mutations";
 
@@ -41,9 +42,39 @@ const Signup = () => {
 
   return (
     <main>
-      <section className="signup-section">
-        <div className="signup-div">
-          <form className="flex-column" onSubmit={handleFormSubmit}>
+      <section className="padding">
+        <h2>Sign Up</h2>
+        <form className="flex-column" onSubmit={handleFormSubmit}>
+          <div>
+            {" "}
+            {/* TODO: display fname and lname in a row */}
+            <div className="flex-column margin-top">
+              <label>First Name:</label>
+              <input
+                className="form-input"
+                placeholder="Your First Name"
+                name="firstName"
+                type="firstName"
+                id="firstName"
+                value={formState.firstName}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="flex-column margin-top">
+              <label>Last Name:</label>
+              <input
+                className="form-input"
+                placeholder="Your Last Name"
+                name="lastName"
+                type="lastName"
+                id="lastName"
+                value={formState.lastName}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+          <div className="flex-column margin-top">
+            <label>Username:</label>
             <input
               className="form-input"
               placeholder="Your Username"
@@ -53,24 +84,9 @@ const Signup = () => {
               value={formState.username}
               onChange={handleChange}
             />
-            <input
-              className="form-input"
-              placeholder="Your First Name"
-              name="firstName"
-              type="firstName"
-              id="firstName"
-              value={formState.firstName}
-              onChange={handleChange}
-            />
-            <input
-              className="form-input"
-              placeholder="Your Last Name"
-              name="lastName"
-              type="lastName"
-              id="lastName"
-              value={formState.lastName}
-              onChange={handleChange}
-            />
+          </div>
+          <div className="flex-column margin-top">
+            <label>Email:</label>
             <input
               className="form-input"
               placeholder="Your email"
@@ -80,6 +96,9 @@ const Signup = () => {
               value={formState.email}
               onChange={handleChange}
             />
+          </div>
+          <div className="flex-column margin-top">
+            <label>Password:</label>
             <input
               className="form-input"
               placeholder="******"
@@ -89,21 +108,25 @@ const Signup = () => {
               value={formState.password}
               onChange={handleChange}
             />
-            <div className="age-container">
-              <input className="checkbox" name="age" type="checkbox"></input>
-              <label htmlFor="age">
-                I agree to SiteSeers <a href="/terms-of-service">Terms</a>{" "}
-                and <a href="/privacy-policy">Privacy</a>.
-              </label>
-            </div>
-            <div className="btn-container">
-              <button className="btn" type="submit">
-                Sign Up
-              </button>
-            </div>
-          </form>
-          {error && <div>Signup failed</div>}
-        </div>
+          </div>
+          <div className="flex-row margin-top justify-center">
+            <input className="checkbox" name="age" type="checkbox"></input>
+            <label for="age">
+              I agree to SiteSeers <Link to="/terms-of-service">Terms</Link> and{" "}
+              <Link to="/privacy-policy">Privacy</Link>.
+            </label>
+          </div>
+          <div className="btn-container margin-top">
+            <button className="btn" type="submit">
+              Sign Up
+            </button>
+          </div>
+        </form>
+        {error && (
+          <div className="margin-top flex-column align-center">
+            Signup failed.
+          </div>
+        )}
       </section>
     </main>
   );
