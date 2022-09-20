@@ -123,6 +123,7 @@ const typeDefs = gql`
 			firstName: String
 			lastName: String
 			email: String
+			profilePicture: String
 			password: String
 			phone: String
 			bio: String
@@ -210,4 +211,3 @@ const typeDefs = gql`
 	}
 `;
 export default typeDefs;
-//uploadAvatar(avatar: Upload): Avatar!

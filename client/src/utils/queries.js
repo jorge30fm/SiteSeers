@@ -11,6 +11,7 @@ export const QUERY_USER_INFO = gql`
 			bio
 			email
 			phone
+			profilePicture
 		}
 	}
 `;

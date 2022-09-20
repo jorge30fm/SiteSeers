@@ -59,6 +59,7 @@ export const EDIT_USER = gql`
     $password: String
     $phone: String
     $bio: String
+    $profilePicture: String
   ) {
     editUser(
       username: $username
@@ -68,6 +69,7 @@ export const EDIT_USER = gql`
       password: $password
       phone: $phone
       bio: $bio
+      profilePicture:$profilePicture
     ) {
       _id
       username
@@ -77,6 +79,7 @@ export const EDIT_USER = gql`
       bio
       email
       phone
+      profilePicture
     }
   }
 `;

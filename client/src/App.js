@@ -21,7 +21,7 @@ import TermsOfService from "./pages/Policies/TermsService";
 import PrivacyPolicy from "./pages/Policies/PrivacyPolicy";
 import CancelConfirm from "./components/CancelConfirm/CancelConfirm";
 import AddListing from "./pages/AddListing/AddListing";
-
+import UploadImage from './components/UploadImage/UploadImage.js'
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -61,7 +61,7 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/cancel-confirm" element={<CancelConfirm />} />
             <Route path="/add-listing" element={<AddListing />} />
-            {/* <Route path="/uploadImage" element={<UploadImageModal />} /> */}
+            <Route path="/uploadImage" element={<UploadImage />} />
           </Routes>
           <Footer />
         </Router>
