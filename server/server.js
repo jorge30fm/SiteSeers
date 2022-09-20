@@ -4,6 +4,10 @@ import {authMiddleware} from "./utils/auth.js";
 import path from "path";
 import { typeDefs, resolvers } from "./schemas/index.js";
 import db from "./config/connection.js";
+import * as dotenv from 'dotenv';
+dotenv.config();
+
+
 
 const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
@@ -40,6 +44,5 @@ const startApolloServer = async (typeDefs, resolvers) => {
 		});
 	});
 };
-
 // Call the async function to start the server
 startApolloServer(typeDefs, resolvers);

@@ -1,6 +1,8 @@
 import { User, Campsite } from "../models/index.js";
 import { AuthenticationError } from "apollo-server-express";
 import { signToken } from "../utils/auth.js";
+// import {uploadFile} from '../utils/uploadCloudinary.js'
+
 
 const resolvers = {
 	Query: {
@@ -47,6 +49,7 @@ const resolvers = {
 
 			return { token, user };
 		},
+
 		//logs in and returns a token and the user info
 		login: async (parent, { email, password }) => {
 			const user = await User.findOne({ email });
@@ -250,6 +253,39 @@ const resolvers = {
 			}
 			throw new AuthenticationError("You need to be logged in to add a review");
 		},
+		// uploadPhoto: async (parent, { photo }, context) => {
+		// 	if (context.user) {
+		// 		try {
+		// 			const result = await cloudinary.v2.uploader.upload(photo, {
+		// 				allowed_formats: ["jpg", "png"],
+		// 				public_id: "",
+		// 				folder: "siteSeers",
+		// 			});
+		// 			const updatedUser = await User.findByIdAndUpdate(
+		// 				{ _id: context.user._id },
+		// 				{ profilePicture: `${result.public_id}.${result.format}` },
+		// 				{ new: true }
+		// 			);
+		// 			return updatedUser.profilePicture;
+		// 		} catch (error) {
+		// 			throw new Error(error);
+		// 		}
+		// 	}
+		// 	throw new AuthenticationError(
+		// 		"You need to be logged in to perform this action."
+		// 	);
+		// },
+		// uploadAvatar: async (parent, args, context) => {
+		// 	if (context.user) {
+		// 	const file = await uploadFile(args.avatar);
+		// 	const updatedUser = await User.findByIdAndUpdate(
+		// 		{ _id: context.user._id },
+		// 		{ profilePicture: `${file.public_id}.${file.format}` },
+		// 		{ new: true }
+ 		// 	);
+		// 	return updatedUser
+		// 	}
+		// },
 	},
 };
 

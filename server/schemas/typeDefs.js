@@ -14,6 +14,7 @@ const typeDefs = gql`
 		createdAt: String
 		phone: String
 		bio: String
+		profilePicture: String
 		reservationHistory: [Reservation]
 		campsiteListings: [Campsite]
 		reviewCount: Int
@@ -95,6 +96,9 @@ const typeDefs = gql`
 		campsiteReviews: [Reviews]
 		active: Boolean
 	}
+	type Avatar {
+	id: ID!
+	url: String}
 
 	type Query {
 		me: User
@@ -102,6 +106,7 @@ const typeDefs = gql`
 		user(_id: ID!): User
 		campsite(_id: ID!): Campsite
 		campsites(name: String, location: String, _id: ID): [Campsite]
+		_: Boolean
 	}
 
 	type Mutation {
@@ -201,6 +206,8 @@ const typeDefs = gql`
 			reviewText: String!
 			username: String
 		): Campsite
+
 	}
 `;
 export default typeDefs;
+//uploadAvatar(avatar: Upload): Avatar!

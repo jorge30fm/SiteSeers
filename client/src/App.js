@@ -22,6 +22,7 @@ import PrivacyPolicy from "./pages/Policies/PrivacyPolicy";
 import CancelConfirm from "./components/CancelConfirm/CancelConfirm";
 import AddListing from "./pages/AddListing/AddListing";
 
+
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -60,6 +61,7 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/cancel-confirm" element={<CancelConfirm />} />
             <Route path="/add-listing" element={<AddListing />} />
+            {/* <Route path="/uploadImage" element={<UploadImageModal />} /> */}
           </Routes>
           <Footer />
         </Router>

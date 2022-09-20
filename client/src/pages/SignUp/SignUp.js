@@ -91,7 +91,7 @@ const Signup = () => {
             />
             <div className="age-container">
               <input className="checkbox" name="age" type="checkbox"></input>
-              <label for="age">
+              <label htmlFor="age">
                 I agree to SiteSeers <a href="/terms-of-service">Terms</a>{" "}
                 and <a href="/privacy-policy">Privacy</a>.
               </label>

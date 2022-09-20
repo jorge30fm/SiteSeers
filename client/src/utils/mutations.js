@@ -21,7 +21,7 @@ export const LOGIN_USER = gql`
 
 //addUser
 // $password: String! - CH 9/17 during office hours - commented out to get addUser mutation to work.
-// 9/18 - CH - red herring about $password: String!.  
+// 9/18 - CH - red herring about $password: String!.
 // Added it back in but... removed it from the user {} part of the mutation, which I think was where the problem was.
 export const ADD_USER = gql`
   mutation addUser(
