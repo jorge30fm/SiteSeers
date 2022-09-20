@@ -61,7 +61,6 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/cancel-confirm" element={<CancelConfirm />} />
             <Route path="/add-listing" element={<AddListing />} />
-            <Route path="/uploadImage" element={<UploadImage />} />
           </Routes>
           <Footer />
         </Router>

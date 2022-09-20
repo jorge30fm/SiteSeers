@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { EDIT_USER } from "../../../utils/mutations";
-import { useMutation } from "@apollo/client";
+import { QUERY_USER_INFO } from "../../../utils/queries";
+import { useMutation, useQuery } from "@apollo/client";
 import "./Account.css";
 import Edit from "@mui/icons-material/Edit";
 
 const Account = () => {
 	const [editUser, { error }] = useMutation(EDIT_USER);
-	const [profilePicture, setProfilePicture] = useState("");
+
+	const { loading, data } = useQuery(QUERY_USER_INFO);
+	const userInfo = data?.me || {};
 
 	var myWidget = window.cloudinary.createUploadWidget(
 		{
@@ -15,18 +18,17 @@ const Account = () => {
 		},
 		async (error, result) => {
 			if (!error && result && result.event === "success") {
+				const { public_id, format } = result.info;
+				console.log(result.info);
+				console.log(public_id);
 
-          const { public_id, format } = result.info;
-          console.log(result.info)
-          console.log(public_id)
-
-          try {
-             editUser({
-              variables: { profilePicture: `${public_id}.${format}` },
-            });
-          } catch (e) {
-            console.log(e);
-          }
+				try {
+					editUser({
+						variables: { profilePicture: `${public_id}.${format}` },
+					});
+				} catch (e) {
+					console.log(e);
+				}
 			}
 		}
 	);
@@ -53,12 +55,20 @@ const Account = () => {
 		divEl.addEventListener("click", handleDivClick);
 		inputEl.replaceWith(divEl);
 	};
-
+	if (loading) {
+		return <div>Loading...</div>;
+	}
 	return (
 		<div>
 			<div className="flex-row justify-space-between">
 				<div className="pfp-container">
-					<div className="pfp"></div>
+					<div
+						className="pfp"
+						style={{
+							backgroundImage:
+								"url: https://res.cloudinary.com/dxs0geixs/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1663680167/siteSeers/hcpz4zaybkvuus7p2mye.jpg",
+						}}
+					></div>
 					<Edit
 						id="upload_widget"
 						className="account-edit-icon "
@@ -66,8 +76,10 @@ const Account = () => {
 					/>
 				</div>
 				<div className="flex-column align-center">
-					<h3>User Name</h3>
-					<p>Member since insertDate</p>
+					<h3>
+						{userInfo.firstName} {userInfo.lastName}
+					</h3>
+					<p>Member since {userInfo.createdAt}</p>
 				</div>
 			</div>
 			<div className="account-div flex-column">
@@ -75,8 +87,7 @@ const Account = () => {
 					<p>About:</p>
 					<div className="input-container about-container">
 						<p onClick={handleDivClick} className="text-to-input">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							{userInfo.bio}
 						</p>
 					</div>
 				</div>
@@ -84,7 +95,7 @@ const Account = () => {
 					<p>Email:</p>
 					<div className="input-container">
 						<p onClick={handleDivClick} className="text-to-input">
-							email@email.com
+							{userInfo.email}
 						</p>
 					</div>
 				</div>
@@ -92,7 +103,7 @@ const Account = () => {
 					<p>Phone:</p>
 					<div className="input-container">
 						<p onClick={handleDivClick} className="text-to-input">
-							123-456-7890
+							{userInfo.phone}
 						</p>
 					</div>
 				</div>
