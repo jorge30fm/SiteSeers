@@ -5,18 +5,21 @@ const PrivacyPolicy = () => {
   return (
     <main>
       <section className="justify-content-center">
-        <div className="justify-text-left">
+        <div className="align-text-left">
           <h2>Privacy Policy</h2>
+          <br />
           <p>
             This privacy policy describes how Site Seers collects, uses, and
             discloses Personal Information when you use our web application.
           </p>
+          <br />
           <h3>What information do we collect?</h3>
           <p>
             We collect Personal Information from you when you register for an
             account or subscribe to our newsletter. Personal Information
             includes your name, email address, and mailing address.
           </p>
+          <br />
           <h3>How do we use your information?</h3>
           <p>We may use your Personal Information to:</p>
           <p>
@@ -26,10 +29,12 @@ const PrivacyPolicy = () => {
           <p>- process transactions and payments;</p>
           <p>- provide customer support; or</p>
           <p>- comply with legal obligations.</p>
+          <br />
           <p>
             We will not sell, trade, or otherwise transfer to outside parties
             your Personal Information without your consent.
           </p>
+          <br />
           <h3>How do we protect your information?</h3>
           <p>
             We take reasonable precautions to protect your Personal Information
@@ -42,6 +47,7 @@ const PrivacyPolicy = () => {
             encourage you to use a unique and strong password, and not to reuse
             passwords that you have used for other online accounts.
           </p>
+          <br />
           <h3>What rights do you have over your information?</h3>
           <p>
             If you have an account on this web application, you can request to
@@ -52,6 +58,7 @@ const PrivacyPolicy = () => {
             administrative, legal, or security purposes.
           </p>
           <p>To make a request, please contact us at info@siteseers.com.</p>
+          <br />
           <h3>Changes to this Privacy Policy</h3>
           <p>
             We may revise this Privacy Policy from time to time. The most
@@ -63,6 +70,7 @@ const PrivacyPolicy = () => {
             access or use our web application after those changes become
             effective, you agree to be bound by the revised policy.
           </p>
+          <br />
           <h3>Contact Us</h3>
           <p>
             If you have questions about this Privacy Policy, please contact us
