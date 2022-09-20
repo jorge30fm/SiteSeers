@@ -60,7 +60,7 @@ const Dashboard = () => {
             <p>Listings</p>
           </div>
           {/* Can uncomment after MVP presentation. ↓↓↓ */}
-          {/* <div
+    <div
             className={`tab ${reviewsSelected && "selected"}`}
             onClick={() => {
               setAccountSelected(false);
@@ -70,7 +70,7 @@ const Dashboard = () => {
             }}
           >
             <p>Reviews</p>
-          </div> */}
+          </div>
         </div>
         <div className="tab-content-container">
           <div className="tab-content">{accountSelected && <Account />}</div>

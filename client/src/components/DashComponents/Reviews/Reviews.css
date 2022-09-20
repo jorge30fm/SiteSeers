@@ -6,3 +6,7 @@ h3 {
 .date-style{
     font-style: italic;
 }
+
+img {
+    width: 50px
+}
