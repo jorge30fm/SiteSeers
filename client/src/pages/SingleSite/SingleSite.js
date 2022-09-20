@@ -15,7 +15,7 @@ import Power from "@mui/icons-material/Power";
 
 const SingleSite = () => {
   const { loading, data } = useQuery(QUERY_CAMPSITE);
-  const siteInfo = data?.campsite || {};
+  const siteInfo = data || {};
   const { id: siteId } = useParams();
 
   console.log(siteId);

@@ -1,7 +1,6 @@
 // const faker = require('faker');
 import users from './users.js'
 import sites from './campsites.js'
-import sites from './sites.js'
 import db from '../config/connection.js';
 import { User, Campsite } from '../models/index.js';
 
