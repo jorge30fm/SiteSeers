@@ -58,7 +58,7 @@ export const QUERY_USER_LISTINGS_BASIC = gql`
 
 export const QUERY_CAMPSITE = gql`
    query campsites($name: String, $_id: ID) {
-        campsite( name:$name, _id: $_id ){
+        campsites( name:$name, _id: $_id ){
                 _id
                 name
                 price

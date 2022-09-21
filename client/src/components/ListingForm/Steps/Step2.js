@@ -61,7 +61,7 @@ const Step2 = (props) => {
 	const [city, setCity] = useState("");
 	const [state, setState] = useState("");
 	const [zipCode, setZipcode] = useState("");
-	const _id = props.campID;
+	const campID = props.campID;
 	const [editCampsite, { error }] = useMutation(EDIT_CAMPSITE);
 
 	function customTheme(theme) {
@@ -80,7 +80,6 @@ const Step2 = (props) => {
 		switch (e.target.id) {
 			case "streetAddress":
 				setStreetAdress(e.target.value);
-				console.log(props.campID)
 				break;
 			case "city":
 				setCity(e.target.value);
@@ -94,7 +93,7 @@ const Step2 = (props) => {
 		try {
 			await editCampsite({
 				variables: {
-					_id,
+					campID,
 					streetAddress,
 					city,
 					state,
@@ -108,7 +107,7 @@ const Step2 = (props) => {
 	};
 
 	return (
-		<>
+		<div>
 			<h1 className="margin-top col-12">Where are you located?</h1>
 
 			<div>
@@ -147,11 +146,13 @@ const Step2 = (props) => {
 					<p className="label-desc"></p>
 					<input id="zipCode" onChange={handleOnChange}></input>
 				</div>
-				<button className="btn" onClick={handleClick}>
-					Next
-				</button>
+				<div className="flex-row justify-center">
+					<button className="btn" onClick={handleClick}>
+						Next
+					</button>
+				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 export default Step2;

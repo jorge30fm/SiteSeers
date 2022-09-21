@@ -24,3 +24,15 @@
 .noMargin {
     margin: 0
 }
+.center-btn {
+    margin-right: auto;
+    margin-left: auto;
+    align-self: center;
+    width: 100%
+}
+
+.img-wrapper {
+    width: 100%;
+ margin: 5px 5px;
+
+}

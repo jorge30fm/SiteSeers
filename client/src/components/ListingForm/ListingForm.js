@@ -25,14 +25,13 @@ const ListingForm = () => {
         <Step2 step={step} setStep={setStep} campID={campID}/>
       }
 			{step === 3 && <Step3 step={step} setStep={setStep} campID={campID} />}
-			{step === 4 && <Step4 />}
-			{step === 5 && <Step5 />}
-			{step === 6 && <Step6 />}
-			{step === 7 && <Step7 />}
-			{step === 8 && <Step8 />}
+			{step === 4 && <Step4 step={step} setStep={setStep} campID={campID}/>}
+			{step === 5 && <Step5 step={step} setStep={setStep} campID={campID} />}
+			{step === 6 && <Step6 step={step} setStep={setStep} campID={campID}/>}
+			{step === 7 && <Step7 step={step} setStep={setStep} campID={campID}/>}
+			{step === 8 && <Step8 step={step} setStep={setStep} campID={campID}/>}
 
-			{step === 8 && <button className="btn">Submit</button>}
-			<button onClick={handleClick}>Next page</button>
+			{step < 8 && <button onClick={handleClick}>Next page</button>}
 		</div>
 	);
 };

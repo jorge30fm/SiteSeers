@@ -182,8 +182,8 @@ export const ADD_RESERVATION = gql`
 `;
 //deleteReservation
 export const DELETE_RESERVATION = gql`
-	mutation deleteReservation($_id: ID!) {
-		deleteReservation(_id: $_id) {
+	mutation deleteReservation($reservationID: ID!) {
+		deleteReservation(reservationID: $reservationID) {
 			_id
 			username
 			firstName
@@ -226,7 +226,7 @@ export const ADD_CAMPSITE = gql`
 //addAmenities
 export const ADD_AMENITIES = gql`
 	mutation addAmenities(
-		$campsiteID: ID!
+		$ campID: ID!
 		$parking: Boolean
 		$wheelchairAccessible: Boolean
 		$petAllowed: Boolean
@@ -241,7 +241,7 @@ export const ADD_AMENITIES = gql`
 		$cookingEquipment: Boolean
 	) {
 		addAmenities(
-			campsiteID: $campsiteID
+			 campID: $ campID
 			parking: $parking
 			wheelchairAccessible: $wheelchairAccessible
 			petAllowed: $petAllowed
@@ -278,7 +278,7 @@ export const ADD_AMENITIES = gql`
 //addActivities
 export const ADD_ACTIVITIES = gql`
 	mutation addActivities(
-		$campsiteID: ID!
+		$ campID: ID!
 		$fishing: Boolean
 		$paddling: Boolean
 		$birdWatching: Boolean
@@ -293,7 +293,7 @@ export const ADD_ACTIVITIES = gql`
 		$windSport: Boolean
 	) {
 		addActivities(
-			campsiteID: $campsiteID
+			 campID: $ campID
 			fishing: $fishing
 			paddling: $paddling
 			birdWatching: $birdWatching
@@ -330,7 +330,7 @@ export const ADD_ACTIVITIES = gql`
 //addTerrain
 export const ADD_TERRAIN = gql`
 	mutation addTerrain(
-		$campsiteID: ID!
+		$campID: ID!
 		$lake: Boolean
 		$beach: Boolean
 		$farm: Boolean
@@ -342,7 +342,7 @@ export const ADD_TERRAIN = gql`
 		$cave: Boolean
 	) {
 		addTerrain(
-			campsiteID: $campsiteID
+			campID: $campID
 			lake: $lake
 			beach: $beach
 			farm: $farm
@@ -373,7 +373,7 @@ export const ADD_TERRAIN = gql`
 //editCampsite
 export const EDIT_CAMPSITE = gql`
 	mutation editCampsite(
-		$_id: ID!
+		$campID: ID!
 		$name: String
 		$price: Int
 		$streetAddress: String
@@ -390,7 +390,7 @@ export const EDIT_CAMPSITE = gql`
 		$active: Boolean
 	) {
 		editCampsite(
-			_id: $_id
+			campID: $campID
 			name: $name
 			price: $price
 			streetAddress: $streetAddress
@@ -434,8 +434,8 @@ export const EDIT_CAMPSITE = gql`
 `;
 //deleteCampsite
 export const DELETE_CAMPSITE = gql`
-	mutation deleteCampsite($_id: ID!) {
-		deleteCampsite(_id: $_id) {
+	mutation deleteCampsite($campID: ID!) {
+		deleteCampsite( campID: $ campID) {
 			_id
 			username
 			firstName
@@ -485,13 +485,13 @@ export const ADD_USER_REVIEW = gql`
 //addCampsiteReview
 export const ADD_CAMPSITE_REVIEW = gql`
 	mutation addCampsiteReview(
-		$campsiteID: ID!
+		$ campID: ID!
 		$rating: Int
 		$reviewText: String!
 		$username: String
 	) {
 		addCampsiteReview(
-			campsiteID: $campsiteID
+			 campID: $campID
 			rating: $rating
 			reviewText: $reviewText
 			username: $username

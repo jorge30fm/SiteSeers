@@ -138,7 +138,7 @@ const typeDefs = gql`
 			numberOfCampers: Int
 			active: Boolean
 		): User
-		deleteReservation(_id: ID!): User
+		deleteReservation(reservationID: ID!): User
 		addCampsite(
 			name: String!
 			price: Int!
@@ -159,7 +159,7 @@ const typeDefs = gql`
 			active: Boolean
 		): Campsite
 		addAmenities(
-			campsiteID: ID!
+			campID: ID!
 			parking: Boolean
 			wheelchairAccessible: Boolean
 			petAllowed: Boolean
@@ -174,7 +174,7 @@ const typeDefs = gql`
 			cookingEquipment: Boolean
 		): Campsite
 		addActivities(
-			campsiteID: ID!
+			campID: ID!
 			fishing: Boolean
 			paddling: Boolean
 			birdWatching: Boolean
@@ -189,7 +189,7 @@ const typeDefs = gql`
 			windSport: Boolean
 		): Campsite
 		addTerrain(
-			campsiteID: ID!
+			campID: ID!
 			lake: Boolean
 			beach: Boolean
 			farm: Boolean
@@ -201,7 +201,7 @@ const typeDefs = gql`
 			cave: Boolean
 		): Campsite
 		editCampsite(
-			_id: ID!
+			campID: ID!
 			name: String
 			streetAddress: String
 			city: String
@@ -217,7 +217,7 @@ const typeDefs = gql`
 			price: Int
 			active: Boolean
 		): Campsite
-		deleteCampsite(_id: ID!): User
+		deleteCampsite(campID: ID!): User
 		addUserReview(
 			userID: ID!
 			rating: Int
@@ -225,7 +225,7 @@ const typeDefs = gql`
 			username: String
 		): User
 		addCampsiteReview(
-			campsiteID: ID!
+			 campID: ID!
 			rating: Int
 			reviewText: String!
 			username: String
