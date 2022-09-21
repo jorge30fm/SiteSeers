@@ -24,11 +24,12 @@ const Step1 = (props) => {
 	};
 	const handleClick = async () => {
 		try {
-			await addCampsite({
+			const newCampsite = await addCampsite({
 				variables: { name, price },
 			});
-			console.log('success')
+			props.setCampID(newCampsite.data.addCampsite._id)
 
+			props.setStep(2)
 		} catch (e) {
 			console.log(e);
 		}

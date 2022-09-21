@@ -203,8 +203,17 @@ const typeDefs = gql`
 		editCampsite(
 			_id: ID!
 			name: String
-			location: String
+			streetAddress: String
+			city: String
+			state: String
+			zipCode: String
 			description: String
+			rules: String
+			checkInInfo: String
+			images: [String]
+			hostBio: String
+			phone: String
+			email: String
 			price: Int
 			active: Boolean
 		): Campsite

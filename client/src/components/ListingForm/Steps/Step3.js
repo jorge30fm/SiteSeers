@@ -40,6 +40,7 @@ const optionTerrain = [
 	{ value: "desert", label: "Desert" },
 	{ value: "cave", label: "Cave" },
 ];
+
 const Step3 = () => {
 	function customTheme(theme) {
 		return {
@@ -52,10 +53,14 @@ const Step3 = () => {
 			},
 		};
 	}
+	function handleChange(e) {
+		console.log(e)
+
+	  }
 	return (
 		<>
 			<h1 className="margin-top col-12">
-				Let's guests know what makes your campsite special!
+				Let guests know what makes your campsite special!
 			</h1>
 
 			<form>
@@ -63,6 +68,7 @@ const Step3 = () => {
 					<label>Terrain:</label>
 					<Select
 						options={optionTerrain}
+						onChange={handleChange}
 						theme={customTheme}
 						className="flex-column input-margin "
 						placeholder="Select Terrain Types"
