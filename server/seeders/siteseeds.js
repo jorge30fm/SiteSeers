@@ -1,16 +1,11 @@
 // const faker = require('faker');
-import users from './users.js'
 import sites from './sites.js'
 import db from '../config/connection.js';
 import { User, Campsite } from '../models/index.js';
 
 db.once('open', async () => {
   try {
-    await User.deleteMany({});
     await Campsite.deleteMany({});
-
-
-    await User.create(users);
     await Campsite.create(sites);
 
   } catch (err) {

@@ -17,43 +17,43 @@ export const QUERY_USER_INFO = gql`
 `;
 
 export const QUERY_USER_RESERVATIONS = gql`
-	{
-		me {
-			reservationHistory {
-				_id
-				totalPrice
-				reservationStartDate
-				reservationEndDate
-				active
-				campsite {
-					_id
-					price
-					name
-					streetAddress
-					city
-					useState
-					zipCode
-				}
-			}
-		}
-	}
+  {
+    me {
+      reservationHistory {
+        _id
+        totalPrice
+        reservationStartDate
+        reservationEndDate
+        active
+        campsite {
+          _id
+          price
+          name
+          streetAddress
+          city
+          useState
+          zipCode
+        }
+      }
+    }
+  }
 `;
 
 export const QUERY_USER_LISTINGS_BASIC = gql`
-	{
-		me {
-			campsiteListings {
-				_id
-				name
-				streetAddress
-				city
-				state
-				zipCode
-				price
-				active
-			}
-		}
-	}
+  {
+    me {
+      campsiteListings {
+        _id
+        name
+        streetAddress
+        city
+        state
+        zipCode
+        price
+        active
+      }
+    }
+  }
 `;
 
 export const QUERY_CAMPSITE = gql`
