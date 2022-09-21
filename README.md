@@ -38,6 +38,12 @@ Unless the user wants to drop and recreate their database. The seeds directory c
 
 `npm run seed`
 
+Finally, to start the server on their localhost, the user will type:
+
+`npm run develop`
+
+The user can also go to PLACE DEPLOYED LINK HERE.
+
 ## Links
 
 - [GitHub Repo](https://github.com/jorge30fm/project3.git)
@@ -45,11 +51,13 @@ Unless the user wants to drop and recreate their database. The seeds directory c
 
 ## Usage
 
-To use this application, the user will need to create an account. The user can then add their own listing or find a listing to book. To book a campsite, the user will need to search by location, check-in date, and check-out date.
+To use this application, the user will need to create an account. The user can then add their own listing or find a listing to book. To book a campsite, the user will need to search by location, select their check-in and check-out dates, and confirm registration.
 
 ## License
 
-The badge at the top of the page shows that this project is licensed under MIT. The link for that license is shown below.- [License: MIT](https://opensource.org/licenses/MIT)
+The badge at the top of the page shows that this project is licensed under MIT. The link for that license is shown below.
+
+- [License: MIT](https://opensource.org/licenses/MIT)
 
 ## How to Contribute
 
@@ -62,7 +70,7 @@ Please direct any questions to jorge30fm@gmail.com, hillkarl03@gmail.com, nowace
 To see more projects, visit the link below for jorge30fm repository:
 
 - [Jorge Monteagudo's GitHub Repository](https://github.com/jorge30fm)
-  [Josie Franklin's GitHub Repository](https://github.com/josie-franklin)
+- [Josie Franklin's GitHub Repository](https://github.com/josie-franklin)
 - [Chip Hill's GitHub Repository](https://github.com/roo116)
 - [Andrew Tower's GitHub Repository](https://github.com/glo6al)
 - [Jack Nowaczewski's GitHub Repository](https://github.com/Lil-Chevy)
