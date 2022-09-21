@@ -31,7 +31,7 @@ function SearchBar(props) {
   // submit form
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setSearchState(document.querySelector("#search-bar").value)
+    setSearchState(document.querySelector("#search-bar").value);
     findCampSites(searchState);
   };
 
