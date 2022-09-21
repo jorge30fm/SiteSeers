@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import amenitiesSchema from "./Amenities.js";
 import activitySchema from "./Activities.js";
 import reviewSchema from "./Review.js";
-import terrainSchema from "./Terrain.js"
+import terrainSchema from "./Terrain.js";
 const { Schema, model } = mongoose;
 
 const campsiteSchema = new Schema(
@@ -11,32 +11,59 @@ const campsiteSchema = new Schema(
 			type: String,
 			required: true,
 		},
-		location: {
-			type: String,
-			required: true,
-		},
-		description: {
-			type: String,
-			required: true,
-			minLength: 1,
-			maxLength: 500,
-		},
 		price: {
 			type: Number,
 			required: true,
 		},
-		owner: {
-			type: Schema.Types.ObjectId,
-			ref: "User",
+		streetAddress: {
+			type: String,
+		},
+		city: {
+			type: String,
+		},
+		state: {
+			type: String,
+		},
+		zipCode: {
+			type: String,
 		},
 		amenities: amenitiesSchema,
 		activities: activitySchema,
 		terrain: terrainSchema,
-		campsiteReviews: [ reviewSchema] ,
+
+		description: {
+			type: String,
+		},
+		rules: {
+			type: String,
+		},
+		checkInInfo: {
+			type: String,
+		},
+		images: [
+			{
+				type: String,
+			},
+		],
+		hostBio: {
+			type: String,
+		},
+		phone: {
+			type: String,
+			match: [
+				/^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$/,
+				"Must match a phone number",
+			],
+		},
+		email: {
+			type: String,
+			match: [/.+@.+\..+/, "Must match an email address!"],
+		},
 		active: {
 			type: Boolean,
-			default: true,
+			default: false,
 		},
+		campsiteReviews: [reviewSchema],
 	},
 	{
 		toJSON: {
