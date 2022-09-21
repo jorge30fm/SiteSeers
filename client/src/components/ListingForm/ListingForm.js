@@ -12,16 +12,16 @@ import Step8 from "./Steps/Step8";
 
 const ListingForm = () => {
 	const [step, setStep] = useState(1);
-  const handleClick = () => {
-    setStep( step + 1);
-    console.log(step)
-  }
+  const [campID, setCampID] = useState('')
+
 	return (
 		<div className="margin-top">
       {
         step === 1 &&
         <Step1
-        onChange={(value) => console.log(value)}
+        step={step}
+        setStep={setStep}
+        setCampID={setCampID}
         />
       }
       {step === 2 && <Step2 />}
@@ -33,7 +33,7 @@ const ListingForm = () => {
       {step === 8 && <Step8 />}
 
 
-			{step < 8 && <button className="btn" onClick={handleClick}>Next</button>}
+
       {step === 8 && <button className="btn">Submit</button>}
 		</div>
 	);
