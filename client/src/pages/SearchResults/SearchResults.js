@@ -10,6 +10,7 @@ import ListingCard from "../../components/ListingCard/ListingCard";
 
 function SearchPage() {
   const [searchValue, setSearchValue] = useState("");
+  const [searchClicked, setSearchClicked] = useState(false);
   const [getCampsites, { loading, data }] = useLazyQuery(QUERY_CAMPSITE);
 
   if (!Auth.loggedIn()) {
@@ -21,17 +22,6 @@ function SearchPage() {
   if (data) {
     console.log(data);
   }
-
-  return (
-    <div>
-      <button onClick={() => getCampsites()}>
-        Click me to print all countries!
-      </button>
-      {data &&
-        data.countries &&
-        data.countries.map((c, i) => <div key={i}>{c.name}</div>)}
-    </div>
-  );
 
   console.log(searchValue);
 
@@ -45,6 +35,8 @@ function SearchPage() {
       <SearchBar
         searchValue={searchValue}
         setSearchValue={setSearchValue}
+        searchClicked={searchClicked}
+        setSearchClicked={setSearchClicked}
       ></SearchBar>
       <section>
         <ListingCard />

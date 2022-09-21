@@ -4,11 +4,13 @@ import React, { useState } from "react";
 
 function SearchBar(props) {
   const { setSearchValue } = props;
+  const { setSearchClicked } = props;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const searchBar = document.querySelector("#search-bar");
     const newSearchValue = searchBar.value;
+    setSearchClicked(true);
     setSearchValue(newSearchValue);
   };
 
