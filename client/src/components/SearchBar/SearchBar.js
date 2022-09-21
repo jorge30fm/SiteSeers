@@ -1,49 +1,37 @@
+import { useLazyQuery } from "@apollo/client";
 import React, { useState } from "react";
-import { useLazyQuery, useQuery } from "@apollo/client";
 import { QUERY_CAMPSITE } from "../../utils/queries";
+// import { useQuery } from "@apollo/client";
+// import { QUERY_CAMPSITE } from "../../utils/queries";
 
-function SearchBar() {
-  // const [searchState, setSearchState] = useState("");
-
-  // const [getSearchResults, { loading, data }] = useLazyQuery(QUERY_CAMPSITE, {
-  //   variables: { name: searchState },
-  // });
-
-  // console.log("GET SEARCH RESULTS", getSearchResults);
-
-  // const [errorMessage, setErrorMessage] = useState("");
-
-  // const handleChange = (e) => {
-  //   setSearchState(e.target.value);
-  //   console.log("Handle Change", e.target.value);
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (!errorMessage) {
-  //     console.log("Handle Submit", searchState);
-  //     setSearchState(e.target.value);
-  //   } else {
-  //     setErrorMessage("Please try another search");
-  //   }
-  // };
-
-  let searchValue;
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const searchbar = document.querySelector("#search-bar");
-    const newSearchValue = searchbar.value;
-    searchValue = newSearchValue;
-    console.log("searchValue", searchValue);
-  };
-
-  const { loading, data } = useQuery(QUERY_CAMPSITE, {
-    variables: { searchValue },
+function SearchBar(props) {
+  const [searchState, setSearchState] = useState(
+    // _id: "",
+    // name: "",
+    // location: "",
+    // price: "",
+    // active: "",
+    // description: "",
+    // reviewCount: "",
+    // campsiteReview: "",
+    ""
+  );
+  const [findCampSites, { error }] = useLazyQuery(QUERY_CAMPSITE, {
+    variables: { location: searchState },
   });
 
-  const siteInfo = data?.campsites || {};
-  console.log("SITEINFO", siteInfo);
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    console.log("EVENT", event.target);
+    setSearchState(value);
+  };
+
+  // submit form
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    findCampSites(searchState);
+  };
 
   return (
     <section className="mountain-bg">
@@ -53,9 +41,10 @@ function SearchBar() {
           placeholder="Find a New Adventure"
           name="search"
           id="search-bar"
+          onSubmit={handleChange}
         />
-        <button type="submit" className="btn">
-          <i className="search">Find</i>
+        <button type="submit" id="search-btn" className="btn">
+          Search
         </button>
       </form>
     </section>
