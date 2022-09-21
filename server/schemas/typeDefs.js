@@ -39,7 +39,6 @@ const typeDefs = gql`
 		numberOfCampers: Int
 		active: Boolean
 	}
-
 	type Amenities {
 		parking: Boolean
 		wheelchairAccessible: Boolean
@@ -85,28 +84,31 @@ const typeDefs = gql`
 	type Campsite {
 		_id: ID
 		name: String
-		location: String
-		description: String
 		price: Int
-		owner: User
+		streetAddress: String
+		city: String
+		state: String
+		zipCode: String
 		amenities: Amenities
 		activities: Activities
 		terrain: Terrain
+		description: String
+		checkInInfo: String
+		rules: String
+		images: [String]
+		phone: String
+		email: String
+		hostBio: String
 		reviewCount: Int
 		campsiteReviews: [Reviews]
 		active: Boolean
 	}
-	type Avatar {
-	id: ID!
-	url: String}
 
 	type Query {
 		me: User
 		users: [User]
 		user(_id: ID!): User
-		campsite(_id: ID!): Campsite
-		campsites(name: String, location: String, _id: ID): [Campsite]
-		_: Boolean
+		campsites(name: String, _id: ID): [Campsite]
 	}
 
 	type Mutation {
@@ -139,9 +141,21 @@ const typeDefs = gql`
 		deleteReservation(_id: ID!): User
 		addCampsite(
 			name: String!
-			location: String!
-			description: String!
 			price: Int!
+			streetAddress: String
+			city: String
+			state: String
+			zipCode: String
+			description: String
+			checkInInfo: String
+			rules: String
+			description: String
+			checkInInfo: String
+			rules: String
+			images: [String]
+			phone: String
+			email: String
+			hostBio: String
 			active: Boolean
 		): Campsite
 		addAmenities(
@@ -207,7 +221,6 @@ const typeDefs = gql`
 			reviewText: String!
 			username: String
 		): Campsite
-
 	}
 `;
 export default typeDefs;
