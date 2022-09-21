@@ -25,7 +25,6 @@ function SearchPage() {
 
   console.log(searchValue);
 
-  // const { loading, data } = useQuery(QUERY_CAMPSITE);
   // console.log(data);
   // const siteInfo = data?.campsites || {};
   // console.log(siteInfo);
@@ -38,6 +37,9 @@ function SearchPage() {
         searchClicked={searchClicked}
         setSearchClicked={setSearchClicked}
       ></SearchBar>
+      if (searchClicked) {
+        
+      }
       <section>
         <ListingCard />
       </section>
