@@ -215,18 +215,11 @@ export const DELETE_RESERVATION = gql`
 
 //addCampsite
 export const ADD_CAMPSITE = gql`
-	mutation addCampsite(
-		$name: String!
-		$price: Int!
-	) {
-		addCampsite(
-			name: $name
-			price: $price
-		) {
+	mutation addCampsite($name: String!, $price: Int!) {
+		addCampsite(name: $name, price: $price) {
 			_id
 			name
 			price
-			}
 		}
 	}
 `;
@@ -382,61 +375,60 @@ export const EDIT_CAMPSITE = gql`
 	mutation editCampsite(
 		$_id: ID!
 		$name: String
-    $price: Int
-    $streetAddress: String
-    $city: String
-    $state: String
-    $zipCode: String
+		$price: Int
+		$streetAddress: String
+		$city: String
+		$state: String
+		$zipCode: String
 		$description: String
-    $checkInInfo: String
-    $rules: String
-    $images: [String]
-    $phone: String
-    $email: String
-    hostBio: $String
+		$checkInInfo: String
+		$rules: String
+		$images: [String]
+		$phone: String
+		$email: String
+		$hostBio: String
 		$active: Boolean
 	) {
 		editCampsite(
 			_id: $_id
 			name: $name
-      price: $price
+			price: $price
 			streetAddress: $streetAddress
-      city: $city
-      state: $state
-      zipCode: $zipCode
+			city: $city
+			state: $state
+			zipCode: $zipCode
 			description: $description
-      checkInInfo: $checkInInfo
-      rules: $rules
-      images: $images
-      phone: $phone
-      email: $email
-      hostBio: $hostBio
+			checkInInfo: $checkInInfo
+			rules: $rules
+			images: $images
+			phone: $phone
+			email: $email
+			hostBio: $hostBio
 			active: $active
 		) {
 			_id
 			name
-      price
+			price
 			streetAddress
-      city
-      state
-      zipCode
+			city
+			state
+			zipCode
 			description
-      checkInInfo
-      rules
-      images
-      phone
-      email
-      hostBio
-      active
-      reviewCount
-      campsiteReviews {
-						_id
-						rating
-						reviewText
-						createdAt
-						username
-					}
-
+			checkInInfo
+			rules
+			images
+			phone
+			email
+			hostBio
+			active
+			reviewCount
+			campsiteReviews {
+				_id
+				rating
+				reviewText
+				createdAt
+				username
+			}
 		}
 	}
 `;
@@ -452,9 +444,9 @@ export const DELETE_CAMPSITE = gql`
 				_id
 				name
 				streetAddress
-        city
-        state
-        zipCode
+				city
+				state
+				zipCode
 				description
 				price
 			}
@@ -507,9 +499,9 @@ export const ADD_CAMPSITE_REVIEW = gql`
 			_id
 			name
 			streetAddress
-      city
-      state
-      zipCode
+			city
+			state
+			zipCode
 			price
 			description
 			campsiteReviews {

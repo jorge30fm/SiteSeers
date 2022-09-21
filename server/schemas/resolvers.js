@@ -89,7 +89,6 @@ const resolvers = {
 			if (context.user) {
 				const campsite = await Campsite.create({
 					...args,
-					username: context.user.username,
 				});
 				await User.findByIdAndUpdate(
 					{ _id: context.user._id },
