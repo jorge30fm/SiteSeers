@@ -1,10 +1,7 @@
-import { useLazyQuery } from "@apollo/client";
-import React, { useState } from "react";
-import { QUERY_CAMPSITE } from "../../utils/queries";
-// import { useQuery } from "@apollo/client";
-// import { QUERY_CAMPSITE } from "../../utils/queries";
+import React from "react";
 
 function SearchBar(props) {
+<<<<<<< HEAD
   const [searchState, setSearchState] = useState(
     // _id: "",
     // name: "",
@@ -31,25 +28,31 @@ function SearchBar(props) {
     setSearchState(value);
     console.log(event);
   };
+=======
+  const { setSearchState } = props;
+>>>>>>> develop
 
   // submit form
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     setSearchState(document.querySelector("#search-bar").value);
-    findCampSites(searchState);
   };
 
   return (
     <section className="mountain-bg">
-      <form action="/action_page.php" onSubmit={handleSubmit}>
+      <form>
         <input
           type="text"
           placeholder="Find a New Adventure"
           name="search"
           id="search-bar"
-          onSubmit={handleChange}
         />
-        <button type="submit" id="search-btn" className="btn">
+        <button
+          type="submit"
+          id="search-btn"
+          className="btn"
+          onClick={handleSubmit}
+        >
           Search
         </button>
       </form>
