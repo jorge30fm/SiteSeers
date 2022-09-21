@@ -15,7 +15,7 @@ function SearchResults(props) {
       return;
     }
     const fetchData = async () => {
-      console.log(searchState);
+      console.log("SEARCHSTATE", searchState);
       try {
         const { data } = await queryCampsite({
           variables: { city: searchState },
@@ -25,7 +25,7 @@ function SearchResults(props) {
           return <p>Nothing here</p>;
         }
         resultsArray.forEach((campsite) => {
-          console.log(campsite.name);
+          console.log("CAMPSITE.NAME", campsite.name);
         });
       } catch (e) {
         console.error(e);
@@ -36,7 +36,7 @@ function SearchResults(props) {
 
   return (
     <div>
-      <div></div>
+      <div> </div>
     </div>
   );
 }
