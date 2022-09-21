@@ -16,10 +16,14 @@ function SearchBar(props) {
     // campsiteReview: "",
     ""
   );
-  const [findCampSites, { error }] = useLazyQuery(QUERY_CAMPSITE, {
-    variables: { location: searchState },
-  });
-
+  const [findCampSites, { loading, data, error }] = useLazyQuery(
+    QUERY_CAMPSITE,
+    {
+      variables: { location: searchState },
+    }
+  );
+  const campsitesArray = data;
+  console.log("campsites Array", campsitesArray);
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
