@@ -1,48 +1,60 @@
 import React, { useState } from "react";
-import { useLazyQuery } from "@apollo/client";
+import { useLazyQuery, useQuery } from "@apollo/client";
 import { QUERY_CAMPSITE } from "../../utils/queries";
 
 function SearchBar() {
-  const [searchState, setSearchState] = useState({ search: "" });
+  // const [searchState, setSearchState] = useState("");
 
-  const [getSearchResults, { loading, data }] = useLazyQuery(QUERY_CAMPSITE, {
-    variables: { name: searchState },
-  });
+  // const [getSearchResults, { loading, data }] = useLazyQuery(QUERY_CAMPSITE, {
+  //   variables: { name: searchState },
+  // });
 
-  const [errorMessage, setErrorMessage] = useState("");
-  const { search } = searchState;
+  // console.log("GET SEARCH RESULTS", getSearchResults);
 
-  const handleChange = (e) => {
-    setSearchState(e.target.value);
-    console.log("Handle Change", e.target.value);
-  };
+  // const [errorMessage, setErrorMessage] = useState("");
+
+  // const handleChange = (e) => {
+  //   setSearchState(e.target.value);
+  //   console.log("Handle Change", e.target.value);
+  // };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (!errorMessage) {
+  //     console.log("Handle Submit", searchState);
+  //     setSearchState(e.target.value);
+  //   } else {
+  //     setErrorMessage("Please try another search");
+  //   }
+  // };
+
+  let searchValue;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!errorMessage) {
-      console.log("Handle Submit", searchState);
-
-      // console.log("CLIENT", client)
-      // client.query({ query: QUERY_USER_INFO }).then((results) => {
-      //   console.log("ANSWER FOR QUERY", results);
-      // });
-    } else {
-      setErrorMessage("Please try another search");
-    }
+    const searchbar = document.querySelector("#search-bar");
+    const newSearchValue = searchbar.value;
+    searchValue = newSearchValue;
+    console.log("searchValue", searchValue);
   };
+
+  const { loading, data } = useQuery(QUERY_CAMPSITE, {
+    variables: { searchValue },
+  });
+
+  const siteInfo = data?.campsites || {};
+  console.log("SITEINFO", siteInfo);
 
   return (
     <section className="mountain-bg">
-      <form action="/action_page.php" onSubmit={getSearchResults}>
+      <form action="/action_page.php" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Find a New Adventure"
           name="search"
-          onChange={handleChange}
-          defaultValue={search}
-          id="searchBarValue"
+          id="search-bar"
         />
-        <button type="submit" className="btn" onSubmit={handleSubmit}>
+        <button type="submit" className="btn">
           <i className="search">Find</i>
         </button>
       </form>
