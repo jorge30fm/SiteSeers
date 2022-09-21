@@ -146,9 +146,6 @@ const typeDefs = gql`
 			city: String
 			state: String
 			zipCode: String
-			amenities: Amenities
-			activities: Activities
-			terrain: Terrain
 			description: String
 			checkInInfo: String
 			rules: String
