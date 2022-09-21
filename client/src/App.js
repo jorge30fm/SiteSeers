@@ -14,7 +14,7 @@ import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import ReserveSite from "./pages/ReserveSite/ReserveSite";
-import SearchResults from "./pages/SearchResults/SearchResults";
+import SearchPage from "./pages/SearchPage/SearchPage";
 import SingleSite from "./pages/SingleSite/SingleSite";
 import PayConfirm from "./pages/PayConfirm/PayConfirm";
 import ReserveDetails from "./pages/ReserveDetails/ReserveDetails";
@@ -54,7 +54,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/" element={<Dashboard />} />
-            <Route path="/search" element={<SearchResults />} />
+            <Route path="/search" element={<SearchPage />} />
             <Route path="/single-site" element={<SingleSite />} />
             <Route path="/reserve" element={<ReserveSite />} />
             <Route path="/pay-confirm" element={<PayConfirm />} />

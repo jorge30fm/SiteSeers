@@ -1,6 +1,4 @@
-import { useLazyQuery } from "@apollo/client";
-import React, { useState } from "react";
-import { QUERY_CAMPSITE } from "../../utils/queries";
+import React from "react";
 
 function SearchBar(props) {
   const { setSearchState } = props;
@@ -13,14 +11,19 @@ function SearchBar(props) {
 
   return (
     <section className="mountain-bg">
-      <form action="/action_page.php" onSubmit={handleSubmit}>
+      <form>
         <input
           type="text"
           placeholder="Find a New Adventure"
           name="search"
           id="search-bar"
         />
-        <button type="submit" id="search-btn" className="btn">
+        <button
+          type="submit"
+          id="search-btn"
+          className="btn"
+          onClick={handleSubmit}
+        >
           Search
         </button>
       </form>

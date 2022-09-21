@@ -5,9 +5,6 @@ const siteData = [
 		"city": "Chapel Hill",
 		"state": "North Carolina",
 		"zipCode": "27519",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
 		"description": "Earum ut a eos eaque.",
 		"price": "12"
 	},
@@ -17,9 +14,6 @@ const siteData = [
 		"city": "Berea",
 		"state": "Kentucky",
 		"zipCode": "37568",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
 		"description": "Quia rerum est nostrum animi.",
 		"price": "17"
 	},
@@ -29,9 +23,6 @@ const siteData = [
 		"city": "Charlotte",
 		"state": "North Carolina",
 		"zipCode": "26301",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
 		"description": "Dolorem repellendus a qui omnis.",
 		"price": "48"
 	},
@@ -41,9 +32,7 @@ const siteData = [
 		"city": "New York City",
 		"state": "New York",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Assumenda accusantium nihil consequatur amet.",
 		"price": "20"
 	},
@@ -53,9 +42,7 @@ const siteData = [
 		"city": "Chapel Hill",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Repellat cupiditate esse laudantium similique.",
 		"price": "8"
 	},
@@ -65,9 +52,7 @@ const siteData = [
 		"city": "Chapel Hill",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Incidunt praesentium officiis quasi et.",
 		"price": "13"
 	},
@@ -77,9 +62,7 @@ const siteData = [
 		"city": "Lexington",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Cupiditate quasi asperiores quia doloremque.",
 		"price": "30"
 	},
@@ -89,9 +72,7 @@ const siteData = [
 		"city": "Bland",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Tempore quia explicabo saepe quam.",
 		"price": "22"
 	},
@@ -101,9 +82,7 @@ const siteData = [
 		"city": "Vass",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Sunt a ullam tenetur sit.",
 		"price": "41"
 	},
@@ -113,9 +92,7 @@ const siteData = [
 		"city": "Carthage",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Sit vel ipsa impedit beatae.",
 		"price": "16"
 	},
@@ -125,9 +102,7 @@ const siteData = [
 		"city": "Seoul",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Nostrum eos sunt qui est.",
 		"price": "14"
 	},
@@ -137,9 +112,7 @@ const siteData = [
 		"city": "Seattle",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Aut esse necessitatibus ut ipsum.",
 		"price": "33"
 	},
@@ -149,9 +122,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Iusto dolor quia recusandae similique.",
 		"price": "36"
 	},
@@ -161,9 +132,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Id numquam odit excepturi dolor.",
 		"price": "13"
 	},
@@ -173,9 +142,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Sapiente tempora pariatur aperiam quia.",
 		"price": "6"
 	},
@@ -185,9 +152,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Sequi cupiditate beatae officia aut.",
 		"price": "2"
 	},
@@ -197,9 +162,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Hic facilis quisquam ullam dignissimos.",
 		"price": "24"
 	},
@@ -209,9 +172,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Consectetur officia inventore doloribus quaerat.",
 		"price": "12"
 	},
@@ -221,9 +182,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Consequatur ex perferendis ducimus ab.",
 		"price": "46"
 	},
@@ -233,9 +192,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Veniam nulla nisi vero nam.",
 		"price": "2"
 	},
@@ -245,9 +202,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Consectetur sit nemo dolor numquam.",
 		"price": "25"
 	},
@@ -257,9 +212,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Recusandae eos rerum sunt et.",
 		"price": "20"
 	},
@@ -269,9 +222,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Doloribus quia atque maxime possimus.",
 		"price": "45"
 	},
@@ -281,9 +232,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Placeat cupiditate fuga id sunt.",
 		"price": "26"
 	},
@@ -293,9 +242,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Atque sapiente nulla expedita dolores.",
 		"price": "45"
 	},
@@ -305,9 +252,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Maiores ut soluta officia accusantium.",
 		"price": "2"
 	},
@@ -317,9 +262,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Ducimus voluptatem saepe iusto rerum.",
 		"price": "13"
 	},
@@ -329,9 +272,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Repellendus ad voluptates eos quis.",
 		"price": "29"
 	},
@@ -341,9 +282,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Occaecati dicta aut veniam commodi.",
 		"price": "9"
 	},
@@ -353,9 +292,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Voluptatibus adipisci recusandae voluptas molestiae.",
 		"price": "9"
 	},
@@ -365,9 +302,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Est ea aut consequatur quam.",
 		"price": "19"
 	},
@@ -377,9 +312,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Sed odio ex ipsa cumque.",
 		"price": "41"
 	},
@@ -389,9 +322,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Sint ex molestiae error inventore.",
 		"price": "41"
 	},
@@ -401,9 +332,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Qui sed quis ipsam et.",
 		"price": "11"
 	},
@@ -413,9 +342,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Ipsa non consequatur consectetur similique.",
 		"price": "32"
 	},
@@ -425,9 +352,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Non iste vitae ea quibusdam.",
 		"price": "44"
 	},
@@ -437,9 +362,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Et eum et consequatur quia.",
 		"price": "33"
 	},
@@ -449,9 +372,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Ut natus sequi repellendus magni.",
 		"price": "14"
 	},
@@ -461,9 +382,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Consequatur quibusdam occaecati suscipit ut.",
 		"price": "21"
 	},
@@ -473,9 +392,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Voluptate quod natus quo tempore.",
 		"price": "48"
 	},
@@ -485,9 +402,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Quibusdam recusandae dolor repellendus autem.",
 		"price": "30"
 	},
@@ -497,9 +412,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Ullam quis qui quia eos.",
 		"price": "43"
 	},
@@ -509,9 +422,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Molestiae sint consequatur voluptas enim.",
 		"price": "26"
 	},
@@ -521,9 +432,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Doloremque sit voluptatum exercitationem magni.",
 		"price": "41"
 	},
@@ -533,9 +442,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Nulla nihil consequuntur assumenda sint.",
 		"price": "3"
 	},
@@ -545,9 +452,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Incidunt nihil quod non iusto.",
 		"price": "14"
 	},
@@ -557,9 +462,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Et asperiores velit asperiores dolor.",
 		"price": "48"
 	},
@@ -569,9 +472,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Doloremque ea ullam qui corrupti.",
 		"price": "10"
 	},
@@ -581,9 +482,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Tenetur labore corrupti qui nam.",
 		"price": "10"
 	},
@@ -593,9 +492,7 @@ const siteData = [
 		"city": "",
 		"state": "",
 		"zipCode": "",
-		"amenities": [],
-		"activities": [],
-		"terrain": [],
+	
 		"description": "Id explicabo minima ea voluptatem.",
 		"price": "7"
 	}
