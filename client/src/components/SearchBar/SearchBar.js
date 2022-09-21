@@ -1,38 +1,26 @@
 import { useLazyQuery } from "@apollo/client";
 import React, { useState } from "react";
 import { QUERY_CAMPSITE } from "../../utils/queries";
-// import { useQuery } from "@apollo/client";
-// import { QUERY_CAMPSITE } from "../../utils/queries";
 
 function SearchBar(props) {
-  const [searchState, setSearchState] = useState(
-    // _id: "",
-    // name: "",
-    // location: "",
-    // price: "",
-    // active: "",
-    // description: "",
-    // reviewCount: "",
-    // campsiteReview: "",
-    ""
+  const { searchState, setSearchState, searchClicked, setSearchClicked } =
+    props;
+  const [findCampSites, { loading, data, error }] = useLazyQuery(
+    QUERY_CAMPSITE,
+    {
+      variables: { location: searchState },
+    }
   );
-  const [findCampSites, { error }] = useLazyQuery(QUERY_CAMPSITE, {
-    variables: { location: searchState },
-  });
-
-  // update state based on form input changes
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    console.log("EVENT", event.target);
-    setSearchState(value);
-    console.log(event);
-  };
 
   // submit form
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setSearchState(document.querySelector("#search-bar").value)
+    setSearchState(document.querySelector("#search-bar").value);
+    setSearchClicked(true);
+    console.log(searchClicked);
     findCampSites(searchState);
+    // setTimeout(setSearchClicked(false), 2000);
+    // console.log(searchClicked);
   };
 
   return (
@@ -43,7 +31,6 @@ function SearchBar(props) {
           placeholder="Find a New Adventure"
           name="search"
           id="search-bar"
-          onSubmit={handleChange}
         />
         <button type="submit" id="search-btn" className="btn">
           Search

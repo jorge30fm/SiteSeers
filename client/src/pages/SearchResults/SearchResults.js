@@ -9,9 +9,15 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import ListingCard from "../../components/ListingCard/ListingCard";
 
 function SearchPage() {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchState, setSearchState] = useState("");
   const [searchClicked, setSearchClicked] = useState(false);
-  const [getCampsites, { loading, data }] = useLazyQuery(QUERY_CAMPSITE);
+  // const [getCampsites, { loading, data }] = useLazyQuery(QUERY_CAMPSITE);
+  const [findCampSites, { loading, data, error }] = useLazyQuery(
+    QUERY_CAMPSITE,
+    {
+      variables: { location: searchState },
+    }
+  );
 
   if (!Auth.loggedIn()) {
     return <Navigate to="/login" />;
@@ -23,7 +29,11 @@ function SearchPage() {
     console.log(data);
   }
 
-  console.log(searchValue);
+  if (searchClicked) {
+    findCampSites(searchState);
+    console.log(searchState);
+    setSearchClicked(false);
+  }
 
   // console.log(data);
   // const siteInfo = data?.campsites || {};
@@ -32,8 +42,8 @@ function SearchPage() {
   return (
     <main>
       <SearchBar
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
+        searchState={searchState}
+        setSearchState={setSearchState}
         searchClicked={searchClicked}
         setSearchClicked={setSearchClicked}
       ></SearchBar>
