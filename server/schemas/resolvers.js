@@ -27,13 +27,14 @@ const resolvers = {
 				.select("-__v -password")
 				.populate("userReviews");
 		},
-		campsites: async (parent, { location, name, _id }) => {
-			const params = location
-				? { location }
-				: name
-				? { name }
-				: _id
-				? { _id }
+		campsites: async (parent, { name, _id, city, state, zipCode, streetAdress }) => {
+			const params =
+				name ? { name }
+				: _id ? { _id }
+				: city ? {city}
+				: state ? {state}
+				: zipCode ? {zipCode}
+				: streetAdress ? {streetAdress}
 				: {};
 			return Campsite.find(params).populate("campsiteReviews");
 		},
@@ -88,7 +89,6 @@ const resolvers = {
 			if (context.user) {
 				const campsite = await Campsite.create({
 					...args,
-					username: context.user.username,
 				});
 				await User.findByIdAndUpdate(
 					{ _id: context.user._id },
