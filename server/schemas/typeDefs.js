@@ -39,7 +39,6 @@ const typeDefs = gql`
 		numberOfCampers: Int
 		active: Boolean
 	}
-
 	type Amenities {
 		parking: Boolean
 		wheelchairAccessible: Boolean
@@ -85,10 +84,17 @@ const typeDefs = gql`
 	type Campsite {
 		_id: ID
 		name: String
-		location: String
+		address: String
+		city: String
+		state: String
+		zipCode: String
 		description: String
+		phone: String
+		email: String
+		hostBio: String
+		checkInInfo: String
+		Rules: String
 		price: Int
-		owner: User
 		amenities: Amenities
 		activities: Activities
 		terrain: Terrain
@@ -96,16 +102,13 @@ const typeDefs = gql`
 		campsiteReviews: [Reviews]
 		active: Boolean
 	}
-	type Avatar {
-	id: ID!
-	url: String}
 
 	type Query {
 		me: User
 		users: [User]
 		user(_id: ID!): User
 		campsite(_id: ID!): Campsite
-		campsites(name: String, location: String, _id: ID): [Campsite]
+		campsites(name: String, _id: ID): [Campsite]
 		_: Boolean
 	}
 

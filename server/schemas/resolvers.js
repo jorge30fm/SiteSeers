@@ -27,10 +27,8 @@ const resolvers = {
 				.select("-__v -password")
 				.populate("userReviews");
 		},
-		campsites: async (parent, { location, name, _id }) => {
-			const params = location
-				? { location }
-				: name
+		campsites: async (parent, { name, _id }) => {
+			const params =  name
 				? { name }
 				: _id
 				? { _id }
