@@ -5,7 +5,7 @@ const TermsService = () => {
   return (
     <main>
       <section className="justify-content-center">
-        <div className="align-text-left">
+        <div className="margin align-text-left">
           <h2>Terms of Service</h2>
           <br />
           <p>
