@@ -18,7 +18,12 @@ const ListingForm = () => {
   }
 	return (
 		<div className="margin-top">
-      {step === 1 && <Step1 />}
+      {
+        step === 1 &&
+        <Step1
+        onChange={(value) => console.log(value)}
+        />
+      }
       {step === 2 && <Step2 />}
       {step === 3 && <Step3 />}
       {step === 4 && <Step4 />}

@@ -29,7 +29,10 @@ export const QUERY_USER_RESERVATIONS = gql`
 					_id
 					price
 					name
-					location
+					streetAddress
+					city
+					useState
+					zipCode
 				}
 			}
 		}
@@ -42,7 +45,10 @@ export const QUERY_USER_LISTINGS_BASIC = gql`
 			campsiteListings {
 				_id
 				name
-				location
+				streetAddress
+				city
+				state
+				zipCode
 				price
 				active
 			}
@@ -55,26 +61,12 @@ export const QUERY_CAMPSITE = gql`
         campsite( name:$name, _id: $_id ){
                 _id
                 name
-
                 price
-                active
-                description
-                reviewCount
-                campsiteReviews {
-                    _id
-                    rating
-                    reviewText
-                    createdAt
-					username
-                }
-				reviewCount
-                owner {
-                    firstName
-                    lastName
-                    phone
-                    email
-                }
-                amenities {
+				streetAddress
+				city
+				state
+				zipCode
+				amenities {
 					parking
 					wheelchairAccessible
 					petAllowed
@@ -88,7 +80,7 @@ export const QUERY_CAMPSITE = gql`
 					wifi
 					cookingEquipment
 				}
-                activities {
+				activities {
 					fishing
 					paddling
 					birdWatching
@@ -113,6 +105,24 @@ export const QUERY_CAMPSITE = gql`
 					desert
 					cave
 				}
+                description
+				checkInInfo
+				rules
+				images
+				phone
+				email
+				hostBio
+                reviewCount
+                campsiteReviews {
+                    _id
+                    rating
+                    reviewText
+                    createdAt
+					username
+                }
+				active
+
+
             }
         }
 `;

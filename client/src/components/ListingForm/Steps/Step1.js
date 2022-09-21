@@ -1,6 +1,6 @@
 import React from "react";
 
-const Step1 = () => {
+const Step1 = (props) => {
 	return (
 		<>
 			<h1 className="margin-top">
@@ -11,11 +11,12 @@ const Step1 = () => {
 				<div className="flex-column margin-top">
 					<label>Camp Site Name:</label>
 					<p className="label-desc">Name your campsite!</p>
-					<input></input>
+					<input type="text" placeholder="campsite name" onChange={event => props.onChange(event.target.value)}></input>
 				</div>
 
 				<div className="flex-column margin-top">
 					<label>Rate:</label>
+					<p className="label-desc">per night</p>
 					<input></input>
 				</div>
 

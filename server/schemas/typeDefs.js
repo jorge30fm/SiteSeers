@@ -84,20 +84,21 @@ const typeDefs = gql`
 	type Campsite {
 		_id: ID
 		name: String
-		address: String
+		price: Int
+		streetAddress: String
 		city: String
 		state: String
 		zipCode: String
-		description: String
-		phone: String
-		email: String
-		hostBio: String
-		checkInInfo: String
-		Rules: String
-		price: Int
 		amenities: Amenities
 		activities: Activities
 		terrain: Terrain
+		description: String
+		checkInInfo: String
+		rules: String
+		images: [String]
+		phone: String
+		email: String
+		hostBio: String
 		reviewCount: Int
 		campsiteReviews: [Reviews]
 		active: Boolean
@@ -107,9 +108,7 @@ const typeDefs = gql`
 		me: User
 		users: [User]
 		user(_id: ID!): User
-		campsite(_id: ID!): Campsite
 		campsites(name: String, _id: ID): [Campsite]
-		_: Boolean
 	}
 
 	type Mutation {
@@ -142,9 +141,24 @@ const typeDefs = gql`
 		deleteReservation(_id: ID!): User
 		addCampsite(
 			name: String!
-			location: String!
-			description: String!
 			price: Int!
+			streetAddress: String
+			city: String
+			state: String
+			zipCode: String
+			amenities: Amenities
+			activities: Activities
+			terrain: Terrain
+			description: String
+			checkInInfo: String
+			rules: String
+			description: String
+			checkInInfo: String
+			rules: String
+			images: [String]
+			phone: String
+			email: String
+			hostBio: String
 			active: Boolean
 		): Campsite
 		addAmenities(
@@ -210,7 +224,6 @@ const typeDefs = gql`
 			reviewText: String!
 			username: String
 		): Campsite
-
 	}
 `;
 export default typeDefs;
