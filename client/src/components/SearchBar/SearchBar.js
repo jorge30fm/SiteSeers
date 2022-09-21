@@ -25,11 +25,13 @@ function SearchBar(props) {
     const { name, value } = event.target;
     console.log("EVENT", event.target);
     setSearchState(value);
+    console.log(event);
   };
 
   // submit form
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setSearchState(document.querySelector("#search-bar").value)
     findCampSites(searchState);
   };
 

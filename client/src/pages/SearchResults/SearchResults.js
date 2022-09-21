@@ -37,7 +37,6 @@ function SearchPage() {
         searchClicked={searchClicked}
         setSearchClicked={setSearchClicked}
       ></SearchBar>
-      if (searchClicked) {}
       <section>
         <ListingCard />
       </section>
