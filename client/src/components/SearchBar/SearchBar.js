@@ -1,27 +1,22 @@
 import React, { useState } from "react";
+// import { useQuery } from "@apollo/client";
+// import { QUERY_CAMPSITE } from "../../utils/queries";
 
-function SearchBar() {
-  const [searchState, setSearchState] = useState({ search: "" });
-
-  const [errorMessage, setErrorMessage] = useState("");
-  const { search } = searchState;
-
-  const handleChange = (e) => {
-    setSearchState(e.target.value);
-    console.log("Handle Change", e.target.value);
-  };
+function SearchBar(props) {
+  const { setSearchValue } = props;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!errorMessage) {
-      console.log(
-        "Handle Submit",
-        document.querySelector("#searchBarValue").value
-      );
-    } else {
-      setErrorMessage("Please try another search");
-    }
+    const searchBar = document.querySelector("#search-bar");
+    const newSearchValue = searchBar.value;
+    setSearchValue(newSearchValue);
   };
+
+  // const { loading, data } = useQuery(QUERY_CAMPSITE);
+  // console.log(data);
+  // const siteInfo = data?.campsites || {};
+  // w;
+  // console.log(siteInfo);
 
   return (
     <section className="mountain-bg">
@@ -30,12 +25,12 @@ function SearchBar() {
           type="text"
           placeholder="Find a New Adventure"
           name="search"
-          onChange={handleChange}
-          defaultValue={search}
-          id="searchBarValue"
+          // onChange={handleChange}
+          // defaultValue={search}
+          id="search-bar"
         />
-        <button type="submit" className="searchButton btn">
-          <i className="search">Find</i>
+        <button type="submit" id="search-btn" className="btn">
+          Search
         </button>
       </form>
     </section>
