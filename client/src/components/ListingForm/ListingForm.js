@@ -1,75 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ListingForm.css";
+import Step1 from "./Steps/Step1";
+import Step2 from "./Steps/Step2";
+import Step3 from "./Steps/Step3";
+import Step4 from "./Steps/Step4";
+import Step5 from "./Steps/Step5";
+import Step6 from "./Steps/Step6";
+import Step7 from "./Steps/Step7";
+import Step8 from "./Steps/Step8";
+
 
 const ListingForm = () => {
-  return (
-    <div>
-      <form className="flex-column">
-        <div className="flex-column margin-top">
-          <label>Camp Site Name:</label>
-          <p className="label-desc">Name your campsite!</p>
-          <input></input>
-        </div>
-        <div className="flex-column margin-top">
-          {/* TODO: add address auto suggest */}
-          <label>Location/Address:</label>
-          <p className="label-desc"></p>
-          <input></input>
-        </div>
-        <div className="flex-column margin-top">
-          <label>Pictures:</label>
-          <p className="label-desc">Add pictures to show off the site! (optional)</p>
-          <input type="file"></input>
-        </div>
-        <div className="flex-column">
-          {/* <div className="flex-row"> */}
-            <div className="flex-column margin-top">
-              <label>Phone:</label>
-              <input type="phone"></input>
-            </div>
-            <div className="flex-column margin-top">
-              <label>Email:</label>
-              <input type="email"></input>
-            </div>
-          {/* </div> */}
-          <div className="flex-column margin-top">
-            <label>Host Bio:</label>
-            <p className="label-desc">Tell your campers a little about yourself!</p>
-            <input></input>
-          </div>
-        </div>
-        <div className="flex-column margin-top">
-          <label>Check-In Info:</label>
-          <p className="label-desc">Let your campers know how to check in.</p>
-          <input></input>
-        </div>
-        <div className="flex-column margin-top">
-          <label>Rules:</label>
-          <p className="label-desc">Tell your campers what rules your site has!</p>
-          <input></input>
-        </div>
-        <div className="flex-column margin-top">
-          <label>Amenties:</label>
-          <input></input>
-        </div>
-        <div className="flex-column margin-top">
-          <label>Rate:</label>
-          <input></input>
-        </div>
-        <div className="flex-column margin-top">
-          <label>Availabilty:</label>
-          <input></input>
-        </div>
-        <div className="flex-column margin-top">
-          <label>Description:</label>
-          <p className="label-desc"></p>
-          <input></input>
-        </div>
-        <div className="btn-container margin-top">
-          <button className="btn">Save Listing</button>
-        </div>
-      </form>
-    </div>
-  );
+	const [step, setStep] = useState(1);
+  const [campID, setCampID] = useState('')
+
+	return (
+		<div className="margin-top">
+      {
+        step === 1 &&
+        <Step1
+        step={step}
+        setStep={setStep}
+        setCampID={setCampID}
+        />
+      }
+      {step === 2 && <Step2 />}
+      {step === 3 && <Step3 />}
+      {step === 4 && <Step4 />}
+      {step === 5 && <Step5 />}
+      {step === 6 && <Step6 />}
+      {step === 7 && <Step7 />}
+      {step === 8 && <Step8 />}
+
+
+
+      {step === 8 && <button className="btn">Submit</button>}
+		</div>
+	);
 };
+
 export default ListingForm;

@@ -342,7 +342,7 @@ main {
   color: var(--bone);
 }
 
-input {
+input, textarea{
   border: 1px solid var(--dark-green);
   border-radius: 10px;
   padding: 10px;
