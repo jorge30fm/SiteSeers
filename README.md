@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# SiteSeers
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This application is a collaborative project using front-end and back-end technologies to create a community for Campers to find and reserve privately listed campsites. Much like you would use Airbnb, outdoor enthusiasts can enjoy the great outdoors anywhere.
 
-### `npm start`
+The following technologies were used to complete the project:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Excalidraw
+- Axios
+- Cloudinary
+- Node.js
+- Express.js
+- GraphQL
+- Mongoose
+- Web-Vitals
+- MySQL
+- Cloudinary
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Table of Contents
 
-### `npm test`
+- [Installation](#installation)
+- [Links](#links)
+- [Usage](#usage)
+- [License](#license)
+- [How to Contribute](#how-to-contribute)
+- [Questions](#questions)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+Visit the GitHub repository, project3 (see the link below), to fork and clone the repository. The JSON file will have the necessary dependencies. Use:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm install`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Unless the user wants to drop and recreate their database. The seeds directory contains all of the data to populate the table. The user will need to use:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npm run seed`
 
-### `npm run eject`
+## Links
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [GitHub Repo](https://github.com/jorge30fm/project3.git)
+- [Heroku Deployed Site](placeholder text)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To use this application, the user will need to create an account. The user can then add their own listing or find a listing to book. To book a campsite, the user will need to search by location, check-in date, and check-out date.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License
 
-## Learn More
+The badge at the top of the page shows that this project is licensed under MIT. The link for that license is shown below.- [License: MIT](https://opensource.org/licenses/MIT)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## How to Contribute
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Please fork and clone the repository and use a pull request to add or make changes to the current repository.
 
-### Code Splitting
+## Questions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Please direct any questions to jorge30fm@gmail.com, hillkarl03@gmail.com, nowacewskijack@gmail.com, and towers.a@gmail.com, this.josie.franklin@gmail.com.
 
-### Analyzing the Bundle Size
+To see more projects, visit the link below for jorge30fm repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Jorge Monteagudo's GitHub Repository](https://github.com/jorge30fm)
+  [Josie Franklin's GitHub Repository](https://github.com/josie-franklin)
+- [Chip Hill's GitHub Repository](https://github.com/roo116)
+- [Andrew Tower's GitHub Repository](https://github.com/glo6al)
+- [Jack Nowaczewski's GitHub Repository](https://github.com/Lil-Chevy)
