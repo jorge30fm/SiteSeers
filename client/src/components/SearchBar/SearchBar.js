@@ -3,24 +3,12 @@ import React, { useState } from "react";
 import { QUERY_CAMPSITE } from "../../utils/queries";
 
 function SearchBar(props) {
-  const { searchState, setSearchState, searchClicked, setSearchClicked } =
-    props;
-  const [findCampSites, { loading, data, error }] = useLazyQuery(
-    QUERY_CAMPSITE,
-    {
-      variables: { location: searchState },
-    }
-  );
+  const { setSearchState } = props;
 
   // submit form
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     setSearchState(document.querySelector("#search-bar").value);
-    setSearchClicked(true);
-    console.log(searchClicked);
-    findCampSites(searchState);
-    // setTimeout(setSearchClicked(false), 2000);
-    // console.log(searchClicked);
   };
 
   return (
