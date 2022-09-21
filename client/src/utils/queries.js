@@ -1,19 +1,19 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_USER_INFO = gql`
-	{
-		me {
-			_id
-			username
-			firstName
-			lastName
-			createdAt
-			bio
-			email
-			phone
-			profilePicture
-		}
-	}
+  {
+    me {
+      _id
+      username
+      firstName
+      lastName
+      createdAt
+      bio
+      email
+      phone
+      profilePicture
+    }
+  }
 `;
 
 export const QUERY_USER_RESERVATIONS = gql`
