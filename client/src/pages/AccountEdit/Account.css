@@ -55,3 +55,15 @@
   width: 100%;
   resize: none;
 }
+
+label {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

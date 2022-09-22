@@ -17,6 +17,7 @@ const EditProfile = () => {
 
   const { loading, data } = useQuery(QUERY_USER_INFO);
   const userInfo = data?.me || {};
+  console.log("This is userInfo", userInfo);
 
   var myWidget = window.cloudinary.createUploadWidget(
     {
@@ -75,6 +76,7 @@ const EditProfile = () => {
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
+    console.log("event.target ", event.target);
 
     setFormState({
       ...formState,
@@ -90,7 +92,6 @@ const EditProfile = () => {
       const { data } = await editUser({
         variables: { ...formState },
       });
-      console.log("this is data ", event);
       Auth.login(data.editUser.token);
     } catch (e) {
       console.error(e);
@@ -115,30 +116,28 @@ const EditProfile = () => {
           <p>Member since {userInfo.createdAt}</p>
         </div>
       </div>
-
-      <div className="padding">
-        <h2>Profile</h2>
-        <form className="flex-column" onSubmit={handleFormSubmit}>
+      <div className="account-div flex-column">
+        <form onSubmit={handleFormSubmit}>
           <div>
             {" "}
             {/* TODO: display fname and lname in a row */}
             <div className="flex-column margin-top">
               <label>About:</label>
-              <textarea
-                className="form-input"
-                placeholder={userInfo.bio}
+              <input
+                className="input-container about-container"
+                placeholder="Please enter updated bio"
                 name="bio"
                 type="bio"
                 id="bio"
                 value={formState.bio}
                 onChange={handleChange}
-              ></textarea>
+              ></input>
             </div>
-            <div className="flex-column margin-top">
+            <div className="account-input-div flex-column">
               <label>Email:</label>
               <input
+                placeholder="Please enter email"
                 className="form-input"
-                placeholder={userInfo.email}
                 name="email"
                 type="email"
                 id="email"
@@ -147,11 +146,11 @@ const EditProfile = () => {
               />
             </div>
           </div>
-          <div className="flex-column margin-top">
+          <div className="account-input-div flex-column">
             <label>Phone:</label>
             <input
               className="form-input"
-              placeholder={userInfo.phone}
+              placeholder="Please enter phone number"
               name="phone"
               type="phone"
               id="phone"
@@ -159,7 +158,7 @@ const EditProfile = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="btn-container margin-top">
+          <div className="btn-container margin-top flex-ro">
             <button className="btn" type="submit">
               Update
             </button>
@@ -170,7 +169,8 @@ const EditProfile = () => {
         </form>
         {error && (
           <div className="margin-top flex-column align-center">
-            If you're not going to change anything, just hit cancel.
+            Something went wrong. Try again or hit cancel to return to the
+            account page.
           </div>
         )}
       </div>
