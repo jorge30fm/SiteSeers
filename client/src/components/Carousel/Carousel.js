@@ -6,7 +6,7 @@ import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
 function Carousel(props) {
   const [currImg, setCurrImg] = useState(0);
-  const [hasImages, setHasImages] = useState(true);
+  // const [hasImages, setHasImages] = useState(true);
   const { campsite } = props;
   const imagesArray = [...campsite.images];
 
