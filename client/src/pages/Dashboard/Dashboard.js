@@ -60,7 +60,7 @@ const Dashboard = () => {
             <p>Listings</p>
           </div>
           {/* Can uncomment after MVP presentation. ↓↓↓ */}
-    <div
+          <div
             className={`tab ${reviewsSelected && "selected"}`}
             onClick={() => {
               setAccountSelected(false);
