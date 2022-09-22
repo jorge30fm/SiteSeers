@@ -58,7 +58,7 @@ const ReserveDetails = () => {
 						onClick={() => {
 							setModalOpen(true);
 						}}
-						className="btn"
+						className="btn btn-long"
 					>
 						Cancel Reservation
 					</button>

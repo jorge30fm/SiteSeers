@@ -24,13 +24,13 @@ const CancelModal = (props) => {
 		<div className="flex-column justify-content-center">
 			<h2>Are you sure you want to cancel your reservation?</h2>
 			<div className="btn-container">
-				<button className="btn" onClick={handleOnClick}>
+				<button className="btn btn-long" onClick={handleOnClick}>
 					Cancel
 				</button>
 			</div>
 			<div className="btn-container">
 				<button
-					className="btn btn-faded"
+					className="btn btn-faded btn-long"
 					onClick={() => {
 						setModalOpen(false);
 					}}

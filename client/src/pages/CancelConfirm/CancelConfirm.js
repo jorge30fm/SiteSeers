@@ -15,14 +15,14 @@ const CancelConfirm = () => {
 	};
 	return (
 		<main className="flex-column align-center justify-center padding">
-			<h2>Success!</h2>
+			<h1>Success!</h1>
 			<div className="padding">
 				<CheckCircle style={{ fontSize: "100px" }} />
 			</div>
-			<p className="centered-text">
+			<h2 className="centered-text">
 				Your reservation was successfully cancelled.
-			</p>
-			<button className="btn" onClick={handleClick}>
+			</h2>
+			<button className="btn btn-long margin-top" onClick={handleClick}>
 				Finish
 			</button>
 		</main>

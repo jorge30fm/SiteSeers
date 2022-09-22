@@ -19,7 +19,7 @@ const Listings = () => {
 				<p className="nothing-here">There's nothing here!</p>
 				<div className="btn-container padding">
 					<Link to="/add-listing">
-						<button className="btn">Add Listing</button>
+						<button className="btn btn-long">Add Listing</button>
 					</Link>
 				</div>
 			</div>
@@ -56,7 +56,7 @@ const Listings = () => {
 			</div>
 			<div className="btn-container padding">
 				<Link to="/add-listing">
-					<button className="btn">Add Listing</button>
+					<button className="btn btn-long">Add Listing</button>
 				</Link>
 			</div>
 		</div>
