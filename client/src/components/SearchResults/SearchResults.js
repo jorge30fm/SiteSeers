@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLazyQuery } from "@apollo/client";
 import { QUERY_CAMPSITE } from "../../utils/queries";
-// import ListingCard from "../../components/ListingCard/ListingCard";
+import ListingCard from "../../components/ListingCard/ListingCard";
 
 function SearchResults(props) {
   const { searchState } = props;
@@ -10,6 +10,7 @@ function SearchResults(props) {
   const [queryCampsite, { error }] = useLazyQuery(QUERY_CAMPSITE);
 
   useEffect(() => {
+    console.log(searchState);
     if (searchState === "") {
       return;
     }
@@ -33,9 +34,6 @@ function SearchResults(props) {
   //   return <p>Nothing here</p>;
   // }
 
-  // resultsArray.forEach((campsite) => {
-  //   console.log(campsite);
-  // });
   if (!campsiteArray) {
     return <div></div>;
   }

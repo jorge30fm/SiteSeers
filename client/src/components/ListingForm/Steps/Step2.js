@@ -1,6 +1,8 @@
-import React from "react";
+/* eslint-disable default-case */
+import React, { useState } from "react";
 import Select from "react-select";
-
+import { EDIT_CAMPSITE } from "../../../utils/mutations";
+import { useMutation } from "@apollo/client";
 const optionStates = [
 	{ value: "Alabama", label: "AL" },
 	{ value: "Alaska", label: "AK " },
@@ -53,8 +55,16 @@ const optionStates = [
 	{ value: "Wisconsin", label: "WI" },
 	{ value: "Wyoming", label: "WY" },
 ];
-const Step2 = () => {
-    function customTheme(theme) {
+
+const Step2 = (props) => {
+	const [streetAddress, setStreetAdress] = useState("");
+	const [city, setCity] = useState("");
+	const [state, setState] = useState("");
+	const [zipCode, setZipcode] = useState("");
+	const campID = props.campID;
+	const [editCampsite, { error }] = useMutation(EDIT_CAMPSITE);
+
+	function customTheme(theme) {
 		return {
 			...theme,
 			borderRadius: 10,
@@ -65,28 +75,62 @@ const Step2 = () => {
 			},
 		};
 	}
-	return (
-		<>
-			<h1 className="margin-top col-12">
-				Where are you located?
-			</h1>
 
-			<form>
-            <div className="flex-column margin-top">
+	const handleOnChange = (e) => {
+		switch (e.target.id) {
+			case "streetAddress":
+				setStreetAdress(e.target.value);
+				break;
+			case "city":
+				setCity(e.target.value);
+				break;
+			case "zipCode":
+				setZipcode(e.target.value);
+				break;
+		}
+	};
+	const handleClick = async () => {
+		try {
+			await editCampsite({
+				variables: {
+					campID,
+					streetAddress,
+					city,
+					state,
+					zipCode,
+				},
+			});
+			props.setStep(3);
+		} catch (e) {
+			console.log(e);
+		}
+	};
+
+	return (
+		<div>
+			<h1 className="margin-top col-12">Where are you located?</h1>
+
+			<div>
+				<div className="flex-column margin-top">
 					{/* TODO: add address auto suggest */}
 					<label>Street Address:</label>
 					<p className="label-desc"></p>
-					<input></input>
+					<input
+						type="text"
+						id="streetAddress"
+						onChange={handleOnChange}
+					></input>
 				</div>
 				<div className="flex-column margin-top">
 					{/* TODO: add address auto suggest */}
 					<label>City:</label>
 					<p className="label-desc"></p>
-					<input></input>
+					<input type="text" id="city" onChange={handleOnChange}></input>
 				</div>
 				<div className="flex-column margin-top">
 					<label>State:</label>
 					<Select
+						onChange={({ value }) => setState(value)}
 						options={optionStates}
 						theme={customTheme}
 						className="flex-column input-margin "
@@ -100,10 +144,15 @@ const Step2 = () => {
 					{/* TODO: add address auto suggest */}
 					<label>Zip Code:</label>
 					<p className="label-desc"></p>
-					<input></input>
+					<input id="zipCode" onChange={handleOnChange}></input>
 				</div>
-			</form>
-		</>
+				<div className="flex-row justify-center">
+					<button className="btn" onClick={handleClick}>
+						Next
+					</button>
+				</div>
+			</div>
+		</div>
 	);
 };
 export default Step2;

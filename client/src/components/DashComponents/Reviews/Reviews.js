@@ -11,7 +11,7 @@ const Reviews = () => {
       {reviewData &&
         reviewData.map((review) => (
           <div key={review._id}>
-            <img src={review.image} alt='campsite'></img>
+            <img src={review.image} className="img" alt='campsite'></img>
             <h5>{review.campsite}</h5>
             <p>Rating: {review.starIcon}</p>
             <p>
