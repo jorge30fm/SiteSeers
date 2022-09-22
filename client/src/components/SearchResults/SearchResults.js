@@ -42,7 +42,7 @@ function SearchResults(props) {
     <div>
       <div>
         {campsiteArray.map((campsite) => (
-          <div key={campsite._id}>{campsite.name}</div>
+          <ListingCard key={campsite._id} campsite={campsite}></ListingCard>
         ))}
       </div>
     </div>
