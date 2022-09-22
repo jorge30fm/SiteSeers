@@ -9,59 +9,59 @@ import Carousel from "../../components/Carousel/Carousel";
 import "./PayConfirm.css";
 
 const PayConfirm = () => {
-	const { id: reservationID } = useParams();
+  const { id: reservationID } = useParams();
 
-	const navigate = useNavigate();
-	if (!Auth.loggedIn()) {
-		navigate("/login");
-	}
-	const { loading, data } = useQuery(QUERY_USER_RESERVATIONS);
-	if (loading) {
-		return <div>Loading ...</div>;
-	}
+  const navigate = useNavigate();
+  if (!Auth.loggedIn()) {
+    navigate("/login");
+  }
+  const { loading, data } = useQuery(QUERY_USER_RESERVATIONS);
+  if (loading) {
+    return <div>Loading ...</div>;
+  }
 
-	const userReservationsList = data?.me.reservationHistory || {};
-	const latestReservation =
-		userReservationsList[userReservationsList.length - 1];
+  const userReservationsList = data?.me.reservationHistory || {};
+  const latestReservation =
+    userReservationsList[userReservationsList.length - 1];
 
-	console.log(latestReservation);
+  console.log(latestReservation);
 
-	return (
-		<main>
-			<section className="flex-column align-center margin-top">
-				<h2 className="font-bigger margin-top">You're all set!</h2>
-			</section>
-			<div className="flex-column align-center margin-top">
-      <Carousel campsite={latestReservation.campsite} />
-				<section className="flex-column align-center">
-					<h2>{latestReservation.campsite.name}</h2>
-					<h3>
-						{latestReservation.campsite.city},{" "}
-						{latestReservation.campsite.state}
-					</h3>
-				</section>
-				<section className="flex-row justify-center margin-top">
-					<p className="col-12 text-center">
-						{latestReservation.reservationStartDate}
-					</p>
+  return (
+    <main>
+      <section className="flex-column align-center padding">
+        <h2 className="font-bigger margin-top">You're all set!</h2>
+      </section>
+      <div className="flex-column align-center margin-top">
+        <Carousel campsite={latestReservation.campsite} />
+        <section className="margin-top flex-column align-center">
+          <h2>{latestReservation.campsite.name}</h2>
+          <h3>
+            {latestReservation.campsite.city},{" "}
+            {latestReservation.campsite.state}
+          </h3>
+        </section>
+        <section className="flex-row justify-center margin-top">
+          <p className="col-12 text-center">
+            {latestReservation.reservationStartDate}
+          </p>
 
-					<p className="col-12 text-center">to</p>
+          <p className="col-12 text-center">to</p>
 
-					<p className="col-12 text-center">
-						{latestReservation.reservationEndDate}
-					</p>
-				</section>
-				<section className="flex-column align-center margin-top">
-					<h3>Owner's Contact Information:</h3>
-					<h4>Phone: {latestReservation.campsite.phone}</h4>
-					<h4>Email: {latestReservation.campsite.email}</h4>
-				</section>
-				<Link to="/">
-					<button className="margin-top btn btn-long">Finish</button>
-				</Link>
-			</div>
-		</main>
-	);
+          <p className="col-12 text-center">
+            {latestReservation.reservationEndDate}
+          </p>
+        </section>
+        <section className="flex-column align-center margin-top padding">
+          <h3>Owner's Contact Information:</h3>
+          <h4>Phone: {latestReservation.campsite.phone}</h4>
+          <h4>Email: {latestReservation.campsite.email}</h4>
+          <Link to="/">
+            <button className="margin-top btn btn-long">Finish</button>
+          </Link>
+        </section>
+      </div>
+    </main>
+  );
 };
 
 export default PayConfirm;
