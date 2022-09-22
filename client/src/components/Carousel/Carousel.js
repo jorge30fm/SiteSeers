@@ -9,14 +9,17 @@ import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
 const images = [{ img: camping1 }, { img: camping2 }, { img: camping3 }];
 
-function Carousel() {
+function Carousel(props) {
   const [currImg, setCurrImg] = useState(0);
-
+  const { campsite } = props;
+  console.log("CAMPSITES", campsite);
   return (
     <div className="carousel">
       <div
         className="carouselInner"
-        style={{ backgroundImage: `url(${images[currImg].img})` }}
+        style={{
+          backgroundImage: `url(https://res.cloudinary.com/dxs0geixs/image/upload/c_scale,w_150/v1663797068/${campsite.image})`,
+        }}
       >
         <div
           className="left carouselArrow"
