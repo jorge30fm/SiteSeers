@@ -17,15 +17,16 @@ const server = new ApolloServer({
 });
 
 const app = express();
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-// console.log('directory-name 👉️', __dirname);
-// console.log(path.join(__dirname, '/dist', 'index.html'));
+const __filename = fileURLToPath(import.meta.url);
+console.log (__filename)
+const __dirname = path.dirname(__filename);
+console.log('directory-name 👉️', __dirname);
+console.log(path.join(__dirname, '/dist', 'index.html'));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// Serve up static assets
+// Serve up static assets 
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static(path.join(__dirname, "../client/build")));
 // }
