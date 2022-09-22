@@ -102,10 +102,10 @@ const resolvers = {
 			);
 		},
 		//adds object of activities to the campsite collection
-		addActivities: async (parent, { campsiteID, ...args }, context) => {
+		addActivities: async (parent, {  campID, ...args }, context) => {
 			if (context.user) {
 				const updatedCampsite = await Campsite.findOneAndUpdate(
-					{ _id: campsiteID },
+					{ _id:  campID },
 					{ activities: { ...args } },
 					{ new: true }
 				).populate("campsiteReviews");
@@ -116,10 +116,10 @@ const resolvers = {
 			);
 		},
 		// adds ammenities to a campsite only if user is logged in
-		addAmenities: async (parent, { campsiteID, ...args }, context) => {
+		addAmenities: async (parent, {  campID, ...args }, context) => {
 			if (context.user) {
 				const updatedCampsite = await Campsite.findOneAndUpdate(
-					{ _id: campsiteID },
+					{ _id:  campID },
 					{ amenities: { ...args } },
 					{ new: true }
 				).populate("campsiteReviews");
@@ -130,10 +130,10 @@ const resolvers = {
 			);
 		},
 		// adds terrain type to a campsite only if user is logged in. Can have multiple types of terrain
-		addTerrain: async (parent, { campsiteID, ...args }, context) => {
+		addTerrain: async (parent, {  campID, ...args }, context) => {
 			if (context.user) {
 				const updatedCampsite = await Campsite.findOneAndUpdate(
-					{ _id: campsiteID },
+					{ _id:  campID },
 					{ terrain: { ...args } },
 					{ new: true }
 				).populate("campsiteReviews");
@@ -147,7 +147,7 @@ const resolvers = {
 		editCampsite: async (parent, args, context) => {
 			if (context.user) {
 				const updatedCampsite = await Campsite.findOneAndUpdate(
-					{ _id: args._id },
+					{ _id: args.campID },
 					args,
 					{ new: true, runValidators: true }
 				).populate("campsiteReviews");
@@ -230,12 +230,12 @@ const resolvers = {
 		//if logged in, adds a review to a campsite
 		addCampsiteReview: async (
 			parent,
-			{ campsiteID, rating, reviewText },
+			{  campID, rating, reviewText },
 			context
 		) => {
 			if (context.user) {
 				const updatedCampsite = await Campsite.findOneAndUpdate(
-					{ _id: campsiteID },
+					{ _id:  campID },
 					{
 						$push: {
 							campsiteReviews: {

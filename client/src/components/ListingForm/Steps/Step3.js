@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Select from "react-select";
+import {
+	ADD_ACTIVITIES,
+	ADD_TERRAIN,
+	ADD_AMENITIES,
+} from "../../../utils/mutations";
+import { useMutation } from "@apollo/client";
 
-const optionAmmenities = [
-	{ value: "parking", label: "Parking" },
+const optionAmenities = [
+	{ value: "parktrueing", label: "Parking" },
 	{ value: "wheelchairAccessible", label: "Wheelchair Accessible" },
 	{ value: "petAllowed", label: "Pets Allowed" },
 	{ value: "toilets", label: "Toilets" },
@@ -40,7 +46,14 @@ const optionTerrain = [
 	{ value: "desert", label: "Desert" },
 	{ value: "cave", label: "Cave" },
 ];
-const Step3 = () => {
+
+const Step3 = (props) => {
+	const [addTerrain] = useMutation(ADD_TERRAIN);
+	const [addActivities] = useMutation(ADD_ACTIVITIES);
+	const [addAmenities] = useMutation(ADD_AMENITIES);
+	const [selectedTerrain, setSelectedTerrain] = useState([]);
+	const [selectedAmenity, setSelectedAmenity] = useState([]);
+	const [selectedActivity, setSelectedActivity] = useState([]);
 	function customTheme(theme) {
 		return {
 			...theme,
@@ -52,16 +65,78 @@ const Step3 = () => {
 			},
 		};
 	}
+
+	function handleTerrainChange(e) {
+		setSelectedTerrain(Array.isArray(e) ? e.map((x) => x.value) : []);
+	}
+	function handleAmenityChange(e) {
+		setSelectedAmenity(Array.isArray(e) ? e.map((x) => x.value) : []);
+	}
+	function handleActivityChange(e) {
+		setSelectedActivity(Array.isArray(e) ? e.map((x) => x.value) : []);
+	}
+
+	let terrain = useRef({ campID: props.campID });
+	let amenities = useRef({ campID: props.campID });
+	let activities = useRef({ campID: props.campID });
+
+	useEffect(() => {
+		if (selectedTerrain.length) {
+			terrain.current = Object.assign(
+				...selectedTerrain.map((k) => ({ [k]: true }))
+			);
+			terrain.current.campID = props.campID;
+		} else {
+			terrain.current = { campID: props.campID };
+		}
+		if (selectedActivity.length) {
+			activities.current = Object.assign(
+				...selectedActivity.map((k) => ({ [k]: true }))
+			);
+			activities.current.campID = props.campID;
+		} else {
+			activities.current = { campID: props.campID };
+		}
+		if (selectedAmenity.length) {
+			amenities.current = Object.assign(
+				...selectedAmenity.map((k) => ({ [k]: true }))
+			);
+			amenities.current.campID = props.campID;
+		} else {
+			amenities.current = { campID: props.campID };
+		}
+	});
+
+	const handleClick = async () => {
+		try {
+			await addTerrain({
+				variables: terrain.current ,
+			});
+			await addActivities({
+				variables: activities.current
+			});
+			await addAmenities({
+				variables: amenities.current
+			})
+			props.setStep(4)
+		} catch (e) {
+			console.log(e);
+		}
+	};
 	return (
 		<>
 			<h1 className="margin-top col-12">
-				Let's guests know what makes your campsite special!
+				Let guests know what makes your campsite special!
 			</h1>
 
-			<form>
+			<div>
 				<div className="flex-column margin-top">
 					<label>Terrain:</label>
 					<Select
+						value={optionTerrain.filter((obj) =>
+							selectedTerrain.includes(obj.value)
+						)}
+						onChange={handleTerrainChange}
 						options={optionTerrain}
 						theme={customTheme}
 						className="flex-column input-margin "
@@ -75,7 +150,11 @@ const Step3 = () => {
 				<div className="flex-column margin-top">
 					<label>Amenities:</label>
 					<Select
-						options={optionAmmenities}
+						value={optionAmenities.filter((obj) =>
+							selectedAmenity.includes(obj.value)
+						)}
+						onChange={handleAmenityChange}
+						options={optionAmenities}
 						theme={customTheme}
 						className="flex-column input-margin "
 						placeholder="Select Amenities"
@@ -88,6 +167,10 @@ const Step3 = () => {
 				<div className="flex-column margin-top">
 					<label>Activities:</label>
 					<Select
+						value={optionActivities.filter((obj) =>
+							selectedActivity.includes(obj.value)
+						)}
+						onChange={handleActivityChange}
 						options={optionActivities}
 						theme={customTheme}
 						className="flex-column input-margin "
@@ -98,7 +181,12 @@ const Step3 = () => {
 						noOptionsMessage={() => "No more activities :("}
 					/>
 				</div>
-			</form>
+				<div className="flex-row justify-center">
+				<button className="btn " onClick={handleClick}>
+					Next
+				</button>
+				</div>
+			</div>
 		</>
 	);
 };
