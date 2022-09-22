@@ -11,8 +11,37 @@ function Carousel(props) {
   const imagesArray = [...campsite.images];
 
   if (!imagesArray.length) {
-    return <div className="carousel"></div>;
-    // setHasImages(false)
+    return (
+      <div className="carousel">
+        <div
+          className="carouselInner"
+          style={{
+            backgroundColor: "var(--light-green)",
+          }}
+        >
+          <div
+            className="left carouselArrow"
+            onClick={() => {
+              currImg > 0 && setCurrImg(currImg - 1);
+            }}
+          >
+            <ArrowBackIosIcon />
+          </div>
+          <div className="center">
+            <BookmarkBorderIcon className="save" style={{ fontSize: 30 }} />
+            <h1 className="rate">${campsite.price}</h1>
+          </div>
+          <div
+            className="right carouselArrow"
+            onClick={() => {
+              currImg < imagesArray.length - 1 && setCurrImg(currImg + 1);
+            }}
+          >
+            <ArrowForwardIosIcon />
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
