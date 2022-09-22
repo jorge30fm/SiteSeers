@@ -54,41 +54,11 @@ const Account = () => {
 		myWidget.open();
 	};
 
-	const handleDivClick = (e) => {
-		const clickedDiv = e.target;
-		const text = clickedDiv.textContent;
-		const inputEl = document.createElement("textarea");
-		inputEl.classList.add("input-to-text");
-		inputEl.value = text;
-		inputEl.addEventListener("blur", divOnBlur);
-		clickedDiv.replaceWith(inputEl);
-		inputEl.focus();
-	};
-
-	const divOnBlur = (e) => {
-		const inputEl = e.target;
-		const text = inputEl.value;
-
-		const divEl = document.createElement("p");
-		divEl.classList.add("text-to-input");
-		divEl.textContent = text;
-		divEl.addEventListener("click", handleDivClick);
-		inputEl.replaceWith(divEl);
-		// eslint-disable-next-line default-case
-	};
-
 	const profilePicStyle = {
 		backgroundImage: `url(https://res.cloudinary.com/dxs0geixs/image/upload/c_scale,w_135/v1663680167/${userInfo.profilePicture})`,
 		backgroundSize: "cover",
 	};
-	const handleSave = async () => {
-		try {
-			await editUser({ bio, email, phone });
-			console.log("success");
-		} catch (e) {
-			console.log(e);
-		}
-	};
+
 	return (
 		<div>
 			<div className="flex-row justify-space-between">
@@ -111,7 +81,7 @@ const Account = () => {
 				<div className="account-input-div flex-column">
 					<p>About:</p>
 					<div className="input-container about-container">
-						<p onClick={handleDivClick} className="text-to-input">
+						<p className="text-to-input">
 							{userInfo.bio}
 						</p>
 					</div>
@@ -119,7 +89,7 @@ const Account = () => {
 				<div className="account-input-div flex-column ">
 					<p>Email:</p>
 					<div className="input-container">
-						<p onClick={handleDivClick} className="text-to-input ">
+						<p className="text-to-input ">
 							{userInfo.email}
 						</p>
 					</div>
@@ -127,7 +97,7 @@ const Account = () => {
 				<div className="account-input-div flex-column">
 					<p>Phone:</p>
 					<div className="input-container">
-						<p onClick={handleDivClick} className="text-to-input">
+						<p className="text-to-input">
 							{userInfo.phone}
 						</p>
 					</div>
@@ -135,7 +105,7 @@ const Account = () => {
 			</div>
 			<div className="btn-container">
 			<Link to="/edit-account">
-				<button className="btn">Edit</button>
+				<button className="btn btn-long">Edit</button>
 			</Link>
 			</div>
 		</div>

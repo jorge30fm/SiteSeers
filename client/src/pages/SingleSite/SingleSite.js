@@ -54,7 +54,7 @@ const SingleSite = () => {
 					<p>{campsite.description}</p>
 				</section>
 				<div className="btn-container">
-					<button className="btn" onClick={handleClick}>
+					<button className="btn btn-long" onClick={handleClick}>
 						Reserve
 					</button>
 				</div>

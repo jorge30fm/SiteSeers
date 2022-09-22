@@ -28,7 +28,7 @@ const PayConfirm = () => {
 
 	return (
 		<main>
-			<section className="flex-column align-center top-margin">
+			<section className="flex-column align-center margin-top">
 				<h2 className="font-bigger margin-top">You're all set!</h2>
 			</section>
 			<div className="flex-column align-center margin-top">
@@ -57,7 +57,7 @@ const PayConfirm = () => {
 					<h4>Email: {latestReservation.campsite.email}</h4>
 				</section>
 				<Link to="/">
-					<button className="margin-top btn">Finish</button>
+					<button className="margin-top btn btn-long">Finish</button>
 				</Link>
 			</div>
 		</main>

@@ -145,7 +145,7 @@ const typeDefs = gql`
 			numberOfCampers: Int
 			active: Boolean
 		): User
-		deleteReservation(reservationID: ID!): User
+		deleteReservation(_id: ID!): User
 		addCampsite(
 			name: String!
 			price: Int!

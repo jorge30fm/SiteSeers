@@ -181,8 +181,8 @@ export const ADD_RESERVATION = gql`
 `;
 //deleteReservation
 export const DELETE_RESERVATION = gql`
-	mutation deleteReservation($reservationID: ID!) {
-		deleteReservation(reservationID: $reservationID) {
+	mutation deleteReservation($_id: ID!) {
+		deleteReservation(_id: $_id) {
 			_id
 			username
 			firstName

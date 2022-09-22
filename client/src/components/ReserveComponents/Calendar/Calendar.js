@@ -44,7 +44,7 @@ const CalendarView = (props) => {
 			/>
 			<div className="btn-container calendar-section">
 				<button
-					className="btn"
+					className="btn btn-long"
 					onClick={() => {
 						setShowCalendar(false);
 						setShowRequest(true);
