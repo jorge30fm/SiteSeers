@@ -6,7 +6,6 @@ import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
 function Carousel(props) {
   const [currImg, setCurrImg] = useState(0);
-  // const [hasImages, setHasImages] = useState(true);
   const { campsite } = props;
   const imagesArray = [...campsite.images];
 
@@ -28,7 +27,7 @@ function Carousel(props) {
             <ArrowBackIosIcon />
           </div>
           <div className="center">
-            <BookmarkBorderIcon className="save" style={{ fontSize: 30 }} />
+            <BookmarkBorderIcon className="save" style={{ fontSize: 30, opacity: 0 }} />
             <h1 className="rate">${campsite.price}</h1>
           </div>
           <div
@@ -61,7 +60,7 @@ function Carousel(props) {
           <ArrowBackIosIcon />
         </div>
         <div className="center">
-          <BookmarkBorderIcon className="save" style={{ fontSize: 30 }} />
+          <BookmarkBorderIcon className="save" style={{ fontSize: 30, opacity: 0 }} />
           <h1 className="rate">${campsite.price}</h1>
         </div>
         <div

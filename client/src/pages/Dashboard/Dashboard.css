@@ -1,7 +1,3 @@
-.dash-section {
-  margin: 30px;
-}
-
 .tab-container {
   border-bottom: 1px solid var(--light-green);
 }
@@ -21,9 +17,4 @@
 
 .dash-border-top {
   border-top: 2px solid var(--dark-green);
-}
-
-.wrapper-link {
-  color: var(--dark-green);
-  text-decoration: none;
 }

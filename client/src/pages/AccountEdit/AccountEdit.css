@@ -22,18 +22,8 @@
   color: var(--bone);
 }
 
-.member-since {
-  font-size: smaller;
-  color: var(--light-green);
-}
-
-.info-container {
-  display: flex;
-  align-items: center;
-  padding-left: 7px;
-  border: 1px solid var(--light-green);
-  border-radius: 5px;
-  height: 35px;
+.account-div {
+  margin: 20px 0;
 }
 
 .about-container {

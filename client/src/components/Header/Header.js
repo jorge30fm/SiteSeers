@@ -11,7 +11,9 @@ const Header = (props) => {
   return (
     <header>
       <Link to="/">
-        <img className="header-icon" src={logo} alt="logo"></img>
+        <div className="logo-container flex-row justify-center align-center">
+          <img className="logo" src={logo} alt="logo"></img>
+        </div>
       </Link>
       <div className={`${menuOpen && "page-cover"}`}></div>
 
