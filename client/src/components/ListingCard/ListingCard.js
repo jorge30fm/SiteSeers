@@ -17,7 +17,6 @@ const ListingCard = (props) => {
 		};
 		return (
 			<div className="listingCard">
-				{/* TODO: On click, redirect to single campsite page */}
 				<Carousel campsite={campsite}></Carousel>
 
 				<div className="basicInfo" onClick={handleClickReservation}>
@@ -31,7 +30,6 @@ const ListingCard = (props) => {
 	} else {
 		return (
 			<div className="listingCard">
-				{/* TODO: On click, redirect to single campsite page */}
 				<Carousel campsite={campsite}></Carousel>
 
 				<div className="basicInfo" onClick={handleClickCampsite}>

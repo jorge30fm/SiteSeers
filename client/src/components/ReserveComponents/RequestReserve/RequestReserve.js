@@ -55,32 +55,27 @@ const RequestReserve = (props) => {
 	return (
 		<div>
 			<Carousel campsite={campsite} />
-			<section className="reserve-section flex-column align-start">
+			<section className="padding flex-column align-start">
 				<h1>{campsite.name}</h1>
 				<h3>
-					{" "}
 					{campers} camper{campers > 1 && "s"}
 				</h3>
 				<div>
-					<div className="flex-row justify-space-between margin-top">
-						<p>{reservationStartDate}</p>
-						<p>through</p>
-						<p>{reservationEndDate}</p>
+					<div className="flex-row margin-top">
+						<p>{reservationStartDate} through {reservationEndDate}</p>
 					</div>
-					<div className="flex-row justify-space-between">
+					<div className="flex-row margin-top justify-space-between">
 						<p>
 							${campsite.price} x {totalNights} night{totalNights > 1 && "s"}
 						</p>
 						<p>${totalPrice}</p>
 					</div>
 					<div className="flex-row justify-space-between margin-top">
-						<p>Total: </p>
-						<p>${totalPrice}</p>
+						<p className="total">Total: </p>
+						<p className="total">${totalPrice}</p>
 					</div>
-					{/* for each for div below */}
-
-					<div className="flex-row justify-center">
-						<button className="btn" onClick={handleClick}>
+					<div className="btn-container margin-top">
+						<button className="btn btn-long" onClick={handleClick}>
 							Reserve
 						</button>
 					</div>

@@ -20,11 +20,11 @@ const Dashboard = () => {
   }
 
   return (
-    <main>
-      <section className="dash-section flex-row justify-center">
+    <main className="padding">
+      <section className="flex-row">
         <h2>Dashboard</h2>
       </section>
-      <section className="dash-section">
+      <section className="margin-top">
         <div className="tab-container flex-row">
           <div
             className={`tab ${accountSelected && "selected"}`}
@@ -60,7 +60,7 @@ const Dashboard = () => {
             <p>Listings</p>
           </div>
           {/* Can uncomment after MVP presentation. ↓↓↓ */}
-          <div
+          {/* <div
             className={`tab ${reviewsSelected && "selected"}`}
             onClick={() => {
               setAccountSelected(false);
@@ -70,7 +70,7 @@ const Dashboard = () => {
             }}
           >
             <p>Reviews</p>
-          </div>
+          </div> */}
         </div>
         <div className="tab-content-container">
           <div className="tab-content">{accountSelected && <Account />}</div>

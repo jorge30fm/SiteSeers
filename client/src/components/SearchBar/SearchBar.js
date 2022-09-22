@@ -1,4 +1,5 @@
 import React from "react";
+import "./SearchBar.css";
 
 function SearchBar(props) {
   const { setSearchState } = props;
@@ -11,21 +12,23 @@ function SearchBar(props) {
 
   return (
     <section className="mountain-bg">
-      <form>
+      <form className="search-form flex-row align-center">
         <input
           type="text"
           placeholder="Find a New Adventure"
           name="search"
           id="search-bar"
         />
-        <button
-          type="submit"
-          id="search-btn"
-          className="btn"
-          onClick={handleSubmit}
-        >
-          Search
-        </button>
+        <div className="btn-container">
+          <button
+            type="submit"
+            id="search-btn"
+            className="btn"
+            onClick={handleSubmit}
+          >
+            Search
+          </button>
+        </div>
       </form>
     </section>
   );

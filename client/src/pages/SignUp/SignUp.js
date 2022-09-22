@@ -117,9 +117,11 @@ const Signup = () => {
             </label>
           </div>
           <div className="btn-container margin-top">
-            <button className="btn" type="submit">
-              Sign Up
-            </button>
+            <div>
+              <button className="btn btn-long" type="submit">
+                Sign Up
+              </button>
+            </div>
           </div>
         </form>
         {error && (
