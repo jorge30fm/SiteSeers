@@ -14,21 +14,20 @@ const Step1 = (props) => {
 		switch (e.target.id) {
 			case "name":
 				setName(e.target.value);
-				console.log(name);
 				break;
 			case "price":
 				setPrice(parseInt(e.target.value));
-				console.log(price);
 				break;
 		}
 	};
 	const handleClick = async () => {
 		try {
-			await addCampsite({
+			const newCampsite = await addCampsite({
 				variables: { name, price },
 			});
-			console.log('success')
+			props.setCampID(newCampsite.data.addCampsite._id);
 
+			props.setStep(2);
 		} catch (e) {
 			console.log(e);
 		}
@@ -50,9 +49,11 @@ const Step1 = (props) => {
 					<p className="label-desc">per night</p>
 					<input type="number" id="price" onChange={handleOnChange}></input>
 				</div>
-				<button className="btn" onClick={handleClick}>
-					Next
-				</button>
+				<div className="flex-row justify-center">
+					<button className="btn " onClick={handleClick}>
+						Next
+					</button>
+				</div>
 			</div>
 		</>
 	);
