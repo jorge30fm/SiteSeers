@@ -1,0 +1,6 @@
+footer {
+	background-size: cover;
+	background-color: var(--dark-green);
+	color: var(--bone);
+	padding: 20px;
+}

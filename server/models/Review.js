@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import dateFormat from "../utils/dateFormat.js";
 
-const { Schema, model } = mongoose;
+const { Schema } = mongoose;
 
 const reviewSchema = new Schema(
 	{
@@ -20,7 +20,7 @@ const reviewSchema = new Schema(
 			default: Date.now,
 			get: (timestamp) => dateFormat(timestamp),
 		},
-		user: {
+		username: {
 			type: String,
 			required: true,
 		},
@@ -32,6 +32,4 @@ const reviewSchema = new Schema(
 	}
 );
 
-const Review = model("Review", reviewSchema);
-
-export default Review;
+export default reviewSchema;

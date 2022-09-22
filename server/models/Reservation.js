@@ -1,23 +1,45 @@
 import mongoose from "mongoose";
 import dateFormat from "../utils/dateFormat.js";
-const { Schema, model } = mongoose;
 
-const reservationSchema = new Schema({
-	totalPrice: {
-		type: Number,
-		required: true,
+const { Schema } = mongoose;
+
+const reservationSchema = new Schema(
+	{
+		totalPrice: {
+			type: Number,
+			required: true,
+		},
+		campsite: {
+			type: Schema.Types.ObjectId,
+			ref: "Campsite",
+		},
+		createdAt: {
+			type: Date,
+			default: Date.now,
+			get: (timestamp) => dateFormat(timestamp),
+		},
+		reservationStartDate: {
+			type: String
+		},
+		reservationEndDate: {
+			type: String
+		},
+		numberOfCampers: {
+			type: Number,
+			default: 1
+		},
+		active: {
+			type: Boolean,
+			default: true
+		}
 	},
-	campsite: {
-		type: Schema.Types.ObjectId,
-		ref: "Campsite",
-	},
-	reservationDate: {
-		type: Date,
-		get: (timestamp) => dateFormat(timestamp),
-	},
-});
+	{
+		toJSON: {
+			getters: true,
+		},
+	}
+);
 
-const Reservation = model("Reservation", reservationSchema);
 
-export default Reservation;
 
+export default reservationSchema;
