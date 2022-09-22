@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useMutation, useQuery } from "@apollo/client";
-import { EDIT_USER } from "../../../utils/mutations";
-import { QUERY_USER_INFO } from "../../../utils/queries";
+import { EDIT_USER } from "../../utils/mutations";
+import { QUERY_USER_INFO } from "../../utils/queries";
 import "./Account.css";
 import Edit from "@mui/icons-material/Edit";
-import Auth from "../../../utils/auth";
+import Auth from "../../utils/auth";
 
 const EditProfile = () => {
   const [formState, setFormState] = useState({
@@ -18,60 +18,59 @@ const EditProfile = () => {
   const { loading, data } = useQuery(QUERY_USER_INFO);
   const userInfo = data?.me || {};
 
-	var myWidget = window.cloudinary.createUploadWidget(
-		{
-			cloudName: "dxs0geixs",
-			uploadPreset: "irkknuii",
-		},
-		async (error, result) => {
-			if (!error && result && result.event === "success") {
-				const { public_id, format } = result.info;
-				console.log(result.info);
-				console.log(public_id);
+  var myWidget = window.cloudinary.createUploadWidget(
+    {
+      cloudName: "dxs0geixs",
+      uploadPreset: "irkknuii",
+    },
+    async (error, result) => {
+      if (!error && result && result.event === "success") {
+        const { public_id, format } = result.info;
+        console.log(result.info);
+        console.log(public_id);
 
-				try {
-					editUser({
-						variables: { profilePicture: `${public_id}.${format}` },
-					});
-				} catch (e) {
-					console.log(e);
-				}
-			}
-		}
-	);
+        try {
+          editUser({
+            variables: { profilePicture: `${public_id}.${format}` },
+          });
+        } catch (e) {
+          console.log(e);
+        }
+      }
+    }
+  );
 
   const handleOpenWidget = () => {
-		myWidget.open();
-	};
-	// const handleDivClick = (e) => {
-	// 	const clickedDiv = e.target;
-	// 	const text = clickedDiv.textContent;
-	// 	const inputEl = document.createElement("textarea");
-	// 	inputEl.classList.add("input-to-text");
-	// 	inputEl.value = text;
-	// 	inputEl.addEventListener("blur", divOnBlur);
-	// 	clickedDiv.replaceWith(inputEl);
-	// 	inputEl.focus();
-	// };
+    myWidget.open();
+  };
+  // const handleDivClick = (e) => {
+  // 	const clickedDiv = e.target;
+  // 	const text = clickedDiv.textContent;
+  // 	const inputEl = document.createElement("textarea");
+  // 	inputEl.classList.add("input-to-text");
+  // 	inputEl.value = text;
+  // 	inputEl.addEventListener("blur", divOnBlur);
+  // 	clickedDiv.replaceWith(inputEl);
+  // 	inputEl.focus();
+  // };
 
-	// const divOnBlur = (e) => {
-	// 	const inputEl = e.target;
-	// 	const text = inputEl.value;
-	// 	const divEl = document.createElement("p");
-	// 	divEl.classList.add("text-to-input");
-	// 	divEl.textContent = text;
-	// 	divEl.addEventListener("click", handleDivClick);
-	// 	inputEl.replaceWith(divEl);
-	// };
-	if (loading) {
-		return <div>Loading...</div>;
-	}
+  // const divOnBlur = (e) => {
+  // 	const inputEl = e.target;
+  // 	const text = inputEl.value;
+  // 	const divEl = document.createElement("p");
+  // 	divEl.classList.add("text-to-input");
+  // 	divEl.textContent = text;
+  // 	divEl.addEventListener("click", handleDivClick);
+  // 	inputEl.replaceWith(divEl);
+  // };
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   const profilePicStyle = {
     backgroundImage: `url(https://res.cloudinary.com/dxs0geixs/image/upload/c_scale,w_135/v1663680167/${userInfo.profilePicture})`,
     backgroundSize: "cover",
-  }
-
+  };
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -91,7 +90,7 @@ const EditProfile = () => {
       const { data } = await editUser({
         variables: { ...formState },
       });
-      console.log("this is data ", data)
+      console.log("this is data ", event);
       Auth.login(data.editUser.token);
     } catch (e) {
       console.error(e);
@@ -162,13 +161,16 @@ const EditProfile = () => {
           </div>
           <div className="btn-container margin-top">
             <button className="btn" type="submit">
-              Save
+              Update
             </button>
+            <Link to="/">
+              <button className="btn">Cancel</button>
+            </Link>
           </div>
         </form>
         {error && (
           <div className="margin-top flex-column align-center">
-            Somthing went wrong.
+            If you're not going to change anything, just hit cancel.
           </div>
         )}
       </div>
