@@ -11,7 +11,7 @@ function Carousel(props) {
   const imagesArray = [...campsite.images];
 
   if (!imagesArray.length) {
-    return <div className="carousel"></div>
+    return <div className="carousel"></div>;
     // setHasImages(false)
   }
 

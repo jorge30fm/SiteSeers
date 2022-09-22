@@ -51,6 +51,7 @@ export const QUERY_USER_LISTINGS_BASIC = gql`
         zipCode
         price
         active
+        images
       }
     }
   }
