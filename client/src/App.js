@@ -22,6 +22,7 @@ import TermsOfService from "./pages/Policies/TermsService";
 import PrivacyPolicy from "./pages/Policies/PrivacyPolicy";
 import CancelConfirm from "./pages/CancelConfirm/CancelConfirm";
 import AddListing from "./pages/AddListing/AddListing";
+import AccountEdit from "./pages/AccountEdit/Accountedit";
 import NotFound from "./pages/NotFound/NotFound";
 
 const httpLink = createHttpLink({
@@ -63,6 +64,7 @@ function App() {
 						<Route path="/privacy-policy" element={<PrivacyPolicy />} />
 						<Route path="/cancel-confirm" element={<CancelConfirm />} />
 						<Route path="/add-listing" element={<AddListing />} />
+						<Route path="/edit-account" element={<AccountEdit />} />
 						<Route path="*" element={<NotFound />} />
 					</Routes>
 					<Footer />

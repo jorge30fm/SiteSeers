@@ -12,8 +12,8 @@ header {
 }
 
 .header-icon {
-  width: 24px;
-  height: 24px;
+  width: 68px;
+  height: auto;
   color: var(--bone);
   filter: opacity(0.7) drop-shadow(0 0 0 var(--bone));
 }

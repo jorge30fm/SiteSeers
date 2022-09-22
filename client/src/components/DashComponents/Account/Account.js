@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { EDIT_USER } from "../../../utils/mutations";
 import { QUERY_USER_INFO } from "../../../utils/queries";
 import { useMutation, useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
 import "./Account.css";
 import Edit from "@mui/icons-material/Edit";
 
@@ -133,9 +134,9 @@ const Account = () => {
 				</div>
 			</div>
 			<div className="btn-container">
-				<button className="btn" onClick={handleSave}>
-					Save
-				</button>
+			<Link to="/edit-account">
+				<button className="btn">Edit</button>
+			</Link>
 			</div>
 		</div>
 	);
