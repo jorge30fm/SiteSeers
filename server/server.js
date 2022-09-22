@@ -16,7 +16,7 @@ const server = new ApolloServer({
   context: authMiddleware,
 });
 
-// const app = express();
+const app = express();
 // const __filename = fileURLToPath(import.meta.url);
 // console.log (__filename)
 // const __dirname = path.dirname(__filename);
