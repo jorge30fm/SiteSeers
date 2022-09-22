@@ -1,16 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLazyQuery } from "@apollo/client";
 import { QUERY_CAMPSITE } from "../../utils/queries";
-// import ListingCard from "../../components/ListingCard/ListingCard";
+import ListingCard from "../../components/ListingCard/ListingCard";
 
 function SearchResults(props) {
   const { searchState } = props;
+  const [getData, setGetData] = useState({});
 
   const [queryCampsite, { error }] = useLazyQuery(QUERY_CAMPSITE);
 
-  let resultsArray;
-
   useEffect(() => {
+    console.log(searchState);
     if (searchState === "") {
       return;
     }
@@ -20,13 +20,7 @@ function SearchResults(props) {
         const { data } = await queryCampsite({
           variables: { city: searchState },
         });
-        resultsArray = data?.campsites || {};
-        if (!resultsArray.length) {
-          return <p>Nothing here</p>;
-        }
-        resultsArray.forEach((campsite) => {
-          console.log("CAMPSITE.NAME", campsite.name);
-        });
+        setGetData(data);
       } catch (e) {
         console.error(e);
       }
@@ -34,11 +28,29 @@ function SearchResults(props) {
     fetchData();
   }, [searchState]);
 
+  const campsiteArray = getData.campsites;
+  console.log(campsiteArray);
+  // if (!resultsArray.length) {
+  //   return <p>Nothing here</p>;
+  // }
+
+  if (!campsiteArray) {
+    return <div></div>;
+  }
+
   return (
     <div>
-      <div> </div>
+      <div>
+        {campsiteArray.map((campsite) => (
+          <div key={campsite._id}>{campsite.name}</div>
+        ))}
+      </div>
     </div>
   );
 }
 
 export default SearchResults;
+
+// resultsArray.forEach((campsite) => {
+//   console.log(campsite);
+// });
