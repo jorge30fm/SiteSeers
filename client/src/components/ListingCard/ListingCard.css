@@ -9,11 +9,17 @@
 }
 .listingCard {
 	margin: 5% 5%;
+	border: 1px solid var(--light-green);
 }
-
+.capitalize {
+	text-transform: capitalize;
+}
 .location {
     color:rgba(9, 69, 28, .6);
 }
 .basicInfo {
     margin: 2% 5% 0 5%;
+}
+.basicInfo:hover {
+	cursor: pointer;
 }

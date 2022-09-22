@@ -8,18 +8,7 @@ import Carousel from "../../components/Carousel/Carousel";
 
 import StarIcon from "@mui/icons-material/Star";
 import AmenitiesDisplay from "../../components/AmenitiesDisplay/AmenitiesDisplay";
-// parking   - PARKING
-// wheelchairAccessible - ACCESSIBLEICON
-// petAllowed    - PETSICON
-// toilets    - WcICON
-// campfire    - FIRE
-// water       -WATERICON
-// showers   - SHOWER
-// trash     -DELETEICON
-// hotTub     -HOTTUB
-// picnicTable    -TABLERESTAURANTICON
-// wifi - WIFIICON
-// cookingEquipment   - GRILL
+
 
 import { QUERY_CAMPSITE } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
@@ -50,8 +39,8 @@ const SingleSite = () => {
 					<StarIcon />
 				</section>
 				<section>
-					<h2>{campsite.name}</h2>
-					<h3>
+					<h2 className='capitalize'>{campsite.name}</h2>
+					<h3 className='capitalize'>
 						{campsite.city}, {campsite.state}
 					</h3>
 				</section>
