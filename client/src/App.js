@@ -57,9 +57,9 @@ function App() {
 						<Route path="/" element={<Dashboard />} />
 						<Route path="/search" element={<SearchPage />} />
 						<Route path="/single-site/:id" element={<SingleSite />} />
-						<Route path="/reserve" element={<ReserveSite />} />
-						<Route path="/pay-confirm" element={<PayConfirm />} />
-						<Route path="/reservation-details" element={<ReserveDetails />} />
+						<Route path="/reserve/:id" element={<ReserveSite />} />
+						<Route path="/pay-confirm/:id" element={<PayConfirm />} />
+						<Route path="/reservation-details/:id" element={<ReserveDetails />} />
 						<Route path="/terms-of-service" element={<TermsOfService />} />
 						<Route path="/privacy-policy" element={<PrivacyPolicy />} />
 						<Route path="/cancel-confirm" element={<CancelConfirm />} />

@@ -42,9 +42,7 @@ const userSchema = new Schema(
 		},
 		bio: {
 			type: String,
-			required: false,
-			minlength: 1,
-			maxLength: 280,
+			default: ''
 		},
 		profilePicture: {
 			type: String

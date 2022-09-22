@@ -49,7 +49,7 @@ function Carousel(props) {
       <div
         className="carouselInner"
         style={{
-          backgroundImage: `url(https://res.cloudinary.com/dxs0geixs/image/upload/c_scale,w_150/v1663797068/${imagesArray[currImg]})`,
+          backgroundImage: `url(https://res.cloudinary.com/dxs0geixs/image/upload/c_fill,f_auto,g_auto,h_400/v1663797068/${imagesArray[currImg]})`,
         }}
       >
         <div

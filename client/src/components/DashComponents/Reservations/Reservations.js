@@ -6,39 +6,34 @@ import { useQuery } from "@apollo/client";
 import { QUERY_USER_RESERVATIONS } from "../../../utils/queries.js";
 
 const Reservations = () => {
-  const { loading, data } = useQuery(QUERY_USER_RESERVATIONS);
-  const reservationInfo = data?.me || [];
-  const reservationArray = reservationInfo.reservationHistory;
-  console.log("RESERVATION INFO", reservationArray);
-  if (loading) {
-    return <p>Loading!</p>;
-  }
-  if (!reservationArray) {
-    return <p> There is nothing here!</p>;
-  }
-  return (
-    <div>
-      {reservationArray.map((reservation) => (
-        <ListingCard key={reservation._id} campsite={reservation}>
-          {reservation.name}
-        </ListingCard>
-      ))}
-      {/* <div>
-        <h3 className="dash-listing-title">Active Listings</h3>
-        <Link className="wrapper-link" to="/reservation-details">
-          <ListingCard />
-        </Link>
-      </div>
-      <div className="dash-border-top">
-        <h3 className="dash-listing-title">Disabled Listings</h3>
-        <p className="nothing-here">There's nothing here!</p>
-      </div>
-      <div className="btn-container padding">
-        <Link to="/add-listing">
-          <button className="btn">Add Listing</button>
-        </Link>
-      </div> */}
-    </div>
-  );
+	const { loading, data } = useQuery(QUERY_USER_RESERVATIONS);
+	const reservationInfo = data?.me || [];
+	const reservationArray = reservationInfo.reservationHistory;
+	if (loading) {
+		return <p>Loading!</p>;
+	}
+	if (!reservationArray.length) {
+		return (
+			<div className="flex-row justify-center">
+				<p className="nothing-here col-12 text-center top-margin"> There is nothing here!</p>
+				<Link to="/search">
+					<button className="btn col-12 top-margin btn-long">Search Campsites</button>
+				</Link>
+			</div>
+		);
+	}
+	return (
+		<div>
+			{reservationArray.map((reservation) => (
+				<ListingCard
+					key={reservation._id}
+					campsite={reservation.campsite}
+					singleReservation={reservation}
+				>
+					{reservation.campsite.name}
+				</ListingCard>
+			))}
+		</div>
+	);
 };
 export default Reservations;

@@ -24,6 +24,7 @@ export const QUERY_USER_RESERVATIONS = gql`
         totalPrice
         reservationStartDate
         reservationEndDate
+        numberOfCampers
         active
         campsite {
           _id
@@ -31,8 +32,11 @@ export const QUERY_USER_RESERVATIONS = gql`
           name
           streetAddress
           city
-          useState
+          state
           zipCode
+          phone
+          email
+          images
         }
       }
     }

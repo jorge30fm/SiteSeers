@@ -10,7 +10,11 @@ const resolvers = {
 					.select("-__v -password")
 					.populate("reservationHistory")
 					.populate("campsiteListings")
-					.populate("userReviews");
+					.populate("userReviews")
+					.populate("reservationHistory.campsite")
+					.populate("campsite.amenities")
+					.populate("campsite.terrain")
+					.populate("campsite.activities")
 				return userData;
 			}
 			throw new AuthenticationError("Not logged in");

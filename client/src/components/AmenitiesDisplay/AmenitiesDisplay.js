@@ -2,7 +2,6 @@ import React from 'react';
 import Grill from "@mui/icons-material/OutdoorGrill";
 import Fire from "@mui/icons-material/Fireplace";
 import Shower from "@mui/icons-material/Shower";
-import Power from "@mui/icons-material/Power";
 import LocalParkingIcon from "@mui/icons-material/LocalParking";
 import AccessibleIcon from "@mui/icons-material/Accessible";
 import PetsIcon from "@mui/icons-material/Pets";

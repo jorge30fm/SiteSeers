@@ -138,14 +138,14 @@ const typeDefs = gql`
 			bio: String
 		): User
 		addReservation(
-			totalPrice: Float!
+			totalPrice: Int!
 			campsite: ID!
 			reservationStartDate: String!
 			reservationEndDate: String!
 			numberOfCampers: Int
 			active: Boolean
 		): User
-		deleteReservation(reservationID: ID!): User
+		deleteReservation(_id: ID!): User
 		addCampsite(
 			name: String!
 			price: Int!

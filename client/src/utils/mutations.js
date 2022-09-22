@@ -87,7 +87,7 @@ export const EDIT_USER = gql`
 //addReservation
 export const ADD_RESERVATION = gql`
 	mutation addReservation(
-		$totalPrice: Float!
+		$totalPrice: Int!
 		$campsite: ID!
 		$reservationStartDate: String!
 		$reservationEndDate: String!
@@ -162,7 +162,6 @@ export const ADD_RESERVATION = gql`
 					description
 					checkInInfo
 					rules
-					images
 					phone
 					email
 					hostBio
@@ -182,8 +181,8 @@ export const ADD_RESERVATION = gql`
 `;
 //deleteReservation
 export const DELETE_RESERVATION = gql`
-	mutation deleteReservation($reservationID: ID!) {
-		deleteReservation(reservationID: $reservationID) {
+	mutation deleteReservation($_id: ID!) {
+		deleteReservation(_id: $_id) {
 			_id
 			username
 			firstName
