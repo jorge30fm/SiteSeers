@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import Nav from "../Nav/Nav";
 import Menu from "@mui/icons-material/Menu";
-import logo from "../../assets/images/icons/logo-placeholder.png";
-
+import logo from "../../assets/images/icons/SiteSeers03.png";
 
 const Header = (props) => {
   const { menuOpen, setMenuOpen } = props;
