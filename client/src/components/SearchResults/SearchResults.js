@@ -6,6 +6,14 @@ import ListingCard from "../../components/ListingCard/ListingCard";
 function SearchResults(props) {
   const { searchState } = props;
   const [getData, setGetData] = useState({});
+  const [siteData, setSiteData] = useState({
+    price: "string",
+    city: "",
+    state: "",
+    images: "",
+    _id: "",
+    name: "",
+  });
 
   const [queryCampsite, { error }] = useLazyQuery(QUERY_CAMPSITE);
 
@@ -38,11 +46,17 @@ function SearchResults(props) {
     return <div></div>;
   }
 
+  const siteDataArray = campsiteArray.map((campsite) => {
+    
+  })
+
   return (
-    <div>
-      <div>
+    <div className="padding">
+      <h2>Search Results</h2>
+      <div className="margin-top">
         {campsiteArray.map((campsite) => (
-          <div key={campsite._id}>{campsite.name}</div>
+          <ListingCard key={campsite.id} campsite={campsite}></ListingCard>
+          // <div key={campsite._id}>{campsite.name}</div>
         ))}
       </div>
     </div>
