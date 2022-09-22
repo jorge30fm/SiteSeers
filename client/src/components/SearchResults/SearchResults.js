@@ -10,6 +10,7 @@ function SearchResults(props) {
   const [queryCampsite, { error }] = useLazyQuery(QUERY_CAMPSITE);
 
   useEffect(() => {
+    console.log(searchState);
     if (searchState === "") {
       return;
     }
