@@ -55,7 +55,7 @@ function SearchResults(props) {
       <h2>Search Results</h2>
       <div className="margin-top">
         {campsiteArray.map((campsite) => (
-          <ListingCard key={campsite.id} siteData={siteData}></ListingCard>
+          <ListingCard key={campsite.id} campsite={campsite}></ListingCard>
           // <div key={campsite._id}>{campsite.name}</div>
         ))}
       </div>
