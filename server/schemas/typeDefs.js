@@ -1,106 +1,122 @@
 import { gql } from "apollo-server-express";
 
 const typeDefs = gql`
-	type Auth {
-		token: ID!
-		user: User
-	}
+  type Auth {
+    token: ID!
+    user: User
+  }
+  type User {
+    _id: ID
+    username: String
+    firstName: String
+    lastName: String
+    email: String
+    createdAt: String
+    phone: String
+    bio: String
+    profilePicture: String
+    reservationHistory: [Reservation]
+    campsiteListings: [Campsite]
+    reviewCount: Int
+    userReviews: [Reviews]
+  }
 
-	type User {
-		_id: ID
-		username: String
-		firstName: String
-		lastName: String
-		email: String
-		phone: String
-		bio: String
-		reservationHistory: [Reservation]
-		campsiteListings: [Campsite]
-		reviewCount: Int
-		userReviews: [Reviews]
-	}
+  type Reviews {
+    _id: ID
+    rating: Int
+    reviewText: String
+    createdAt: String
+    username: String
+  }
 
-	type Reviews {
-		_id: ID
-		rating: Int
-		reviewText: String
-		createdAt: String
-		user: String
-	}
+  type Reservation {
+    _id: ID
+    totalPrice: Float
+    createdAt: String
+    reservationStartDate: String
+    reservationEndDate: String
+    campsite: Campsite
+    numberOfCampers: Int
+    active: Boolean
+  }
+  type Amenities {
+    parking: Boolean
+    wheelchairAccessible: Boolean
+    petAllowed: Boolean
+    toilets: Boolean
+    campfire: Boolean
+    water: Boolean
+    showers: Boolean
+    trash: Boolean
+    hotTub: Boolean
+    picnicTable: Boolean
+    wifi: Boolean
+    cookingEquipment: Boolean
+  }
 
-	type Reservation {
-		_id: ID
-		totalPrice: Float
-		createdAt: String
-		reservationStartDate: String
-		reservationEndDate: String
-		campsite: Campsite
-		active: Boolean
-	}
+  type Activities {
+    fishing: Boolean
+    paddling: Boolean
+    birdWatching: Boolean
+    wildlifeWatching: Boolean
+    biking: Boolean
+    boating: Boolean
+    offRoading: Boolean
+    climbing: Boolean
+    snowSports: Boolean
+    horsebackRiding: Boolean
+    surfing: Boolean
+    windSport: Boolean
+  }
 
-	type Ammenities {
-		parking: Boolean
-		wheelchairAccessible: Boolean
-		petAllowed: Boolean
-		toilets: Boolean
-		campfire: Boolean
-		water: Boolean
-		showers: Boolean
-		trash: Boolean
-		hotTub: Boolean
-		picnicTable: Boolean
-		wifi: Boolean
-		cookingEquipment: Boolean
-	}
+  type Terrain {
+    lake: Boolean
+    beach: Boolean
+    farm: Boolean
+    forest: Boolean
+    river: Boolean
+    hotSpring: Boolean
+    swimmingHole: Boolean
+    desert: Boolean
+    cave: Boolean
+  }
 
-	type Activities {
-		fishing: Boolean
-		paddling: Boolean
-		birdWatching: Boolean
-		wildlifeWatching: Boolean
-		biking: Boolean
-		boating: Boolean
-		offRoading: Boolean
-		climbing: Boolean
-		snowSports: Boolean
-		horsebackRiding: Boolean
-		surfing: Boolean
-		windSport: Boolean
-	}
+  type Campsite {
+    _id: ID
+    name: String
+    price: Int
+    streetAddress: String
+    city: String
+    state: String
+    zipCode: String
+    amenities: Amenities
+    activities: Activities
+    terrain: Terrain
+    description: String
+    checkInInfo: String
+    rules: String
+    images: [String]
+    phone: String
+    email: String
+    hostBio: String
+    reviewCount: Int
+    campsiteReviews: [Reviews]
+    active: Boolean
+  }
 
-	type Terrain {
-		lake: Boolean
-		beach: Boolean
-		farm: Boolean
-		forest: Boolean
-		river: Boolean
-		hotSpring: Boolean
-		swimmingHole: Boolean
-		desert: Boolean
-		cave: Boolean
-	}
-
-	type Campsite {
-		_id: ID
-		name: String
-		location: String
-		description: String
-		rate: Int
-		owner: User
-		ammenities: Ammenities
-		activities: Activities
-		terrain: Terrain
-		reviewCount: Int
-		campsiteReviews: [Reviews]
-	}
-
-	type Query {
-		me: User
-		users: [User]
-		user(_id: ID!): User
-		campsite(_id: ID!): Campsite
-		campsites(name: String, location: String, _id: ID): [Campsite]
-	}
+  type Query {
+    me: User
+    users: [User]
+    user(_id: ID!): User
+    campsites(
+      name: String
+      streetAddress: String
+      city: String
+      state: String
+      zipCode: String
+      _id: ID
+    ): [Campsite]
+  }
 
 	type Mutation {
 		login(email: String!, password: String!): Auth
@@ -116,44 +132,111 @@ const typeDefs = gql`
 			firstName: String
 			lastName: String
 			email: String
+			profilePicture: String
 			password: String
 			phone: String
 			bio: String
 		): User
 		addReservation(
-			totalPrice: Float!
+			totalPrice: Int!
 			campsite: ID!
 			reservationStartDate: String!
 			reservationEndDate: String!
+			numberOfCampers: Int
 			active: Boolean
-		): Reservation
+		): User
 		deleteReservation(_id: ID!): User
 		addCampsite(
 			name: String!
-			location: String!
-			description: String!
-			rate: Int!
+			price: Int!
+			streetAddress: String
+			city: String
+			state: String
+			zipCode: String
+			description: String
+			checkInInfo: String
+			rules: String
+			description: String
+			checkInInfo: String
+			rules: String
+			images: [String]
+			phone: String
+			email: String
+			hostBio: String
+			active: Boolean
+		): Campsite
+		addAmenities(
+			campID: ID!
+			parking: Boolean
+			wheelchairAccessible: Boolean
+			petAllowed: Boolean
+			toilets: Boolean
+			campfire: Boolean
+			water: Boolean
+			showers: Boolean
+			trash: Boolean
+			hotTub: Boolean
+			picnicTable: Boolean
+			wifi: Boolean
+			cookingEquipment: Boolean
+		): Campsite
+		addActivities(
+			campID: ID!
+			fishing: Boolean
+			paddling: Boolean
+			birdWatching: Boolean
+			wildlifeWatching: Boolean
+			biking: Boolean
+			boating: Boolean
+			offRoading: Boolean
+			climbing: Boolean
+			snowSports: Boolean
+			horsebackRiding: Boolean
+			surfing: Boolean
+			windSport: Boolean
+		): Campsite
+		addTerrain(
+			campID: ID!
+			lake: Boolean
+			beach: Boolean
+			farm: Boolean
+			forest: Boolean
+			river: Boolean
+			hotSpring: Boolean
+			swimmingHole: Boolean
+			desert: Boolean
+			cave: Boolean
 		): Campsite
 		editCampsite(
-			_id: ID!
+			campID: ID!
 			name: String
-			location: String
+			streetAddress: String
+			city: String
+			state: String
+			zipCode: String
 			description: String
-			rate: Int
+			rules: String
+			checkInInfo: String
+			images: [String]
+			hostBio: String
+			phone: String
+			email: String
+			price: Int
+			active: Boolean
 		): Campsite
-		deleteCampsite(_id: ID!): User
+		deleteCampsite(campID: ID!): User
 		addUserReview(
-			_id: ID!
+			userID: ID!
 			rating: Int
 			reviewText: String!
-			user: String
+			username: String
 		): User
 		addCampsiteReview(
-			campsite: ID!
+			 campID: ID!
 			rating: Int
 			reviewText: String!
-			user: String
-		): User
+			username: String
+		): Campsite
 	}
 `;
 export default typeDefs;

@@ -1,22 +1,56 @@
 import React, { useState } from "react";
 import "./Carousel.css";
-import camping1 from "../../assets/campImages/camping1.jpg";
-import camping2 from "../../assets/campImages/camping2.jpg";
-import camping3 from "../../assets/campImages/camping3.jfif";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
-const images = [{ img: camping1 }, { img: camping2 }, { img: camping3 }];
-
-function Carousel() {
+function Carousel(props) {
   const [currImg, setCurrImg] = useState(0);
+  // const [hasImages, setHasImages] = useState(true);
+  const { campsite } = props;
+  const imagesArray = [...campsite.images];
+
+  if (!imagesArray.length) {
+    return (
+      <div className="carousel">
+        <div
+          className="carouselInner"
+          style={{
+            backgroundColor: "var(--light-green)",
+          }}
+        >
+          <div
+            className="left carouselArrow"
+            onClick={() => {
+              currImg > 0 && setCurrImg(currImg - 1);
+            }}
+          >
+            <ArrowBackIosIcon />
+          </div>
+          <div className="center">
+            <BookmarkBorderIcon className="save" style={{ fontSize: 30 }} />
+            <h1 className="rate">${campsite.price}</h1>
+          </div>
+          <div
+            className="right carouselArrow"
+            onClick={() => {
+              currImg < imagesArray.length - 1 && setCurrImg(currImg + 1);
+            }}
+          >
+            <ArrowForwardIosIcon />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="carousel">
       <div
         className="carouselInner"
-        style={{ backgroundImage: `url(${images[currImg].img})` }}
+        style={{
+          backgroundImage: `url(https://res.cloudinary.com/dxs0geixs/image/upload/c_fill,f_auto,g_auto,h_400/v1663797068/${imagesArray[currImg]})`,
+        }}
       >
         <div
           className="left carouselArrow"
@@ -28,12 +62,12 @@ function Carousel() {
         </div>
         <div className="center">
           <BookmarkBorderIcon className="save" style={{ fontSize: 30 }} />
-          <h1 className="rate">$75</h1>
+          <h1 className="rate">${campsite.price}</h1>
         </div>
         <div
           className="right carouselArrow"
           onClick={() => {
-            currImg < images.length - 1 && setCurrImg(currImg + 1);
+            currImg < imagesArray.length - 1 && setCurrImg(currImg + 1);
           }}
         >
           <ArrowForwardIosIcon />

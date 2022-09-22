@@ -1,10 +1,11 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/project3', {  //change name
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/project3", {
+  //change name
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
-  useFindAndModify: false
+  useFindAndModify: false,
 });
 
 export default mongoose.connection;

@@ -1,0 +1,38 @@
+.label-desc {
+    color: var(--light-green)
+}
+.input-margin {
+    margin: 5px
+}
+.uploadImgs {
+    padding: 10%;
+    font-size: 1rem;
+    text-align: center;
+    background: #96a68d;
+    border-radius: 10px;
+    border: 2px dotted #09451c;
+}
+.btn-secondary {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    width: 70px;
+    background-color:rgba(9, 69, 28, .6);
+    color: var(--bone);
+    transition: background-color 0.15s, color 0.15s;
+  }
+.noMargin {
+    margin: 0
+}
+.center-btn {
+    margin-right: auto;
+    margin-left: auto;
+    align-self: center;
+    width: 100%
+}
+
+.img-wrapper {
+    width: 100%;
+ margin: 5px 5px;
+
+}

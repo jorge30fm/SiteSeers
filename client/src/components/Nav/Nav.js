@@ -1,5 +1,7 @@
 import React from "react";
 import "./Nav.css";
+import { Link } from "react-router-dom";
+import Auth from "../../utils/auth";
 import Close from "@mui/icons-material/Close";
 
 const Nav = (props) => {
@@ -16,23 +18,73 @@ const Nav = (props) => {
         />
       </div>
       <div>
-        <ul>
-          <li>
-            <a href="/search" className="nav-link">
-              Search
-            </a>
-          </li>
-          <li>
-            <a href="/" className="nav-link">
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a href="/logout" className="nav-link">
-              Logout
-            </a>
-          </li>
-        </ul>
+        {Auth.loggedIn() ? (
+          <>
+            <ul>
+              <li>
+                <Link
+                  to="/search"
+                  className="nav-link"
+                  onClick={() => {
+                    setMenuOpen(false);
+                  }}
+                >
+                  Search
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className="nav-link"
+                  onClick={() => {
+                    setMenuOpen(false);
+                  }}
+                >
+                  Dashboard
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/"
+                  className="nav-link"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    Auth.logout();
+                  }}
+                >
+                  Logout
+                </Link>
+              </li>
+            </ul>
+          </>
+        ) : (
+          <>
+            <ul>
+              <li>
+                <Link
+                  to="/login"
+                  className="nav-link"
+                  onClick={() => {
+                    setMenuOpen(false);
+                  }}
+                >
+                  Log In
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/signup"
+                  className="nav-link"
+                  onClick={() => {
+                    setMenuOpen(false);
+                  }}
+                >
+                  Sign Up
+                </Link>
+              </li>
+            </ul>
+          </>
+        )}
       </div>
     </div>
   );

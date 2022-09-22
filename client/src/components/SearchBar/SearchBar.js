@@ -1,41 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 
-function SearchBar() {
-  const [searchState, setSearchState] = useState({ search: "" });
+function SearchBar(props) {
+  const { setSearchState } = props;
 
-  const [errorMessage, setErrorMessage] = useState("");
-  const { search } = searchState;
-
-  const handleChange = (e) => {
-    setSearchState(e.target.value);
-    console.log("Handle Change", e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!errorMessage) {
-      console.log(
-        "Handle Submit",
-        document.querySelector("#searchBarValue").value
-      );
-    } else {
-      setErrorMessage("Please try another search");
-    }
+  // submit form
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSearchState(document.querySelector("#search-bar").value);
   };
 
   return (
     <section className="mountain-bg">
-      <form action="/action_page.php" onSubmit={handleSubmit}>
+      <form>
         <input
           type="text"
           placeholder="Find a New Adventure"
           name="search"
-          onChange={handleChange}
-          defaultValue={search}
-          id="searchBarValue"
+          id="search-bar"
         />
-        <button type="submit" className="searchButton btn">
-          <i className="search">Find</i>
+        <button
+          type="submit"
+          id="search-btn"
+          className="btn"
+          onClick={handleSubmit}
+        >
+          Search
         </button>
       </form>
     </section>

@@ -1,31 +1,79 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Login.css";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../../utils/mutations";
 
-const Login = () => {
+import Auth from "../../utils/auth";
+
+const Login = (props) => {
+  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [login, { error }] = useMutation(LOGIN_USER);
+
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target; 
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
   return (
     <main>
-      <section className="mountain-bg login-section">
+      <section className="mountain-bg padding">
         <h2>Login</h2>
-        <form className="flex-column">
-          <div className="login-div">
+        <form className="flex-column" onSubmit={handleFormSubmit}>
+          <div className="flex-column margin-top">
             <label>Email:</label>
-            <input name="email" type="email"></input>
+            <input
+              placeholder="Your email"
+              name="email"
+              type="email"
+              value={formState.email}
+              onChange={handleChange}
+            />
           </div>
-          <div className="login-div">
+          <div className="flex-column margin-top">
             <label>Password:</label>
-            <input name="password" type="password"></input>
+            <input
+              placeholder="******"
+              name="password"
+              type="password"
+              value={formState.password}
+              onChange={handleChange}
+            />
           </div>
-          <div className="login-div">
-            <div className="btn-container">
-              <button className="btn" type="submit">Login</button>
-            </div>
+          <div className="btn-container margin-top">
+            <button className="btn" type="submit">
+              Login
+            </button>
           </div>
         </form>
+        <div className="flex-column align-center margin-top">
+          {error && <div>Email or password incorrect.</div>}
+        </div>
       </section>
-      <section className="login-section flex-column align-center">
+      <section className="padding flex-column align-center">
         <h3>Not a user yet? No worries!</h3>
         <div className="btn-container">
-          <button className="btn">Sign Up</button>
+          <Link to="/signup">
+            <button className="btn">Sign Up</button>
+          </Link>
         </div>
       </section>
     </main>
