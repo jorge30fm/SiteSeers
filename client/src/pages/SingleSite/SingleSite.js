@@ -2,23 +2,20 @@ import React from "react";
 import "./SingleSite.css";
 
 import Auth from "../../utils/auth";
-import { Navigate, Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import Carousel from "../../components/Carousel/Carousel";
 
 import StarIcon from "@mui/icons-material/Star";
 import AmenitiesDisplay from "../../components/AmenitiesDisplay/AmenitiesDisplay";
 
-
 import { QUERY_CAMPSITE } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
 
 const SingleSite = () => {
 	const { id: _id } = useParams();
+	const navigate = useNavigate();
 
-	// if (!Auth.loggedIn()) {
-	// 	return <Navigate to="/login" />;
-	// }
 	const { loading, data } = useQuery(QUERY_CAMPSITE, {
 		variables: { _id: _id },
 	});
@@ -26,7 +23,14 @@ const SingleSite = () => {
 	if (loading) {
 		return <div>Loading...</div>;
 	}
-	console.log(campsite);
+	const handleClick = () => {
+		if (!Auth.loggedIn()) {
+			navigate('/login');
+		}
+		else {
+			navigate(`/reserve/${campsite._id}`)
+		}
+	};
 	return (
 		<main>
 			<Carousel campsite={campsite} />
@@ -39,8 +43,8 @@ const SingleSite = () => {
 					<StarIcon />
 				</section>
 				<section>
-					<h2 className='capitalize'>{campsite.name}</h2>
-					<h3 className='capitalize'>
+					<h2 className="capitalize">{campsite.name}</h2>
+					<h3 className="capitalize">
 						{campsite.city}, {campsite.state}
 					</h3>
 				</section>
@@ -50,9 +54,9 @@ const SingleSite = () => {
 					<p>{campsite.description}</p>
 				</section>
 				<div className="btn-container">
-					<Link to="/reserve">
-						<button className="btn">Reserve</button>
-					</Link>
+					<button className="btn" onClick={handleClick}>
+						Reserve
+					</button>
 				</div>
 			</div>
 		</main>

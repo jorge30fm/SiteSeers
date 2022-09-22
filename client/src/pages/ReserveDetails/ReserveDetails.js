@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import "./ReserveDetails.css";
-
 import Auth from "../../utils/auth";
-import { Navigate } from "react-router-dom";
-
+import { Navigate, useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { QUERY_USER_RESERVATIONS} from "../../utils/queries";
 import Carousel from "../../components/Carousel/Carousel";
 import CancelModal from "../../components/CancelModal/CancelModal";
 
 const ReserveDetails = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const {id: reservationID} = useParams();
+  console.log(reservationID)
 
   if (!Auth.loggedIn()) {
     return <Navigate to="/login" />;
@@ -16,7 +18,7 @@ const ReserveDetails = () => {
 
   return (
     <main className="position-relative">
-      <Carousel />
+      {/* <Carousel /> */}
       <section className="section-padding">
         <div className="margin-bottom">
           <h3>Camp Name</h3>

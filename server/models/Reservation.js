@@ -19,12 +19,10 @@ const reservationSchema = new Schema(
 			get: (timestamp) => dateFormat(timestamp),
 		},
 		reservationStartDate: {
-			type: Date,
-			get: (timestamp) => dateFormat(timestamp),
+			type: String
 		},
 		reservationEndDate: {
-			type: Date,
-			get: (timestamp) => dateFormat(timestamp),
+			type: String
 		},
 		numberOfCampers: {
 			type: Number,

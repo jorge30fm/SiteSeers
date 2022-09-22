@@ -21,8 +21,8 @@ const Dashboard = () => {
 
   return (
     <main>
-      <section className="dash-section">
-        <h2>User's Dashboard</h2>
+      <section className="dash-section flex-row justify-center">
+        <h2>Dashboard</h2>
       </section>
       <section className="dash-section">
         <div className="tab-container flex-row">

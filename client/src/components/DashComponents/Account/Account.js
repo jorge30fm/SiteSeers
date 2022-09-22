@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { EDIT_USER } from "../../../utils/mutations";
 import { QUERY_USER_INFO } from "../../../utils/queries";
 import { useMutation, useQuery } from "@apollo/client";
 import "./Account.css";
 import Edit from "@mui/icons-material/Edit";
 
+
 const Account = () => {
 	const [editUser, { error }] = useMutation(EDIT_USER);
 
+	const [bio, setBio] = useState("");
+	const [email, setEmail] = useState("");
+	const [phone, setPhone] = useState("");
+
 	const { loading, data } = useQuery(QUERY_USER_INFO);
 	const userInfo = data?.me || {};
+
+	useEffect(() => {
+		if (!loading && data) {
+			setBio(data.me.bio);
+			setEmail(data.me.email);
+			setPhone(data.me.phone);
+		}
+	}, [loading, data]);
+
+	if (loading) {
+		return <div>Loading...</div>;
+	}
 
 	var myWidget = window.cloudinary.createUploadWidget(
 		{
@@ -35,6 +52,7 @@ const Account = () => {
 	const handleOpenWidget = () => {
 		myWidget.open();
 	};
+
 	const handleDivClick = (e) => {
 		const clickedDiv = e.target;
 		const text = clickedDiv.textContent;
@@ -49,26 +67,32 @@ const Account = () => {
 	const divOnBlur = (e) => {
 		const inputEl = e.target;
 		const text = inputEl.value;
+
 		const divEl = document.createElement("p");
 		divEl.classList.add("text-to-input");
 		divEl.textContent = text;
 		divEl.addEventListener("click", handleDivClick);
 		inputEl.replaceWith(divEl);
+		// eslint-disable-next-line default-case
 	};
-	if (loading) {
-		return <div>Loading...</div>;
-	}
 
-  const profilePicStyle = {
-    backgroundImage: `url(https://res.cloudinary.com/dxs0geixs/image/upload/c_scale,w_135/v1663680167/${userInfo.profilePicture})`,
-    backgroundSize: "cover",
-  }
+	const profilePicStyle = {
+		backgroundImage: `url(https://res.cloudinary.com/dxs0geixs/image/upload/c_scale,w_135/v1663680167/${userInfo.profilePicture})`,
+		backgroundSize: "cover",
+	};
+	const handleSave = async () => {
+		try {
+			await editUser({ bio, email, phone });
+			console.log("success");
+		} catch (e) {
+			console.log(e);
+		}
+	};
 	return (
 		<div>
 			<div className="flex-row justify-space-between">
 				<div className="pfp-container">
-					<div
-						className="pfp"style={profilePicStyle}></div>
+					<div className="pfp" style={profilePicStyle}></div>
 					<Edit
 						id="upload_widget"
 						className="account-edit-icon "
@@ -94,7 +118,7 @@ const Account = () => {
 				<div className="account-input-div flex-column ">
 					<p>Email:</p>
 					<div className="input-container">
-						<p onClick={handleDivClick} className="text-to-input">
+						<p onClick={handleDivClick} className="text-to-input ">
 							{userInfo.email}
 						</p>
 					</div>
@@ -109,7 +133,9 @@ const Account = () => {
 				</div>
 			</div>
 			<div className="btn-container">
-				<button className="btn">Save</button>
+				<button className="btn" onClick={handleSave}>
+					Save
+				</button>
 			</div>
 		</div>
 	);

@@ -138,7 +138,7 @@ const typeDefs = gql`
 			bio: String
 		): User
 		addReservation(
-			totalPrice: Float!
+			totalPrice: Int!
 			campsite: ID!
 			reservationStartDate: String!
 			reservationEndDate: String!
