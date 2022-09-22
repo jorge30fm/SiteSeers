@@ -29,12 +29,13 @@ function SearchPage() {
 				<h2 className="text-center margin-top"> A simpler way </h2>
 				<h2 className="text-center">to camp</h2>
 			</div>
-			<form className="top-margin flex-row formPadding">
+			<form className="top-margin flex-row justify-center formPadding">
 				<input
 					type="text"
 					placeholder="Find a New Adventure"
 					name="search"
 					id="search-bar"
+					className="col-5"
 				/>
 				<div>
 					<button
