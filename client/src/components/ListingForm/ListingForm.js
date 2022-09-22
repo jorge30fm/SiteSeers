@@ -31,7 +31,6 @@ const ListingForm = () => {
 			{step === 7 && <Step7 step={step} setStep={setStep} campID={campID}/>}
 			{step === 8 && <Step8 step={step} setStep={setStep} campID={campID}/>}
 
-			{step < 8 && <button onClick={handleClick}>Next page</button>}
 		</div>
 	);
 };
