@@ -23,7 +23,7 @@ function SearchResults(props) {
       return;
     }
     const fetchData = async () => {
-      console.log(searchState);
+      console.log("SEARCHSTATE", searchState);
       try {
         const { data } = await queryCampsite({
           variables: { city: searchState },
@@ -46,17 +46,14 @@ function SearchResults(props) {
     return <div></div>;
   }
 
-  const siteDataArray = campsiteArray.map((campsite) => {
-    
-  })
+  // const siteDataArray = campsiteArray.map((campsite) => {});
 
   return (
     <div className="padding">
       <h2>Search Results</h2>
       <div className="margin-top">
         {campsiteArray.map((campsite) => (
-          <ListingCard key={campsite.id} campsite={campsite}></ListingCard>
-          // <div key={campsite._id}>{campsite.name}</div>
+          <ListingCard key={campsite._id} campsite={campsite}></ListingCard>
         ))}
       </div>
     </div>
