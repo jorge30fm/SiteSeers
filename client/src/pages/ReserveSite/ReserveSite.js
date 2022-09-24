@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./ReserveSite.css";
 
-import Auth from "../../utils/auth";
+import Auth from "../../utils/auth.js";
 
 import { useNavigate, useParams } from "react-router-dom";
 
-import Calendar from "../../components/ReserveComponents/Calendar/Calendar";
-import RequestReserve from "../../components/ReserveComponents/RequestReserve/RequestReserve";
+import Calendar from "../../components/ReserveComponents/Calendar/Calendar.js";
+import RequestReserve from "../../components/ReserveComponents/RequestReserve/RequestReserve.js";
 
 const ReserveSite = () => {
 	const [value, setValue] = useState(new Date());

@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import "./RequestReserve.css";
 import { useNavigate, useParams } from "react-router-dom";
-import Carousel from "../../Carousel/Carousel";
+import Carousel from "../../Carousel/Carousel.js";
 
-import { QUERY_CAMPSITE } from "../../../utils/queries";
+import { QUERY_CAMPSITE } from "../../../utils/queries.js";
 import { useQuery, useMutation } from "@apollo/client";
-import { calculateNumNights } from "../../../utils/utils";
+import { calculateNumNights, formatDate } from "../../../utils/utils.js";
 import { ADD_RESERVATION } from "../../../utils/mutations.js";
 
-import { formatDate } from "../../../utils/utils";
 
 const RequestReserve = (props) => {
 	const navigate = useNavigate();
@@ -55,32 +54,27 @@ const RequestReserve = (props) => {
 	return (
 		<div>
 			<Carousel campsite={campsite} />
-			<section className="reserve-section flex-column align-start">
+			<section className="padding flex-column align-start">
 				<h1>{campsite.name}</h1>
 				<h3>
-					{" "}
 					{campers} camper{campers > 1 && "s"}
 				</h3>
 				<div>
-					<div className="flex-row justify-space-between margin-top">
-						<p>{reservationStartDate}</p>
-						<p>through</p>
-						<p>{reservationEndDate}</p>
+					<div className="flex-row margin-top">
+						<p>{reservationStartDate} through {reservationEndDate}</p>
 					</div>
-					<div className="flex-row justify-space-between">
+					<div className="flex-row margin-top justify-space-between">
 						<p>
 							${campsite.price} x {totalNights} night{totalNights > 1 && "s"}
 						</p>
 						<p>${totalPrice}</p>
 					</div>
 					<div className="flex-row justify-space-between margin-top">
-						<p>Total: </p>
-						<p>${totalPrice}</p>
+						<p className="total">Total: </p>
+						<p className="total">${totalPrice}</p>
 					</div>
-					{/* for each for div below */}
-
-					<div className="flex-row justify-center">
-						<button className="btn" onClick={handleClick}>
+					<div className="btn-container margin-top">
+						<button className="btn btn-long" onClick={handleClick}>
 							Reserve
 						</button>
 					</div>

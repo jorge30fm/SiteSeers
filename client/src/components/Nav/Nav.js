@@ -1,7 +1,7 @@
 import React from "react";
 import "./Nav.css";
 import { Link } from "react-router-dom";
-import Auth from "../../utils/auth";
+import Auth from "../../utils/auth.js";
 import Close from "@mui/icons-material/Close";
 
 const Nav = (props) => {

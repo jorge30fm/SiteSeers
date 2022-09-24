@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-import { ADD_USER } from "../../utils/mutations";
+import { ADD_USER } from "../../utils/mutations.js";
 
-import Auth from "../../utils/auth";
+import Auth from "../../utils/auth.js";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -117,9 +117,11 @@ const Signup = () => {
             </label>
           </div>
           <div className="btn-container margin-top">
-            <button className="btn" type="submit">
-              Sign Up
-            </button>
+            <div>
+              <button className="btn btn-long" type="submit">
+                Sign Up
+              </button>
+            </div>
           </div>
         </form>
         {error && (

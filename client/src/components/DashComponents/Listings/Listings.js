@@ -1,7 +1,7 @@
 import React from "react";
 import "./Listings.css";
 import { Link } from "react-router-dom";
-import ListingCard from "../../ListingCard/ListingCard";
+import ListingCard from "../../ListingCard/ListingCard.js";
 import { useQuery } from "@apollo/client";
 import { QUERY_USER_LISTINGS_BASIC } from "../../../utils/queries.js";
 
@@ -39,8 +39,8 @@ const Listings = () => {
 					}
 				})}
 			</div>
-			<div className="dash-border-top">
-				<h3 className="dash-listing-title">Disabled Listings</h3>
+			<div className="dash-border-top margin-top">
+				<h3 className="dash-listing-title margin-top">Disabled Listings</h3>
 				{listingsArray.map((listing) => {
 					if (!listing.active) {
 						return (
@@ -49,9 +49,6 @@ const Listings = () => {
 							</ListingCard>
 						);
 					}
-					// <ListingCard key={listing._id} campsite={listing}>
-					//   {listing.name}
-					// </ListingCard>
 				})}
 			</div>
 			<div className="btn-container padding">

@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from "../Carousel/Carousel";
+import Carousel from "../Carousel/Carousel.js";
 import "./ListingCard.css";
 import StarIcon from "@mui/icons-material/Star";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +17,6 @@ const ListingCard = (props) => {
 		};
 		return (
 			<div className="listingCard">
-				{/* TODO: On click, redirect to single campsite page */}
 				<Carousel campsite={campsite}></Carousel>
 
 				<div className="basicInfo" onClick={handleClickReservation}>
@@ -31,7 +30,6 @@ const ListingCard = (props) => {
 	} else {
 		return (
 			<div className="listingCard">
-				{/* TODO: On click, redirect to single campsite page */}
 				<Carousel campsite={campsite}></Carousel>
 
 				<div className="basicInfo" onClick={handleClickCampsite}>

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useMutation, useQuery } from "@apollo/client";
-import { EDIT_USER } from "../../utils/mutations";
-import { QUERY_USER_INFO } from "../../utils/queries";
-import "./Account.css";
+import { EDIT_USER } from "../../utils/mutations.js";
+import { QUERY_USER_INFO } from "../../utils/queries.js";
+import "./EditProfile.css";
 import Edit from "@mui/icons-material/Edit";
 
 const EditProfile = () => {
@@ -70,7 +70,7 @@ const EditProfile = () => {
 		}
 	};
 	return (
-		<div>
+		<div className="padding">
 			<div className="flex-row justify-space-between">
 				<div className="pfp-container">
 					<div className="pfp" style={profilePicStyle}></div>
@@ -84,23 +84,21 @@ const EditProfile = () => {
 					<h3>
 						{userInfo.firstName} {userInfo.lastName}
 					</h3>
-					<p>Member since {userInfo.createdAt}</p>
+					<p className="member-since">Member since {userInfo.createdAt}</p>
 				</div>
 			</div>
 			<div className="account-div flex-column">
 				<div>
 					<div>
-						{" "}
-						{/* TODO: display fname and lname in a row */}
 						<div className="flex-column margin-top">
 							<label>About:</label>
 							<input
-								className="input-container about-container"
+								className="about-container"
 								placeholder="Please enter updated bio"
 								onChange={handleBioOnChange}
 							></input>
 						</div>
-						<div className="account-input-div flex-column">
+						<div className="flex-column margin-top">
 							<label>Email:</label>
 							<input
 								placeholder="Please enter email"
@@ -109,7 +107,7 @@ const EditProfile = () => {
 							/>
 						</div>
 					</div>
-					<div className="account-input-div flex-column">
+					<div className="flex-column margin-top">
 						<label>Phone:</label>
 						<input
 							className="form-input"
@@ -117,14 +115,14 @@ const EditProfile = () => {
 							onChange={handlePhoneOnChange}
 						/>
 					</div>
-					<div className="btn-container margin-top flex-row justify">
-						<div>
+					<div className="margin-top padding flex-row justify-space-around">
+						<div className="btn-container">
 							<button className="btn btn-long" onClick={handleOnClick}>
 								Update
 							</button>
 						</div>
 						<Link to="/">
-							<button className="btn btn-long">Cancel</button>
+							<button className="btn btn-faded btn-long">Cancel</button>
 						</Link>
 					</div>
 				</div>

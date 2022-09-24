@@ -1,7 +1,7 @@
 import React from "react";
 import "./Reservations.css";
 import { Link } from "react-router-dom";
-import ListingCard from "../../ListingCard/ListingCard";
+import ListingCard from "../../ListingCard/ListingCard.js";
 import { useQuery } from "@apollo/client";
 import { QUERY_USER_RESERVATIONS } from "../../../utils/queries.js";
 

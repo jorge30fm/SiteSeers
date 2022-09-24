@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 import { useMutation } from "@apollo/client";
-import { LOGIN_USER } from "../../utils/mutations";
+import { LOGIN_USER } from "../../utils/mutations.js";
 
-import Auth from "../../utils/auth";
+import Auth from "../../utils/auth.js";
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -26,7 +26,7 @@ const Login = (props) => {
   };
 
   const handleChange = (event) => {
-    const { name, value } = event.target; 
+    const { name, value } = event.target;
     setFormState({
       ...formState,
       [name]: value,
@@ -59,9 +59,11 @@ const Login = (props) => {
             />
           </div>
           <div className="btn-container margin-top">
-            <button className="btn" type="submit">
-              Login
-            </button>
+            <div>
+              <button className="btn btn-long" type="submit">
+                Login
+              </button>
+            </div>
           </div>
         </form>
         <div className="flex-column align-center margin-top">
@@ -70,9 +72,9 @@ const Login = (props) => {
       </section>
       <section className="padding flex-column align-center">
         <h3>Not a user yet? No worries!</h3>
-        <div className="btn-container">
+        <div className="btn-container margin-top">
           <Link to="/signup">
-            <button className="btn">Sign Up</button>
+            <button className="btn btn-long">Sign Up</button>
           </Link>
         </div>
       </section>

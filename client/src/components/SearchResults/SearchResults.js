@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLazyQuery } from "@apollo/client";
-import { QUERY_CAMPSITE } from "../../utils/queries";
-import ListingCard from "../../components/ListingCard/ListingCard";
+import { QUERY_CAMPSITE } from "../../utils/queries.js";
+import ListingCard from "../../components/ListingCard/ListingCard.js";
 
 function SearchResults(props) {
   const { searchState } = props;

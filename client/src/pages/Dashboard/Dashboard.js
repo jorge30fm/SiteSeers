@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./Dashboard.css";
 
-import Auth from "../../utils/auth";
+import Auth from "../../utils/auth.js";
 import { Navigate } from "react-router-dom";
 
-import Account from "../../components/DashComponents/Account/Account";
-import Reservations from "../../components/DashComponents/Reservations/Reservations";
-import Listings from "../../components/DashComponents/Listings/Listings";
-import Reviews from "../../components/DashComponents/Reviews/Reviews";
+import Account from "../../components/DashComponents/Account/Account.js";
+import Reservations from "../../components/DashComponents/Reservations/Reservations.js";
+import Listings from "../../components/DashComponents/Listings/Listings.js";
+import Reviews from "../../components/DashComponents/Reviews/Reviews.js";
 
 const Dashboard = () => {
   const [accountSelected, setAccountSelected] = useState(true);
@@ -20,11 +20,11 @@ const Dashboard = () => {
   }
 
   return (
-    <main>
-      <section className="dash-section flex-row justify-center">
+    <main className="padding">
+      <section className="flex-row">
         <h2>Dashboard</h2>
       </section>
-      <section className="dash-section">
+      <section className="margin-top">
         <div className="tab-container flex-row">
           <div
             className={`tab ${accountSelected && "selected"}`}
@@ -60,7 +60,7 @@ const Dashboard = () => {
             <p>Listings</p>
           </div>
           {/* Can uncomment after MVP presentation. ↓↓↓ */}
-          <div
+          {/* <div
             className={`tab ${reviewsSelected && "selected"}`}
             onClick={() => {
               setAccountSelected(false);
@@ -70,7 +70,7 @@ const Dashboard = () => {
             }}
           >
             <p>Reviews</p>
-          </div>
+          </div> */}
         </div>
         <div className="tab-content-container">
           <div className="tab-content">{accountSelected && <Account />}</div>

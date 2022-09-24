@@ -32,7 +32,7 @@ const CalendarView = (props) => {
 		<section className="flex-column align-center">
 			<div className="calendar-section">
 				<h2>How many campers?</h2>
-				<div className="ticker flex-row justify-center">
+				<div className="ticker flex-row justify-space-around">
 					<AddCircleOutlineIcon onClick={handleDecrement}/> {campers} <RemoveCircleOutlineIcon onClick={handleIncrement} />
 				</div>
 			</div>

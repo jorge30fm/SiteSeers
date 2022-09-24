@@ -14,7 +14,7 @@ import WifiIcon from "@mui/icons-material/Wifi";
 
 const AmenitiesDisplay = ({campsite}) => {
 return (
-    <section>
+    <section className='margin-top'>
 					<h3>Amenties</h3>
 					<div>
 						{campsite.amenities.parking && <LocalParkingIcon />}

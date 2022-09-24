@@ -8,22 +8,22 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import Login from "./pages/Login/Login";
-import SignUp from "./pages/SignUp/SignUp";
-import Dashboard from "./pages/Dashboard/Dashboard";
-import ReserveSite from "./pages/ReserveSite/ReserveSite";
-import SearchPage from "./pages/SearchPage/SearchPage";
-import SingleSite from "./pages/SingleSite/SingleSite";
-import PayConfirm from "./pages/PayConfirm/PayConfirm";
-import ReserveDetails from "./pages/ReserveDetails/ReserveDetails";
-import TermsOfService from "./pages/Policies/TermsService";
-import PrivacyPolicy from "./pages/Policies/PrivacyPolicy";
-import CancelConfirm from "./pages/CancelConfirm/CancelConfirm";
-import AddListing from "./pages/AddListing/AddListing";
-import AccountEdit from "./pages/AccountEdit/Accountedit";
-import NotFound from "./pages/NotFound/NotFound";
+import Header from "./components/Header/Header.js";
+import Footer from "./components/Footer/Footer.js";
+import Login from "./pages/Login/Login.js";
+import SignUp from "./pages/SignUp/SignUp.js";
+import Dashboard from "./pages/Dashboard/Dashboard.js";
+import ReserveSite from "./pages/ReserveSite/ReserveSite.js";
+import SearchPage from "./pages/SearchPage/SearchPage.js";
+import SingleSite from "./pages/SingleSite/SingleSite.js";
+import PayConfirm from "./pages/PayConfirm/PayConfirm.js";
+import ReserveDetails from "./pages/ReserveDetails/ReserveDetails.js";
+import TermsOfService from "./pages/Policies/TermsService.js";
+import PrivacyPolicy from "./pages/Policies/PrivacyPolicy.js";
+import CancelConfirm from "./pages/CancelConfirm/CancelConfirm.js";
+import AddListing from "./pages/AddListing/AddListing.js";
+import EditProfile from "./pages/EditProfile/EditProfile.js";
+import NotFound from "./pages/NotFound/NotFound.js";
 
 const httpLink = createHttpLink({
 	uri: "/graphql",
@@ -64,7 +64,7 @@ function App() {
 						<Route path="/privacy-policy" element={<PrivacyPolicy />} />
 						<Route path="/cancel-confirm" element={<CancelConfirm />} />
 						<Route path="/add-listing" element={<AddListing />} />
-						<Route path="/edit-account" element={<AccountEdit />} />
+						<Route path="/edit-account" element={<EditProfile />} />
 						<Route path="*" element={<NotFound />} />
 					</Routes>
 					<Footer />
