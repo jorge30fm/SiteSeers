@@ -47,7 +47,7 @@ The user can also go to PLACE DEPLOYED LINK HERE.
 ## Links
 
 - [GitHub Repo](https://github.com/jorge30fm/project3.git)
-- [Heroku Deployed Site](https://stark-journey-76834.herokuapp.com/)
+- [Heroku Deployed Site](https://site-seers.herokuapp.com/)
 
 ## Usage
 
