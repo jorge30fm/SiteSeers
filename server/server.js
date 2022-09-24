@@ -36,10 +36,10 @@ const startApolloServer = async (typeDefs, resolvers) => {
 	server.applyMiddleware({ app });
 
 	if (process.env.NODE_ENV === "production") {
-		app.use(express.static(path.dirname(__filename)));
+		app.use(express.static(path.join(__dirname, __filename)));
 	}
 	app.get("/*", (req, res) => {
-		res.sendFile(path.dirname(__dirname, __filename));
+		res.sendFile(path.join(__dirname, __filename));
 	});
 	db.once("open", () => {
 		app.listen(PORT, () => {
