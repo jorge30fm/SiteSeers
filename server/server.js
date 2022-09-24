@@ -6,7 +6,9 @@ import path from "path";
 // import { createRequire } from 'node:module';
 import { typeDefs, resolvers } from "./schemas/index.js";
 import db from "./config/connection.js";
-
+import * as url from 'url';
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
