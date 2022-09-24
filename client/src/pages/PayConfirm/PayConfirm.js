@@ -1,11 +1,11 @@
 import React from "react";
 
-import Auth from "../../utils/auth";
+import Auth from "../../utils/auth.js";
 import { useNavigate, useParams, Link } from "react-router-dom";
 
 import { useQuery } from "@apollo/client";
 import { QUERY_USER_RESERVATIONS } from "../../utils/queries.js";
-import Carousel from "../../components/Carousel/Carousel";
+import Carousel from "../../components/Carousel/Carousel.js";
 import "./PayConfirm.css";
 
 const PayConfirm = () => {
@@ -24,7 +24,6 @@ const PayConfirm = () => {
   const latestReservation =
     userReservationsList[userReservationsList.length - 1];
 
-  console.log(latestReservation);
 
   return (
     <main>

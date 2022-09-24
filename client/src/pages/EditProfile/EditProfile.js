@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useMutation, useQuery } from "@apollo/client";
-import { EDIT_USER } from "../../utils/mutations";
-import { QUERY_USER_INFO } from "../../utils/queries";
-import "./AccountEdit.css";
+import { EDIT_USER } from "../../utils/mutations.js";
+import { QUERY_USER_INFO } from "../../utils/queries.js";
+import "./EditProfile.css";
 import Edit from "@mui/icons-material/Edit";
 
 const EditProfile = () => {

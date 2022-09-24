@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./CancelModal.css";
-import { DELETE_RESERVATION } from "../../utils/mutations";
+import { DELETE_RESERVATION } from "../../utils/mutations.js";
 import { useMutation } from "@apollo/client";
 
 const CancelModal = (props) => {

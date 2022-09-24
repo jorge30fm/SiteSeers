@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from "../Carousel/Carousel";
+import Carousel from "../Carousel/Carousel.js";
 import "./ListingCard.css";
 import StarIcon from "@mui/icons-material/Star";
 import { useNavigate } from "react-router-dom";

@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 
-import Auth from "../../utils/auth";
+import Auth from "../../utils/auth.js";
 import { Navigate } from "react-router-dom";
 
 import "../../components/SearchBar/SearchBar.css";
-import SearchResults from "../../components/SearchResults/SearchResults";
+import SearchResults from "../../components/SearchResults/SearchResults.js";
 
 function SearchPage() {
   const [searchState, setSearchState] = useState("");

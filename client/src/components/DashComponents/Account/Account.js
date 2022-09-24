@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { EDIT_USER } from "../../../utils/mutations";
-import { QUERY_USER_INFO } from "../../../utils/queries";
+import { EDIT_USER } from "../../../utils/mutations.js";
+import { QUERY_USER_INFO } from "../../../utils/queries.js";
 import { useMutation, useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import "./Account.css";

@@ -1,6 +1,6 @@
 import React from "react";
 import "./CancelConfirm.css";
-import Auth from "../../utils/auth";
+import Auth from "../../utils/auth.js";
 import { useNavigate } from "react-router-dom";
 
 import CheckCircle from "@mui/icons-material/CheckCircleOutline";

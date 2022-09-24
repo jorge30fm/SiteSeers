@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./Dashboard.css";
 
-import Auth from "../../utils/auth";
+import Auth from "../../utils/auth.js";
 import { Navigate } from "react-router-dom";
 
-import Account from "../../components/DashComponents/Account/Account";
-import Reservations from "../../components/DashComponents/Reservations/Reservations";
-import Listings from "../../components/DashComponents/Listings/Listings";
-import Reviews from "../../components/DashComponents/Reviews/Reviews";
+import Account from "../../components/DashComponents/Account/Account.js";
+import Reservations from "../../components/DashComponents/Reservations/Reservations.js";
+import Listings from "../../components/DashComponents/Listings/Listings.js";
+import Reviews from "../../components/DashComponents/Reviews/Reviews.js";
 
 const Dashboard = () => {
   const [accountSelected, setAccountSelected] = useState(true);

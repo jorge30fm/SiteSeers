@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./ReserveDetails.css";
-import Auth from "../../utils/auth";
+import Auth from "../../utils/auth.js";
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-import { QUERY_USER_RESERVATIONS } from "../../utils/queries";
-import Carousel from "../../components/Carousel/Carousel";
-import CancelModal from "../../components/CancelModal/CancelModal";
+import { QUERY_USER_RESERVATIONS } from "../../utils/queries.js";
+import Carousel from "../../components/Carousel/Carousel.js";
+import CancelModal from "../../components/CancelModal/CancelModal.js";
 
 const ReserveDetails = () => {
   const [modalOpen, setModalOpen] = useState(false);

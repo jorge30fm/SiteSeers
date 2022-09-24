@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import Nav from "../Nav/Nav";
+import Nav from "../Nav/Nav.js";
 import Menu from "@mui/icons-material/Menu";
 import logo from "../../assets/images/icons/SiteSeers03.png";
 

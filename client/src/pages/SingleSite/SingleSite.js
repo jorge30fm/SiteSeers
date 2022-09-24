@@ -1,15 +1,15 @@
 import React from "react";
 import "./SingleSite.css";
 
-import Auth from "../../utils/auth";
+import Auth from "../../utils/auth.js";
 import { useNavigate, useParams } from "react-router-dom";
 
-import Carousel from "../../components/Carousel/Carousel";
+import Carousel from "../../components/Carousel/Carousel.js";
 
 import StarIcon from "@mui/icons-material/Star";
-import AmenitiesDisplay from "../../components/AmenitiesDisplay/AmenitiesDisplay";
+import AmenitiesDisplay from "../../components/AmenitiesDisplay/AmenitiesDisplay.js";
 
-import { QUERY_CAMPSITE } from "../../utils/queries";
+import { QUERY_CAMPSITE } from "../../utils/queries.js";
 import { useQuery } from "@apollo/client";
 
 const SingleSite = () => {

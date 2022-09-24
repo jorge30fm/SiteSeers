@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import "./RequestReserve.css";
 import { useNavigate, useParams } from "react-router-dom";
-import Carousel from "../../Carousel/Carousel";
+import Carousel from "../../Carousel/Carousel.js";
 
-import { QUERY_CAMPSITE } from "../../../utils/queries";
+import { QUERY_CAMPSITE } from "../../../utils/queries.js";
 import { useQuery, useMutation } from "@apollo/client";
-import { calculateNumNights } from "../../../utils/utils";
+import { calculateNumNights, formatDate } from "../../../utils/utils.js";
 import { ADD_RESERVATION } from "../../../utils/mutations.js";
 
-import { formatDate } from "../../../utils/utils";
 
 const RequestReserve = (props) => {
 	const navigate = useNavigate();

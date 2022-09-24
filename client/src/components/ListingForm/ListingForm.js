@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./ListingForm.css";
-import Step1 from "./Steps/Step1";
-import Step2 from "./Steps/Step2";
-import Step3 from "./Steps/Step3";
-import Step4 from "./Steps/Step4";
-import Step5 from "./Steps/Step5";
-import Step6 from "./Steps/Step6";
-import Step7 from "./Steps/Step7";
-import Step8 from "./Steps/Step8";
+import Step1 from "./Steps/Step1.js";
+import Step2 from "./Steps/Step2.js";
+import Step3 from "./Steps/Step3.js";
+import Step4 from "./Steps/Step4.js";
+import Step5 from "./Steps/Step5.js";
+import Step6 from "./Steps/Step6.js";
+import Step7 from "./Steps/Step7.js";
+import Step8 from "./Steps/Step8.js";
 
 const ListingForm = () => {
 	const [step, setStep] = useState(1);

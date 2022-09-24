@@ -1,10 +1,10 @@
 import React from "react";
 
 import "./AddListing.css";
-import Auth from "../../utils/auth";
+import Auth from "../../utils/auth.js";
 import { Navigate } from "react-router-dom";
 
-import ListingForm from "../../components/ListingForm/ListingForm";
+import ListingForm from "../../components/ListingForm/ListingForm.js";
 
 const AddListing = () => {
 	if (!Auth.loggedIn()) {
