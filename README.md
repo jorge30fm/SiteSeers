@@ -47,11 +47,22 @@ The user can also go to PLACE DEPLOYED LINK HERE.
 ## Links
 
 - [GitHub Repo](https://github.com/jorge30fm/project3.git)
-- [Heroku Deployed Site](placeholder text)
+- [Heroku Deployed Site](https://stark-journey-76834.herokuapp.com/)
 
 ## Usage
 
-To use this application, the user will need to create an account. The user can then add their own listing or find a listing to book. To book a campsite, the user will need to search by location, select their check-in and check-out dates, and confirm registration.
+To use this application, the user will need to create an account. The user can then add their own listing or find a listing to book. To book a campsite, the user will need to search by location, select their check-in and check-out dates, and confirm registration. Users can add their own listing by providing the following information :
+- name
+- price
+- address
+- ammenities, terrain type, activities
+- images
+- rules and check in procedures
+- descriptions and more
+Users can cancel their reservations, update their profile picture and information, and disable listings.
+
+<img src='https://res.cloudinary.com/dxs0geixs/image/upload/v1663989001/stark-journey-76834.herokuapp.com__iPhone_13_1_gw1kyv.png'>
+<img src='https://res.cloudinary.com/dxs0geixs/image/upload/v1663989000/stark-journey-76834.herokuapp.com_login_iPhone_13_gisuam.png'>
 
 ## License
 
