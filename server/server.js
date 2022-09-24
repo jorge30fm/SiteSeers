@@ -39,7 +39,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
 		app.use(express.static(path.dirname(__filename)));
 	}
 	app.get("/*", (req, res) => {
-		res.sendFile(path.dirname(__filename));
+		res.sendFile(path.dirname(__dirname, __filename));
 	});
 	db.once("open", () => {
 		app.listen(PORT, () => {
