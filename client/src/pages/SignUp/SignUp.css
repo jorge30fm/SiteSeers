@@ -1,3 +1,8 @@
 .checkbox {
   margin: 0 7px;
 }
+
+form {
+  max-width: 35rem;
+  margin: 0 auto;
+}
