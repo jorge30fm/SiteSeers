@@ -15,7 +15,7 @@ const Reservations = () => {
 	if (!reservationArray.length) {
 		return (
 			<div className="flex-row justify-center">
-				<p className="nothing-here col-12 text-center top-margin"> There is nothing here!</p>
+				<p className="nothing-here text-center top-margin"> There is nothing here!</p>
 				<Link to="/search">
 					<button className="btn col-12 top-margin btn-long">Search Campsites</button>
 				</Link>
@@ -23,7 +23,7 @@ const Reservations = () => {
 		);
 	}
 	return (
-		<div>
+		<div className="flex-row">
 			{reservationArray.map((reservation) => (
 				<ListingCard
 					key={reservation._id}

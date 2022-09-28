@@ -27,8 +27,8 @@ const Listings = () => {
 	}
 	return (
 		<div>
-			<div>
-				<h3 className="dash-listing-title">Active Listings</h3>
+			<div className="flex-row">
+				<h3 className="dash-listing-title col-12">Active Listings</h3>
 				{listingsArray.map((listing) => {
 					if (listing.active) {
 						return (
@@ -39,8 +39,8 @@ const Listings = () => {
 					}
 				})}
 			</div>
-			<div className="dash-border-top margin-top">
-				<h3 className="dash-listing-title margin-top">Disabled Listings</h3>
+			<div className="dash-border-top margin-top flex-row">
+				<h3 className="dash-listing-title margin-top col-12">Disabled Listings</h3>
 				{listingsArray.map((listing) => {
 					if (!listing.active) {
 						return (

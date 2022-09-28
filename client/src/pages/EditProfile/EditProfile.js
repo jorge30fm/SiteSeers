@@ -27,8 +27,7 @@ const EditProfile = () => {
 		async (error, result) => {
 			if (!error && result && result.event === "success") {
 				const { public_id, format } = result.info;
-				console.log(result.info);
-				console.log(public_id);
+
 
 				try {
 					editUser({

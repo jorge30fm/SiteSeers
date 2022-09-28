@@ -18,12 +18,10 @@ function SearchResults(props) {
   const [queryCampsite, { error }] = useLazyQuery(QUERY_CAMPSITE);
 
   useEffect(() => {
-    console.log(searchState);
     if (searchState === "") {
       return;
     }
     const fetchData = async () => {
-      console.log("SEARCHSTATE", searchState);
       try {
         const { data } = await queryCampsite({
           variables: { city: searchState },
@@ -34,10 +32,10 @@ function SearchResults(props) {
       }
     };
     fetchData();
-  }, [searchState]);
+  }, [searchState, queryCampsite]);
 
   const campsiteArray = getData.campsites;
-  console.log(campsiteArray);
+
   // if (!resultsArray.length) {
   //   return <p>Nothing here</p>;
   // }
@@ -51,7 +49,7 @@ function SearchResults(props) {
   return (
     <div className="padding">
       <h2>Search Results</h2>
-      <div className="margin-top">
+      <div className="margin-top flex-row">
         {campsiteArray.map((campsite) => (
           <ListingCard key={campsite._id} campsite={campsite}></ListingCard>
         ))}
@@ -62,6 +60,4 @@ function SearchResults(props) {
 
 export default SearchResults;
 
-// resultsArray.forEach((campsite) => {
-//   console.log(campsite);
-// });
+

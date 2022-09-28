@@ -8,86 +8,89 @@ import Carousel from "../../components/Carousel/Carousel.js";
 import CancelModal from "../../components/CancelModal/CancelModal.js";
 
 const ReserveDetails = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const { id: reservationID } = useParams();
+	const [modalOpen, setModalOpen] = useState(false);
+	const { id: reservationID } = useParams();
 
-  const { loading, data } = useQuery(QUERY_USER_RESERVATIONS);
-  if (loading) {
-    return <div>Loading ...</div>;
-  }
+	const { loading, data } = useQuery(QUERY_USER_RESERVATIONS);
+	if (loading) {
+		return <div>Loading ...</div>;
+	}
 
-  const userReservationsList = data?.me.reservationHistory || {};
+	const userReservationsList = data?.me.reservationHistory || {};
+	let SingleReservation;
+	userReservationsList.map((reservation) => {
+		if (reservation._id === reservationID) {
+			SingleReservation = reservation;
+		}
+	});
 
-  const reservationArr = userReservationsList.map((reservation) => {
-    if (reservation._id === reservationID) {
-      return reservation;
-    } else {
-      return false;
-    }
-  });
-  const reservation = reservationArr[0];
-  if (!Auth.loggedIn()) {
-    return <Navigate to="/login" />;
-  }
-
-  return (
-    <main className="position-relative">
-      <Carousel campsite={reservation.campsite} />
-      <section className="padding text-center">
-        <div className="flex-column justify-center">
-          <h2>{reservation.campsite.name}</h2>
-          <h4 className="margin-top">
-            {reservation.campsite.city}, {reservation.campsite.state}
-          </h4>
-          <div className="flex-column margin-top">
-            <p>
-              {reservation.reservationStartDate} to {reservation.reservationEndDate}
-            </p>
-            <p>
-              for {reservation.numberOfCampers} of camper
-              {reservation.numberOfCampers > 1 && "s"}
-            </p>
-          </div>
-        </div>
-        <div className="margin-top flex-column">
-          <h2>Owner Contact Information:</h2>
-          <div className="margin-top">
-            <p>
-              <strong>Phone:</strong> {reservation.campsite.phone}
-            </p>
-            <p>
-              <strong>Email:</strong> {reservation.campsite.email}
-            </p>
-          </div>
-        </div>
-        <div className="btn-container margin-top">
-          <button
-            onClick={() => {
-              setModalOpen(true);
-            }}
-            className="btn btn-long"
-          >
-            Cancel Reservation
-          </button>
-        </div>
-      </section>
+	if (!Auth.loggedIn()) {
+		return <Navigate to="/login" />;
+	}
+	return (
+		<main className="position-relative">
+			<div className="flex-row justify-center align-center">
+				<div className="col-12 col-md-6 col-lg-4">
+					<Carousel campsite={SingleReservation.campsite} />
+				</div>
+				<section className="padding text-center flex-row justify-center col-12 col-md-6">
+					<div className="flex-column justify-center col-12">
+						<h2>{SingleReservation.campsite.name}</h2>
+						<h4 className="margin-top">
+							{SingleReservation.campsite.city},{" "}
+							{SingleReservation.campsite.state}
+						</h4>
+						<div className="flex-column margin-top">
+							<p>
+								{SingleReservation.reservationStartDate} to{" "}
+								{SingleReservation.reservationEndDate}
+							</p>
+							<p>
+								for {SingleReservation.numberOfCampers} of camper
+								{SingleReservation.numberOfCampers > 1 && "s"}
+							</p>
+						</div>
+					</div>
+					<div className="margin-top flex-column col-12">
+						<h2>Owner Contact Information:</h2>
+						<div className="margin-top">
+							<p>
+								<strong>Phone:</strong> {SingleReservation.campsite.phone}
+							</p>
+							<p>
+								<strong>Email:</strong> {SingleReservation.campsite.email}
+							</p>
+						</div>
+					</div>
+					<div className="btn-container margin-top col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3">
+						<button
+							onClick={() => {
+								setModalOpen(true);
+							}}
+							className="btn btn-long"
+						>
+							Cancel Reservation
+						</button>
+					</div>
+				</section>
+			</div>
       <div
         className={`page-cover ${modalOpen && "modal-open"} ${
           !modalOpen && "modal-close"
         }`}
       ></div>
-      <div
-        className={`flex-column modal-wrapper ${modalOpen && "modal-open"} ${
-          !modalOpen && "modal-close"
-        }`}
-      >
-        <CancelModal
-          reservationID={reservation._id}
-          modalOpen={modalOpen}
-          setModalOpen={setModalOpen}
-        ></CancelModal>
-      </div>
-    </main>
-  );
+			<div
+				className={`flex-column modal-wrapper ${modalOpen && "modal-open"} ${
+					!modalOpen && "modal-close"
+				}`}
+			>
+				<CancelModal
+					reservationID={SingleReservation._id}
+					modalOpen={modalOpen}
+					setModalOpen={setModalOpen}
+				></CancelModal>
+			</div>
+		</main>
+	);
 };
 export default ReserveDetails;

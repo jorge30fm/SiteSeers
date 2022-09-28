@@ -20,8 +20,8 @@ const Nav = (props) => {
       <div>
         {Auth.loggedIn() ? (
           <>
-            <ul>
-              <li>
+            <ul className='flex-row justify-center text-center margin-top'>
+              <li className="col-12 margin-top green-hover">
                 <Link
                   to="/search"
                   className="nav-link"
@@ -32,7 +32,7 @@ const Nav = (props) => {
                   Search
                 </Link>
               </li>
-              <li>
+              <li className="col-12 margin-top green-hover">
                 <Link
                   to="/"
                   className="nav-link"
@@ -43,7 +43,7 @@ const Nav = (props) => {
                   Dashboard
                 </Link>
               </li>
-              <li>
+              <li className="col-12 margin-top green-hover">
                 <Link
                   to="/"
                   className="nav-link"

@@ -41,17 +41,17 @@ const Signup = () => {
   };
 
   return (
-    <main>
-      <section className="padding">
-        <h2>Sign Up</h2>
+    <main className="mountain-bg">
+      <section className="padding flex-row justify-center">
+        <h2 className="col-12 text-center">Sign Up</h2>
         <form className="flex-column" onSubmit={handleFormSubmit}>
           <div>
             {" "}
             {/* TODO: display fname and lname in a row */}
-            <div className="flex-column margin-top">
-              <label>First Name:</label>
+            <div className="flex-row margin-top">
+              <label className="col-12">First Name:</label>
               <input
-                className="form-input"
+                className="form-input col-12"
                 placeholder="Your First Name"
                 name="firstName"
                 type="firstName"
@@ -60,10 +60,10 @@ const Signup = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="flex-column margin-top">
-              <label>Last Name:</label>
+            <div className="flex-row margin-top">
+              <label className="col-12">Last Name:</label>
               <input
-                className="form-input"
+                className="form-input col-12"
                 placeholder="Your Last Name"
                 name="lastName"
                 type="lastName"
@@ -73,10 +73,10 @@ const Signup = () => {
               />
             </div>
           </div>
-          <div className="flex-column margin-top">
-            <label>Username:</label>
+          <div className="flex-row margin-top">
+            <label className="col-12">Username:</label>
             <input
-              className="form-input"
+              className="form-input col-12"
               placeholder="Your Username"
               name="username"
               type="username"
@@ -85,10 +85,10 @@ const Signup = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="flex-column margin-top">
-            <label>Email:</label>
+          <div className="flex-row margin-top">
+            <label className="col-12">Email:</label>
             <input
-              className="form-input"
+              className="form-input col-12"
               placeholder="Your email"
               name="email"
               type="email"
@@ -97,10 +97,10 @@ const Signup = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="flex-column margin-top">
-            <label>Password:</label>
+          <div className="flex-row margin-top">
+            <label className="col-12">Password:</label>
             <input
-              className="form-input"
+              className="form-input col-12"
               placeholder="******"
               name="password"
               type="password"

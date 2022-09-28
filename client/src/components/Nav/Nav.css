@@ -3,6 +3,10 @@
   height: 100%;
   border: 1px solid var(--dark-green);
   color: var(--dark-green);
+  position: absolute;
+  top: 0;
+  right: 0;
+  width:50%;
 }
 
 .menu-header {
@@ -10,16 +14,14 @@
   padding: 10px;
 }
 
-nav ul {
-  list-style: none;
-  margin: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
 .nav-link {
   font-size: 20px;
   color: var(--dark-green);
   text-decoration: none;
+  border-bottom: 1px solid;
+}
+
+.green-hover:hover {
+  background-color: var(--light-green);
+  transition: background .5s;
 }

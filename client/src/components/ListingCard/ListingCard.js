@@ -16,7 +16,7 @@ const ListingCard = (props) => {
 			navigate(`/reservation-details/${props.singleReservation._id}`);
 		};
 		return (
-			<div className="listingCard">
+			<div className="listingCard col-12  col-sm-6 col-md-4 col-lg-3">
 				<Carousel campsite={campsite}></Carousel>
 
 				<div className="basicInfo" onClick={handleClickReservation}>
@@ -29,7 +29,7 @@ const ListingCard = (props) => {
 		);
 	} else {
 		return (
-			<div className="listingCard">
+			<div className="listingCard col-12  col-sm-6 col-md-4 col-lg-3">
 				<Carousel campsite={campsite}></Carousel>
 
 				<div className="basicInfo" onClick={handleClickCampsite}>

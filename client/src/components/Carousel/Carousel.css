@@ -6,17 +6,19 @@
 .carouselInner {
     height: 100%;
     width: 100%;
+    background: black;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
+    object-fit: cover;
 
 }
 
 .carouselArrow {
     flex: 5%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .6);
+    background-color: rgba(9, 68, 27, .6);;
     display: grid;
     place-items: center;
     color: white;
