@@ -16,8 +16,7 @@ The following technologies were used to complete the project:
 - GraphQL
 - Mongoose
 - Web-Vitals
-- MySQL
-- Cloudinary
+- NoSQL
 
 ## Table of Contents
 
