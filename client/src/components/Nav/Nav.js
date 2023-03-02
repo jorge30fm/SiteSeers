@@ -11,7 +11,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Auth from "../../utils/auth";
 
 const MenuHeader = styled(AppBar)(() => ({
-  height: "51px",
+  height: "84px",
   backgroundColor: "var(--dark-green)",
   position: "static",
 }));
@@ -20,6 +20,10 @@ const MenuBody = styled(Box)(() => ({
   width: "350px",
   height: "100%",
   backgroundColor: "var(--bone)",
+}));
+
+const RightAlignedListText = styled(ListItemText)(() => ({
+  textAlign: "end",
 }));
 
 const Nav = (props) => {
@@ -45,7 +49,7 @@ const Nav = (props) => {
         setMenuOpen(!menuOpen);
       }}
     >
-      <MenuHeader />
+      <MenuHeader component={Box} />
       <MenuBody>
         <List>
           {navItems.map((navItem) => (
@@ -60,7 +64,7 @@ const Nav = (props) => {
                   }
                 }}
               >
-                <ListItemText primary={navItem.text} />
+                <RightAlignedListText primary={navItem.text} />
               </ListItemButton>
             </ListItem>
           ))}
