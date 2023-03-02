@@ -15,16 +15,16 @@ const Header = (props) => {
           <img className="logo" src={logo} alt="logo"></img>
         </div>
       </Link>
-      <div className={`${menuOpen && "page-cover"}`}></div>
+      {/* <div className={`${menuOpen && "page-cover"}`}></div> */}
 
-      <nav className={`${menuOpen && "menu-open"}`}>
+      {/* <nav className={`${menuOpen && "menu-open"}`}> */}
         <Nav menuOpen={menuOpen} setMenuOpen={setMenuOpen}></Nav>
-      </nav>
+      {/* </nav> */}
       <div>
         <Menu
           className="header-icon"
           onClick={() => {
-            setMenuOpen(true);
+            setMenuOpen(!menuOpen);
           }}
         />
       </div>

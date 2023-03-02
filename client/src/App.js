@@ -22,7 +22,7 @@ import TermsOfService from "./pages/Policies/TermsService";
 import PrivacyPolicy from "./pages/Policies/PrivacyPolicy";
 import CancelConfirm from "./pages/CancelConfirm/CancelConfirm";
 import AddListing from "./pages/AddListing/AddListing";
-import AccountEdit from "./pages/AccountEdit/AccountEdit";
+import AccountEdit from "./pages/AccountEdit/Accountedit";
 import NotFound from "./pages/NotFound/NotFound";
 
 const httpLink = createHttpLink({
